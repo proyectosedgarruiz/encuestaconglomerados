@@ -1,0 +1,16 @@
+body{
+    margin-left: 20px !important; 
+    margin-top: 20px !important; 
+    margin-bottom: 10px !important; 
+    line-height: 1.5 !important;
+ }
+
+.izq
+{
+    float: left;
+}
+
+.der
+{
+    float: right;
+}

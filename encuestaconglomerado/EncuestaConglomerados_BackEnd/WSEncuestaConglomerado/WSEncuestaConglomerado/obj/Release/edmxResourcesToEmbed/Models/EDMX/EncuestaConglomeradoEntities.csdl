@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EncuestaConglomeradosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EncuestaConglomeradosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Barrios" EntityType="EncuestaConglomeradosModel.Barrios" />
+    <EntitySet Name="CriterioPriorizacionMuestra" EntityType="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" />
+    <EntitySet Name="Cuadrantes" EntityType="EncuestaConglomeradosModel.Cuadrantes" />
+    <EntitySet Name="Encuesta" EntityType="EncuestaConglomeradosModel.Encuesta" />
+    <EntitySet Name="Localidades" EntityType="EncuestaConglomeradosModel.Localidades" />
+    <EntitySet Name="Roles" EntityType="EncuestaConglomeradosModel.Roles" />
+    <EntitySet Name="Subred" EntityType="EncuestaConglomeradosModel.Subred" />
+    <EntitySet Name="TipoDocumento" EntityType="EncuestaConglomeradosModel.TipoDocumento" />
+    <EntitySet Name="Upz" EntityType="EncuestaConglomeradosModel.Upz" />
+    <EntitySet Name="Usuarios" EntityType="EncuestaConglomeradosModel.Usuarios" />
+    <AssociationSet Name="FK_Encuesta_Barrios" Association="EncuestaConglomeradosModel.FK_Encuesta_Barrios">
+      <End Role="Barrios" EntitySet="Barrios" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_CriterioPriorizacionMuestra" Association="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra">
+      <End Role="CriterioPriorizacionMuestra" EntitySet="CriterioPriorizacionMuestra" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Cuadrantes" Association="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes">
+      <End Role="Cuadrantes" EntitySet="Cuadrantes" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Localidades" Association="EncuestaConglomeradosModel.FK_Encuesta_Localidades">
+      <End Role="Localidades" EntitySet="Localidades" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Subred" Association="EncuestaConglomeradosModel.FK_Encuesta_Subred">
+      <End Role="Subred" EntitySet="Subred" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_TipoDocumento" Association="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento">
+      <End Role="TipoDocumento" EntitySet="TipoDocumento" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Upz" Association="EncuestaConglomeradosModel.FK_Encuesta_Upz">
+      <End Role="Upz" EntitySet="Upz" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Usuarios" Association="EncuestaConglomeradosModel.FK_Encuesta_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="EncuestaConglomeradosModel.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <FunctionImport Name="SP_ADD_ENCUESTA">
+      <Parameter Name="enc_fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="loc_id" Mode="In" Type="Int32" />
+      <Parameter Name="upz_id" Mode="In" Type="Int32" />
+      <Parameter Name="bar_id" Mode="In" Type="Int32" />
+      <Parameter Name="cua_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_muestreadopor" Mode="In" Type="String" />
+      <Parameter Name="cpm_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_nombreencuestado" Mode="In" Type="String" />
+      <Parameter Name="tpd_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_numerodocumento" Mode="In" Type="String" />
+      <Parameter Name="enc_edad" Mode="In" Type="Int32" />
+      <Parameter Name="enc_genero" Mode="In" Type="String" />
+      <Parameter Name="enc_dirresidencia" Mode="In" Type="String" />
+      <Parameter Name="enc_numcelular" Mode="In" Type="String" />
+      <Parameter Name="enc_aseguramiento" Mode="In" Type="String" />
+      <Parameter Name="enc_nombreEAPB" Mode="In" Type="String" />
+      <Parameter Name="enc_ocupacion" Mode="In" Type="String" />
+      <Parameter Name="enc_cuantaspersonashabitan" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantaspersonasmayores60" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantascondicionescronicas" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantashabitacionescuentaresidencia" Mode="In" Type="Int32" />
+      <Parameter Name="enc_hapresentadosintomas_fiebre" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_tos" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_dolorgarganta" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_fatigadebilidad" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_ahogofaltaaire" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_ninguno" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_comoconsideracumplimientocuarentena" Mode="In" Type="String" />
+      <Parameter Name="enc_contactopersonas24horas" Mode="In" Type="String" />
+      <Parameter Name="enc_dondedesplazoustedomiembrofamilia" Mode="In" Type="String" />
+      <Parameter Name="enc_motivosalirdecasa_noaplica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_atrabajar" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_compraralimento" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_ahacerdeporte" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_acitamedica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_sacarmascota" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_diligenciabancaria" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_socializar" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_otro" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_otromotivosalirdecasa" Mode="In" Type="String" />
+      <Parameter Name="enc_mediostransporteutilizo_noaplica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_transmilenio" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_sitp" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_moto" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_bicicleta" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_taxi" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_carro" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_apie" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_otro" Mode="In" Type="Boolean" />
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ADD_USUARIO">
+      <Parameter Name="usu_nombre" Mode="In" Type="String" />
+      <Parameter Name="usu_login" Mode="In" Type="String" />
+      <Parameter Name="usu_password" Mode="In" Type="String" />
+      <Parameter Name="usu_estado" Mode="In" Type="String" />
+      <Parameter Name="rol_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_FIND_ENCUESTAS_FILTER">
+      <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
+      <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
+      <Parameter Name="usuario" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_FIND_USUARIO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_Result)">
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_FIND_USUARIO_AUTORIZADO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_AUTORIZADO_Result)">
+      <Parameter Name="login" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LIST_BARRIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_BARRIOS_Result)">
+      <Parameter Name="upz_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result)" />
+    <FunctionImport Name="SP_LIST_CUADRANTES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CUADRANTES_Result)">
+      <Parameter Name="loc_id" Mode="In" Type="Int32" />
+      <Parameter Name="upz_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LIST_ENCUESTAS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result)">
+      <Parameter Name="todos" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="Int32" />
+      <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
+      <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LIST_LOCALIDADES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result)" />
+    <FunctionImport Name="SP_LIST_ROLES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ROLES_Result)" />
+    <FunctionImport Name="SP_LIST_SUBREDES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_SUBREDES_Result)" />
+    <FunctionImport Name="SP_LIST_TIPODOCUMENTO" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_TIPODOCUMENTO_Result)" />
+    <FunctionImport Name="SP_LIST_UPZ" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_UPZ_Result)">
+      <Parameter Name="loc_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LIST_USUARIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_Result)" />
+    <FunctionImport Name="SP_UPD_CLAVE_USUARIO">
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UPD_USUARIO">
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_nombre" Mode="In" Type="String" />
+      <Parameter Name="usu_login" Mode="In" Type="String" />
+      <Parameter Name="usu_password" Mode="In" Type="String" />
+      <Parameter Name="usu_estado" Mode="In" Type="String" />
+      <Parameter Name="rol_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Barrios">
+    <Key>
+      <PropertyRef Name="bar_id" />
+    </Key>
+    <Property Name="bar_id" Type="Int32" Nullable="false" />
+    <Property Name="bar_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upz_id" Type="Int32" Nullable="false" />
+    <Property Name="bar_codigo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upz_codigo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Barrios" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="CriterioPriorizacionMuestra">
+    <Key>
+      <PropertyRef Name="cpm_id" />
+    </Key>
+    <Property Name="cpm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cpm_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" FromRole="CriterioPriorizacionMuestra" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="Cuadrantes">
+    <Key>
+      <PropertyRef Name="cua_id" />
+    </Key>
+    <Property Name="cua_id" Type="Int32" Nullable="false" />
+    <Property Name="cua_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="loc_id" Type="Int32" />
+    <Property Name="upz_id" Type="Int32" />
+    <Property Name="cua_cod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Cuadrantes" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="Encuesta">
+    <Key>
+      <PropertyRef Name="enc_id" />
+    </Key>
+    <Property Name="enc_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="enc_fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="loc_id" Type="Int32" Nullable="false" />
+    <Property Name="upz_id" Type="Int32" Nullable="false" />
+    <Property Name="bar_id" Type="Int32" Nullable="false" />
+    <Property Name="cua_id" Type="Int32" Nullable="false" />
+    <Property Name="enc_muestreadopor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_nombreencuestado" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tpd_id" Type="Int32" Nullable="false" />
+    <Property Name="enc_numerodocumento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_edad" Type="Int32" Nullable="false" />
+    <Property Name="enc_genero" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_dirresidencia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_numcelular" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_aseguramiento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_nombreEAPB" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_ocupacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_cuantaspersonashabitan" Type="Int32" Nullable="false" />
+    <Property Name="enc_cuantaspersonasmayores60" Type="Int32" Nullable="false" />
+    <Property Name="enc_cuantascondicionescronicas" Type="Int32" Nullable="false" />
+    <Property Name="enc_cuantashabitacionescuentaresidencia" Type="Int32" Nullable="false" />
+    <Property Name="enc_hapresentadosintomas_fiebre" Type="Boolean" />
+    <Property Name="enc_hapresentadosintomas_tos" Type="Boolean" />
+    <Property Name="enc_hapresentadosintomas_dolorgarganta" Type="Boolean" />
+    <Property Name="enc_hapresentadosintomas_fatigadebilidad" Type="Boolean" />
+    <Property Name="enc_hapresentadosintomas_ahogofaltaaire" Type="Boolean" />
+    <Property Name="enc_hapresentadosintomas_ninguno" Type="Boolean" />
+    <Property Name="enc_comoconsideracumplimientocuarentena" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_contactopersonas24horas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_dondedesplazoustedomiembrofamilia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_motivosalirdecasa_noaplica" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_atrabajar" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_compraralimento" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_ahacerdeporte" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_acitamedica" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_sacarmascota" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_diligenciabancaria" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_socializar" Type="Boolean" />
+    <Property Name="enc_motivosalirdecasa_otro" Type="Boolean" />
+    <Property Name="enc_otromotivosalirdecasa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="enc_mediostransporteutilizo_noaplica" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_transmilenio" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_sitp" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_moto" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_bicicleta" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_taxi" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_carro" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_apie" Type="Boolean" />
+    <Property Name="enc_mediostransporteutilizo_otro" Type="Boolean" />
+    <Property Name="usu_id" Type="Int32" Nullable="false" />
+    <Property Name="enc_datetimecreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cpm_id" Type="Int32" />
+    <Property Name="sub_id" Type="Int32" />
+    <NavigationProperty Name="Barrios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Encuesta" ToRole="Barrios" />
+    <NavigationProperty Name="CriterioPriorizacionMuestra" Relationship="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" FromRole="Encuesta" ToRole="CriterioPriorizacionMuestra" />
+    <NavigationProperty Name="Cuadrantes" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Encuesta" ToRole="Cuadrantes" />
+    <NavigationProperty Name="Localidades" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Localidades" FromRole="Encuesta" ToRole="Localidades" />
+    <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
+    <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
+    <NavigationProperty Name="Upz" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Upz" FromRole="Encuesta" ToRole="Upz" />
+    <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Localidades">
+    <Key>
+      <PropertyRef Name="loc_id" />
+    </Key>
+    <Property Name="loc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="loc_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="loc_codigo" Type="Int32" Nullable="false" />
+    <Property Name="loc_estado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Localidades" FromRole="Localidades" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rol_nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Usuarios_Roles" FromRole="Roles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Subred">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sub_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Subred" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="TipoDocumento">
+    <Key>
+      <PropertyRef Name="tpd_id" />
+    </Key>
+    <Property Name="tpd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tpd_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="TipoDocumento" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="Upz">
+    <Key>
+      <PropertyRef Name="upz_id" />
+    </Key>
+    <Property Name="upz_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="upz_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="loc_id" Type="Int32" Nullable="false" />
+    <Property Name="upz_codigo" Type="Int32" Nullable="false" />
+    <Property Name="loc_codigo" Type="Int32" Nullable="false" />
+    <Property Name="upz_estado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Upz" FromRole="Upz" ToRole="Encuesta" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="usu_id" />
+    </Key>
+    <Property Name="usu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usu_nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="usu_login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="usu_password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="usu_estado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="rol_id" Type="Int32" Nullable="false" />
+    <Property Name="usu_req_clave" Type="Boolean" Nullable="false" />
+    <Property Name="usu_datetimecreated" Type="DateTime" Precision="3" />
+    <Property Name="sub_id" Type="Int32" />
+    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Usuarios" ToRole="Encuesta" />
+    <NavigationProperty Name="Roles" Relationship="EncuestaConglomeradosModel.FK_Usuarios_Roles" FromRole="Usuarios" ToRole="Roles" />
+  </EntityType>
+  <Association Name="FK_Encuesta_Barrios">
+    <End Type="EncuestaConglomeradosModel.Barrios" Role="Barrios" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barrios">
+        <PropertyRef Name="bar_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="bar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_CriterioPriorizacionMuestra">
+    <End Type="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" Role="CriterioPriorizacionMuestra" Multiplicity="0..1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CriterioPriorizacionMuestra">
+        <PropertyRef Name="cpm_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="cpm_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Cuadrantes">
+    <End Type="EncuestaConglomeradosModel.Cuadrantes" Role="Cuadrantes" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuadrantes">
+        <PropertyRef Name="cua_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="cua_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Localidades">
+    <End Type="EncuestaConglomeradosModel.Localidades" Role="Localidades" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="loc_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="loc_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Subred">
+    <End Type="EncuestaConglomeradosModel.Subred" Role="Subred" Multiplicity="0..1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subred">
+        <PropertyRef Name="sub_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_TipoDocumento">
+    <End Type="EncuestaConglomeradosModel.TipoDocumento" Role="TipoDocumento" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDocumento">
+        <PropertyRef Name="tpd_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="tpd_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Upz">
+    <End Type="EncuestaConglomeradosModel.Upz" Role="Upz" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Upz">
+        <PropertyRef Name="upz_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="upz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Usuarios">
+    <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="usu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Type="EncuestaConglomeradosModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_FIND_USUARIO_Result">
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_login" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rol_id" Nullable="false" />
+    <Property Type="Boolean" Name="usu_req_clave" Nullable="false" />
+    <Property Type="Int32" Name="sub_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_FIND_USUARIO_AUTORIZADO_Result">
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_login" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rol_id" Nullable="false" />
+    <Property Type="Boolean" Name="usu_req_clave" Nullable="false" />
+    <Property Type="Int32" Name="sub_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_BARRIOS_Result">
+    <Property Type="Int32" Name="bar_id" Nullable="false" />
+    <Property Type="String" Name="bar_nombre" Nullable="false" />
+    <Property Type="Int32" Name="upz_id" Nullable="false" />
+    <Property Type="String" Name="bar_codigo" Nullable="false" />
+    <Property Type="Int32" Name="upz_codigo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result">
+    <Property Type="Int32" Name="cpm_id" Nullable="false" />
+    <Property Type="String" Name="cpm_nombre" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_CUADRANTES_Result">
+    <Property Type="Int32" Name="cua_id" Nullable="false" />
+    <Property Type="String" Name="cua_nombre" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_ENCUESTAS_Result">
+    <Property Type="Int64" Name="enc_id" Nullable="false" />
+    <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="loc_nombre" Nullable="false" />
+    <Property Type="String" Name="upz_nombre" Nullable="false" />
+    <Property Type="String" Name="bar_nombre" Nullable="false" />
+    <Property Type="String" Name="cua_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+    <Property Type="String" Name="cpm_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+    <Property Type="String" Name="tpd_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+    <Property Type="Int32" Name="enc_edad" Nullable="false" />
+    <Property Type="String" Name="enc_genero" Nullable="false" />
+    <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+    <Property Type="String" Name="enc_numcelular" Nullable="false" />
+    <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+    <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+    <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+    <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+    <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+    <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+    <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+    <Property Type="String" Name="sub_nombre" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_LOCALIDADES_Result">
+    <Property Type="Int32" Name="loc_id" Nullable="false" />
+    <Property Type="String" Name="loc_nombre" Nullable="false" />
+    <Property Type="Int32" Name="loc_codigo" Nullable="false" />
+    <Property Type="String" Name="loc_estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_ROLES_Result">
+    <Property Type="Int32" Name="rol_id" Nullable="false" />
+    <Property Type="String" Name="rol_nombre" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_SUBREDES_Result">
+    <Property Type="Int32" Name="sub_id" Nullable="false" />
+    <Property Type="String" Name="sub_nombre" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_TIPODOCUMENTO_Result">
+    <Property Type="Int32" Name="tpd_id" Nullable="false" />
+    <Property Type="String" Name="tpd_nombre" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_UPZ_Result">
+    <Property Type="Int32" Name="upz_id" Nullable="false" />
+    <Property Type="String" Name="upz_nombre" Nullable="false" />
+    <Property Type="Int32" Name="loc_id" Nullable="false" />
+    <Property Type="Int32" Name="upz_codigo" Nullable="false" />
+    <Property Type="Int32" Name="loc_codigo" Nullable="false" />
+    <Property Type="String" Name="upz_estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_USUARIOS_Result">
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_login" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rol_id" Nullable="false" />
+    <Property Type="String" Name="rol_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="usu_req_clave" Nullable="false" />
+    <Property Type="String" Name="sub_nombre" Nullable="false" />
+  </ComplexType>
+</Schema>

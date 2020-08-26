@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EncuestaConglomeradosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Barrios">
+    <Key>
+      <PropertyRef Name="bar_id" />
+    </Key>
+    <Property Name="bar_id" Type="int" Nullable="false" />
+    <Property Name="bar_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="upz_id" Type="int" Nullable="false" />
+    <Property Name="bar_codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="upz_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CriterioPriorizacionMuestra">
+    <Key>
+      <PropertyRef Name="cpm_id" />
+    </Key>
+    <Property Name="cpm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cpm_nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cuadrantes">
+    <Key>
+      <PropertyRef Name="cua_id" />
+    </Key>
+    <Property Name="cua_id" Type="int" Nullable="false" />
+    <Property Name="cua_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="loc_id" Type="int" />
+    <Property Name="upz_id" Type="int" />
+    <Property Name="cua_cod" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Encuesta">
+    <Key>
+      <PropertyRef Name="enc_id" />
+    </Key>
+    <Property Name="enc_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="enc_fecha" Type="date" Nullable="false" />
+    <Property Name="loc_id" Type="int" Nullable="false" />
+    <Property Name="upz_id" Type="int" Nullable="false" />
+    <Property Name="bar_id" Type="int" Nullable="false" />
+    <Property Name="cua_id" Type="int" Nullable="false" />
+    <Property Name="enc_muestreadopor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_nombreencuestado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tpd_id" Type="int" Nullable="false" />
+    <Property Name="enc_numerodocumento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_edad" Type="int" Nullable="false" />
+    <Property Name="enc_genero" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_dirresidencia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_numcelular" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_aseguramiento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_nombreEAPB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_ocupacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_cuantaspersonashabitan" Type="int" Nullable="false" />
+    <Property Name="enc_cuantaspersonasmayores60" Type="int" Nullable="false" />
+    <Property Name="enc_cuantascondicionescronicas" Type="int" Nullable="false" />
+    <Property Name="enc_cuantashabitacionescuentaresidencia" Type="int" Nullable="false" />
+    <Property Name="enc_hapresentadosintomas_fiebre" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_tos" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_dolorgarganta" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_fatigadebilidad" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_ahogofaltaaire" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_ninguno" Type="bit" />
+    <Property Name="enc_comoconsideracumplimientocuarentena" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_contactopersonas24horas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_dondedesplazoustedomiembrofamilia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enc_motivosalirdecasa_noaplica" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_atrabajar" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_compraralimento" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_ahacerdeporte" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_acitamedica" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_sacarmascota" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_diligenciabancaria" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_socializar" Type="bit" />
+    <Property Name="enc_motivosalirdecasa_otro" Type="bit" />
+    <Property Name="enc_otromotivosalirdecasa" Type="nvarchar(max)" />
+    <Property Name="enc_mediostransporteutilizo_noaplica" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_transmilenio" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_sitp" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_moto" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_bicicleta" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_taxi" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_carro" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_apie" Type="bit" />
+    <Property Name="enc_mediostransporteutilizo_otro" Type="bit" />
+    <Property Name="usu_id" Type="int" Nullable="false" />
+    <Property Name="enc_datetimecreated" Type="datetime" Nullable="false" />
+    <Property Name="cpm_id" Type="int" />
+    <Property Name="sub_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Localidades">
+    <Key>
+      <PropertyRef Name="loc_id" />
+    </Key>
+    <Property Name="loc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loc_nombre" Type="varchar(max)" Nullable="false" />
+    <Property Name="loc_codigo" Type="int" Nullable="false" />
+    <Property Name="loc_estado" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rol_nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subred">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sub_nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDocumento">
+    <Key>
+      <PropertyRef Name="tpd_id" />
+    </Key>
+    <Property Name="tpd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tpd_nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Upz">
+    <Key>
+      <PropertyRef Name="upz_id" />
+    </Key>
+    <Property Name="upz_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="upz_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="loc_id" Type="int" Nullable="false" />
+    <Property Name="upz_codigo" Type="int" Nullable="false" />
+    <Property Name="loc_codigo" Type="int" Nullable="false" />
+    <Property Name="upz_estado" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="usu_id" />
+    </Key>
+    <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usu_nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="usu_login" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="usu_password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="usu_estado" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="rol_id" Type="int" Nullable="false" />
+    <Property Name="usu_req_clave" Type="bit" Nullable="false" />
+    <Property Name="usu_datetimecreated" Type="datetime" />
+    <Property Name="sub_id" Type="int" />
+  </EntityType>
+  <Association Name="FK_Encuesta_Barrios">
+    <End Role="Barrios" Type="Self.Barrios" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barrios">
+        <PropertyRef Name="bar_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="bar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_CriterioPriorizacionMuestra">
+    <End Role="CriterioPriorizacionMuestra" Type="Self.CriterioPriorizacionMuestra" Multiplicity="0..1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CriterioPriorizacionMuestra">
+        <PropertyRef Name="cpm_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="cpm_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Cuadrantes">
+    <End Role="Cuadrantes" Type="Self.Cuadrantes" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuadrantes">
+        <PropertyRef Name="cua_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="cua_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Localidades">
+    <End Role="Localidades" Type="Self.Localidades" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="loc_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="loc_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Subred">
+    <End Role="Subred" Type="Self.Subred" Multiplicity="0..1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subred">
+        <PropertyRef Name="sub_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_TipoDocumento">
+    <End Role="TipoDocumento" Type="Self.TipoDocumento" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDocumento">
+        <PropertyRef Name="tpd_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="tpd_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Upz">
+    <End Role="Upz" Type="Self.Upz" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Upz">
+        <PropertyRef Name="upz_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="upz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Encuesta_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="Encuesta">
+        <PropertyRef Name="usu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_ADD_ENCUESTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="enc_fecha" Type="date" Mode="In" />
+    <Parameter Name="loc_id" Type="int" Mode="In" />
+    <Parameter Name="upz_id" Type="int" Mode="In" />
+    <Parameter Name="bar_id" Type="int" Mode="In" />
+    <Parameter Name="cua_id" Type="int" Mode="In" />
+    <Parameter Name="enc_muestreadopor" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="cpm_id" Type="int" Mode="In" />
+    <Parameter Name="enc_nombreencuestado" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="tpd_id" Type="int" Mode="In" />
+    <Parameter Name="enc_numerodocumento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_edad" Type="int" Mode="In" />
+    <Parameter Name="enc_genero" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_dirresidencia" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_numcelular" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_aseguramiento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_nombreEAPB" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_ocupacion" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_cuantaspersonashabitan" Type="int" Mode="In" />
+    <Parameter Name="enc_cuantaspersonasmayores60" Type="int" Mode="In" />
+    <Parameter Name="enc_cuantascondicionescronicas" Type="int" Mode="In" />
+    <Parameter Name="enc_cuantashabitacionescuentaresidencia" Type="int" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_fiebre" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_tos" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_dolorgarganta" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_fatigadebilidad" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_ahogofaltaaire" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_ninguno" Type="bit" Mode="In" />
+    <Parameter Name="enc_comoconsideracumplimientocuarentena" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_contactopersonas24horas" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_dondedesplazoustedomiembrofamilia" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_noaplica" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_atrabajar" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_compraralimento" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_ahacerdeporte" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_acitamedica" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_sacarmascota" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_diligenciabancaria" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_socializar" Type="bit" Mode="In" />
+    <Parameter Name="enc_motivosalirdecasa_otro" Type="bit" Mode="In" />
+    <Parameter Name="enc_otromotivosalirdecasa" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_noaplica" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_transmilenio" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_sitp" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_moto" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_bicicleta" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_taxi" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_carro" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_apie" Type="bit" Mode="In" />
+    <Parameter Name="enc_mediostransporteutilizo_otro" Type="bit" Mode="In" />
+    <Parameter Name="sub_id" Type="int" Mode="In" />
+    <Parameter Name="usu_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ADD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usu_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_login" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_password" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_estado" Type="nvarchar" Mode="In" />
+    <Parameter Name="rol_id" Type="int" Mode="In" />
+    <Parameter Name="usu_req_clave" Type="bit" Mode="In" />
+    <Parameter Name="sub_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_FIND_ENCUESTAS_FILTER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechainicial" Type="date" Mode="In" />
+    <Parameter Name="fechafinal" Type="date" Mode="In" />
+    <Parameter Name="usuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_FIND_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usu_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_FIND_USUARIO_AUTORIZADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="login" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_LIST_BARRIOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="upz_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_CUADRANTES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="loc_id" Type="int" Mode="In" />
+    <Parameter Name="upz_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LIST_ENCUESTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="todos" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="int" Mode="In" />
+    <Parameter Name="fechainicial" Type="date" Mode="In" />
+    <Parameter Name="fechafinal" Type="date" Mode="In" />
+  </Function>
+  <Function Name="SP_LIST_LOCALIDADES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_SUBREDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_TIPODOCUMENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_UPZ" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="loc_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LIST_USUARIOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_UPD_CLAVE_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usu_id" Type="int" Mode="In" />
+    <Parameter Name="clave" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_UPD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usu_id" Type="int" Mode="In" />
+    <Parameter Name="usu_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_login" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_password" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_estado" Type="nvarchar" Mode="In" />
+    <Parameter Name="rol_id" Type="int" Mode="In" />
+    <Parameter Name="usu_req_clave" Type="bit" Mode="In" />
+    <Parameter Name="sub_id" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="EncuestaConglomeradosModelStoreContainer">
+    <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CriterioPriorizacionMuestra" EntityType="Self.CriterioPriorizacionMuestra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cuadrantes" EntityType="Self.Cuadrantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Encuesta" EntityType="Self.Encuesta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subred" EntityType="Self.Subred" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Upz" EntityType="Self.Upz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Encuesta_Barrios" Association="Self.FK_Encuesta_Barrios">
+      <End Role="Barrios" EntitySet="Barrios" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_CriterioPriorizacionMuestra" Association="Self.FK_Encuesta_CriterioPriorizacionMuestra">
+      <End Role="CriterioPriorizacionMuestra" EntitySet="CriterioPriorizacionMuestra" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Cuadrantes" Association="Self.FK_Encuesta_Cuadrantes">
+      <End Role="Cuadrantes" EntitySet="Cuadrantes" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Localidades" Association="Self.FK_Encuesta_Localidades">
+      <End Role="Localidades" EntitySet="Localidades" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Subred" Association="Self.FK_Encuesta_Subred">
+      <End Role="Subred" EntitySet="Subred" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_TipoDocumento" Association="Self.FK_Encuesta_TipoDocumento">
+      <End Role="TipoDocumento" EntitySet="TipoDocumento" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Upz" Association="Self.FK_Encuesta_Upz">
+      <End Role="Upz" EntitySet="Upz" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Encuesta_Usuarios" Association="Self.FK_Encuesta_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Encuesta" EntitySet="Encuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SilaspReportesUnacModelStoreContainer" CdmEntityContainer="SilaspReportesUnacEntities">
+    <EntitySetMapping Name="DatosRecepcion">
+      <EntityTypeMapping TypeName="SilaspReportesUnacModel.DatosRecepcion">
+        <MappingFragment StoreEntitySet="DatosRecepcion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ideyr_dyr" ColumnName="Ideyr_dyr" />
+          <ScalarProperty Name="Idrvp_dyr" ColumnName="Idrvp_dyr" />
+          <ScalarProperty Name="dato_dyr" ColumnName="dato_dyr" />
+          <ScalarProperty Name="Texto_dyr" ColumnName="Texto_dyr" />
+          <ScalarProperty Name="Codigouym_dyr" ColumnName="Codigouym_dyr" />
+          <ScalarProperty Name="Codigousu_dyr" ColumnName="Codigousu_dyr" />
+          <ScalarProperty Name="Fecha_dyr" ColumnName="Fecha_dyr" />
+          <ScalarProperty Name="Periodoeyr_dyr" ColumnName="Periodoeyr_dyr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

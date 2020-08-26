@@ -1,0 +1,645 @@
+<div *ngIf="!formSaved">
+  <div class="izq">
+    <img src="assets/alcaldiac_logo.png">
+  </div>
+  <div class="der">
+    <button *ngIf="VisualizarCerrarSesion" class="btn btn-info active" (click)="cerrarsesion()" style="padding-left: 20px;">Cerrar Sesión</button>
+  </div>
+
+  <br>
+  <br>
+  <div class="centrado">
+    <h4>ENCUESTA A RESIDENTES SELECCIONADOS EN LAS MUESTRAS POR CONVENIENCIA Y </h4>
+    <h4>PROBABILÍSTICA EN CONGLOMERADOS EN EL MICRO TERRITORIO</h4>
+  </div>
+
+  <div class="contenedorprincipal">
+    <form>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="dia">*1. Fecha de la Encuesta :</label>
+
+            <input *ngIf="VisualizarBotonGuardar" required type="date" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_fecha"
+              class="form-control" id="enc_fecha" placeholder="dd/mm/yyyy" datepicker-popup="dd/MM/yyyy"
+              is-open="opened" close-text="Close"  max="{{FechaHoraMax}}">
+
+              <input *ngIf="VisualizarBotonActualizar" required type="date" [ngModelOptions]="{standalone: true}" [(ngModel)]="FechaEdicion"
+              class="form-control" id="enc_fecha" placeholder="dd/mm/yyyy" datepicker-popup="dd/MM/yyyy"
+              is-open="opened" close-text="Close"  max="{{FechaHoraMax}}">
+
+          </div>
+        </div>
+        <div class="col">
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="localidad">*2. Localidad :</label>
+            <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.loc_id"
+              id="localidad" (change)="InhabilitadoCuadrante = true; GetListaBarrios(encuesta.loc_id,null); GetListaUPZs(encuesta.loc_id, null); ">
+              <option *ngFor="let fila of selectLocalidades" value="{{fila.loc_id}}">{{fila.loc_nombre}}
+              </option>
+            </select>
+          
+           
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="upz">*3. UPZ :</label>
+            <select #UPZ required class="form-control" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.upz_id" id="upz" (change)="GetListaCuadrantes(encuesta.loc_id,encuesta.upz_id, null);"
+              [disabled]="InhabilitadoUPZ">
+              <option *ngFor="let fila of selectUPZs" value="{{fila.upz_id}}">{{fila.upz_nombre}}
+              </option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="barrio">*4. Barrio :</label>
+            <select #UPZ required class="form-control" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.bar_id" id="barrio"  [disabled]="InhabilitadoBarrio">
+              <option *ngFor="let fila of selectBarrios" value="{{fila.bar_id}}">{{fila.bar_nombre}}
+              </option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="idcuadrante">*5. ID Cuadrante :</label>
+            <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.cua_id"
+              id="cuadrante"   [disabled]="InhabilitadoCuadrante">
+              <option *ngFor="let fila of selectCuadrantes" value="{{fila.cua_id}}">{{fila.cua_nombre}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="muestreadopor">*6. Muestreado por : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Conveniencia" name="muestreadopor" [(ngModel)]="encuesta.enc_muestreadopor"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Conveniencia
+            <label></label>
+            <input type="radio" value="Probabilístico (aleatorio)" name="muestreadopor"
+              [(ngModel)]="encuesta.enc_muestreadopor"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Probabilístico
+            (aleatorio)
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="criteriopriormuestreo">*7. Criterio de Priorización para muestreo :</label>
+            <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.cpm_id"
+              id="cpm_id" >
+              <option *ngFor="let fila of selectCriterioPriorizacionMuestra" value="{{fila.cpm_id}}">{{fila.cpm_nombre}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="nombreencuestado">*8. Nombre del encuestado :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_nombreencuestado" class="form-control" id="enc_nombreencuestado"
+              placeholder="Ingrese el nombre del encuestado">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="tipodocumento">*9. Tipo de Documento :</label>
+            <select #TipoDocumento required class="form-control" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.tpd_id" id="tipodocumento">
+              <option *ngFor="let fila of selectTipoDocumento" value="{{fila.tpd_id}}">{{fila.tpd_nombre}}
+              </option>
+
+
+            </select>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="numerodocumento">*10. Número de Documento :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_numerodocumento"
+              class="form-control" id="enc_numerodocumento" placeholder="Ingrese el número de documento">
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="aseguramiento">*11. Aseguramiento : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Contributivo" name="aseguramiento" [(ngModel)]="encuesta.enc_aseguramiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Contributivo
+            <input type="radio" value="Subsidiado" name="aseguramiento" [(ngModel)]="encuesta.enc_aseguramiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Subsidiado
+            <input type="radio" value="Especial/Excepción" name="aseguramiento" [(ngModel)]="encuesta.enc_aseguramiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;">
+            Especial/Excepción
+            <input type="radio" value="No asegurado" name="aseguramiento" [(ngModel)]="encuesta.enc_aseguramiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No asegurado
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="ocupacion">*12. Ocupación ( a qué se dedica o qué tipo de trabajo realiza)
+              :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_ocupacion"
+              class="form-control" id="enc_ocupacion" placeholder="Ingrese la ocupación" (keypress)="soloLetras($event)">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="cuantaspersonashabitan">*13. ¿Cuántas personas habitan en su residencia?
+              :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_cuantaspersonashabitan" class="form-control" id="enc_cuantaspersonashabitan"
+              placeholder="" maxlength="2" mask="99" (keypress)="soloNumeros($event)">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="cuantaspersonasmayores60">*14. ¿Cuántas son mayores de 60 años? :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_cuantaspersonasmayores60" class="form-control" id="enc_cuantaspersonasmayores60"
+              placeholder="" maxlength="2" mask="99" (keypress)="soloNumeros($event)">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="cuantaspersonascronicas">*15. ¿Cuántas con condiciones crónicas? :</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_cuantascondicionescronicas" class="form-control"
+              id="enc_cuantascondicionescronicas" placeholder="" maxlength="2" mask="99"
+              (keypress)="soloNumeros($event)">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="cuantashabitacionesresidencia">*16. ¿Con cuántas habitaciones cuenta la
+              residencia?:</label>
+            <input required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_cuantashabitacionescuentaresidencia" class="form-control"
+              id="enc_cuantashabitacionescuentaresidencia" placeholder="" maxlength="2" mask="99"
+              (keypress)="soloNumeros($event)">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="hapresentadosintomas">*17. ¿Usted o alguien de las personas que viven con usted
+              ha presentado uno
+              varios de los siguientes síntomas o molestias? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <div class="divTableRow">
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="hapresentadosintomas_fiebre"
+                  (change)="deshabilitarnoaplicasintomas()" [(ngModel)]="encuesta.enc_hapresentadosintomas_fiebre"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Fiebre
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_tos"
+                  (change)="deshabilitarnoaplicasintomas()" [(ngModel)]="encuesta.enc_hapresentadosintomas_tos"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Tos
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_dolorgarganta"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_dolorgarganta"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Dolor de
+                garganta
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_fatigadebilidad"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_fatigadebilidad"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Fatiga o
+                debilidad
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_ahogofaltaaire"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_ahogofaltaaire"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ahogo o
+                falta
+                de aire
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_ninguno"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_ninguno" (change)="deshabilitarsintomas()"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="comoconsideracumplimientocuarentena">*18. ¿Cómo considera o evalúa el
+              cumplimiento o acatamiento del confinamiento o la cuarentena en el barrio donde usted vive? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Muy buena" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Muy buena
+            <input type="radio" value="Buena" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Buena
+            <input type="radio" value="Regular" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Regular
+            <input type="radio" value="Mala" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Mala
+            <input type="radio" value="Muy mala" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Muy mala
+            <input type="radio" value="No sabe" name="comoconsideracumplimientocuarentena"
+              [(ngModel)]="encuesta.enc_comoconsideracumplimientocuarentena"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No sabe
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="contactopersonas24horas">*19. En las últimas 24 horas, ¿Ha estado en contacto con
+              otras personas
+              <u>fuera de su casa</u>? (<u>dentro de una distancia menor de 2 metros y más de 15 minutos</u>) : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="SI" name="contactopersonas24horas"
+              [(ngModel)]="encuesta.enc_contactopersonas24horas"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> SI
+            <input type="radio" value="NO" name="contactopersonas24horas"
+              [(ngModel)]="encuesta.enc_contactopersonas24horas"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> NO
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="dondedesplazoustedomiembrofamilia">*20. ¿Hasta dónde se desplazó usted o el
+              miembro de su familia
+              que salió fuera de la vivienda? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="No aplica" name="dondedesplazoustedomiembrofamilia"
+              [(ngModel)]="encuesta.enc_dondedesplazoustedomiembrofamilia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No aplica
+            <input type="radio" value="Únicamente dentro del barrio" name="dondedesplazoustedomiembrofamilia"
+              [(ngModel)]="encuesta.enc_dondedesplazoustedomiembrofamilia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Únicamente
+            dentro del barrio
+            <input type="radio" value="Salió del barrio, pero no de la localidad"
+              name="dondedesplazoustedomiembrofamilia" [(ngModel)]="encuesta.enc_dondedesplazoustedomiembrofamilia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Salió del
+            barrio, pero no de la localidad
+            <input type="radio" value="Se movilizó hasta otra localidad" name="dondedesplazoustedomiembrofamilia"
+              [(ngModel)]="encuesta.enc_dondedesplazoustedomiembrofamilia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Se movilizó
+            hasta otra localidad
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="motivosalirdecasa">*21. ¿Por qué motivo o razón salió o salieron a la calle? :
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_noaplica"
+                (change)="deshabilitarmotivosalirdecasa();otromotivoseleccionado=false;"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_noaplica"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No aplica
+            </label>
+            <label> <input type="checkbox" value="1" name="enc_motivosalirdecasa_atrabajar"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_atrabajar"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> A trabajar
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_compraralimento"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_compraralimento"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> A comprar
+              alimentos o víveres
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_ahacerdeporte"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_ahacerdeporte"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> A hacer
+              deporte
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_acitamedica"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_acitamedica"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> A cita
+              médica, autorización por EPS, reclamar medicamentos
+            </label>
+            <br>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_sacarmascota"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_sacarmascota"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Sacar a la
+              mascota
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_diligenciabancaria"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_diligenciabancaria"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Diligencias
+              bancarias, ir al cajero
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_socializar"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_socializar"
+                (change)="otromotivoseleccionado=false; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Socializar,
+              encontrarse con amigos, vecinos
+            </label>
+            <label>
+              <input type="checkbox" value="1" name="enc_motivosalirdecasa_otro"
+                [(ngModel)]="encuesta.enc_motivosalirdecasa_otro"
+                (change)="otromotivoseleccionado=true; deshabilitarmotivosalirdecasanoaplica();"
+                style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otro motivo
+            </label>
+            <label>
+              <input *ngIf="otromotivoseleccionado" required type="text" [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="encuesta.enc_otromotivosalirdecasa" class="form-control" id="enc_otromotivosalirdecasa"
+                placeholder="Indique Otro Motivo">
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="mediostransporteutilizo">*22. ¿Qué medios de transporte utilizó? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_noaplica"
+              (change)="deshabilitarmediotransporte()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_noaplica"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No aplica
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_transmilenio"
+              (change)="deshabilitarmediotransportenoaplica()"
+              [(ngModel)]="encuesta.enc_mediostransporteutilizo_transmilenio"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;">
+            Transmilenio/Cable
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_sitp"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_sitp"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> SITP (buses
+            azules) u otro tipo de bus
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_moto"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_moto"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Moto
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_bicicleta"
+              (change)="deshabilitarmediotransportenoaplica()"
+              [(ngModel)]="encuesta.enc_mediostransporteutilizo_bicicleta"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Bicicleta
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_taxi"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_taxi"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Taxi
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_carro"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_carro"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Carro
+            particular
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_apie"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_apie"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> A pie
+            <input type="checkbox" value="1" name="enc_mediostransporteutilizo_otro"
+              (change)="deshabilitarmediotransportenoaplica()" [(ngModel)]="encuesta.enc_mediostransporteutilizo_otro"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otro
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="contenedorsecundario">
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label class="labeld" for="equipoacargo"><b>EQUIPO A CARGO :</b></label>
+            </div>
+          </div>
+        </div>
+       
+        <div class="form-row">
+
+          <div class="col">
+            <div class="form-group">
+              <label for="subred">Subred :</label>
+              <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.sub_id"
+                id="sub_id" >
+                <option *ngFor="let fila of selectSubRedes" value="{{fila.sub_id}}">{{fila.sub_nombre}}
+                </option>
+              </select>
+            </div>
+          </div>
+
+      
+        </div>
+
+      </div>
+      <br>
+      <br>
+
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <button *ngIf="VisualizarBotonGuardar" class="btn btn-info active" (click)="validateRegistroExistente()" style="padding-left: 20px;">Guardar</button>
+          <button *ngIf="VisualizarBotonActualizar" class="btn btn-info active" (click)="confirmar2()" style="padding-left: 20px;">Actualizar</button>
+          <button *ngIf="VisualizarBotonActualizar" class="btn btn-info active" (click)="volver()" style="padding-left: 20px;">Cancelar</button>
+          
+        </div>
+        <div class="divTableCell">
+          <div *ngIf="errorLabel" class="alert alert-danger api-response-alert2 col-sm-3" role="alert">
+            {{errorText}}
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+<div *ngIf="formSaved">
+  <div>
+    <img src="assets/alcaldiac_logo.png">
+  </div>
+  <br>
+  <br>
+  <div class="contenedorsecundario">
+    <div class="centrado">
+      <label class="labelf1">Se ha realizado el registro de la información </label>
+      <br>
+      <label class="labelf2">Muchas gracias por diligenciar la encuesta</label>
+      <div>
+        <button class="btn btn-info active" (click)="inicializar()" style="padding-left: 20px;">Iniciar Nueva
+          Encuesta</button>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  Modal Confirmación previo a grabación-->
+<ng-template #AceptaGrabación let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Información</h4>
+  </div>
+  <div class="modal-body">
+    <p>
+      <span><b>¿Confirma que los datos son correctos y grabar?</b></span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="d('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="saveForm(); d('Ok click'); ">Aceptar</button>
+  </div>
+</ng-template>

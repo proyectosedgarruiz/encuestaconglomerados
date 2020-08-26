@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e49c624079374ecfbdc3a568c3a2fa0e" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Barrios" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" Width="1.5" PointX="3" PointY="15.5" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Cuadrantes" Width="1.5" PointX="3" PointY="12.5" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Encuesta" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Localidades" Width="1.5" PointX="3" PointY="17.75" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Roles" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Subred" Width="1.5" PointX="3" PointY="20.5" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.TipoDocumento" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Upz" Width="1.5" PointX="3" PointY="22.875" />
+        <EntityTypeShape EntityType="EncuestaConglomeradosModel.Usuarios" Width="1.5" PointX="3" PointY="6.25" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Barrios" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Localidades" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Subred" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Upz" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" />
+        <AssociationConnector Association="EncuestaConglomeradosModel.FK_Usuarios_Roles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

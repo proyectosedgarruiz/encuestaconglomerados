@@ -1,0 +1,30 @@
+body{
+    margin-left: 20px !important; 
+    margin-top: 20px !important; 
+    margin-bottom: 10px !important; 
+    line-height: 1.5 !important;
+ }
+
+
+ .tarjeta {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    outline: none;
+    vertical-align: middle;
+    background-color: #F4F6F6;
+    /* #E5E7E9;*/
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #837272;
+}
+
+.labeld
+{
+    font-weight: bold;
+}

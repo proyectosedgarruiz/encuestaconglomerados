@@ -1,0 +1,58 @@
+ 
+  
+  <div>
+    <div class="izq">
+        <img src="assets/alcaldiac_logo.png">
+      </div>
+      <div class="der">
+        <button class="btn btn-info active" (click)="cerrarsesion()" style="padding-left: 20px;">Cerrar Sesión</button>
+      </div>
+    <br>
+    <br>
+    </div>
+        <br>
+        <br> 
+        <br>
+
+    <div class="contenedorsecundario">
+      <div class="centrado">
+          <h4>Zona de Administración del Sistema</h4>
+      </div>
+
+        <label >Seleccione la opción deseada </label>
+        <br>
+       
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="localidad">*Opción de Administrador</label>
+            <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="opcion"
+              id="opcion" (change)="EjecutarAccion()">
+              <option value="1">Descargar Sábana de Encuestas</option>
+              <option value="2">Gestionar Usuarios</option>
+              
+            </select>
+          </div>
+        </div>
+        
+  
+  
+  
+    </div>
+  </div>
+  
+  
+  <app-sabanaencuesta *ngIf="VisualizarSabana" [publicas]="publicas">
+  </app-sabanaencuesta>
+
+  <app-gestionusuarios *ngIf="VisualizarGestionUsuarios" [publicas]="publicas">
+
+  </app-gestionusuarios>
+
+  
+  
+  
+  
+  
+  
+  

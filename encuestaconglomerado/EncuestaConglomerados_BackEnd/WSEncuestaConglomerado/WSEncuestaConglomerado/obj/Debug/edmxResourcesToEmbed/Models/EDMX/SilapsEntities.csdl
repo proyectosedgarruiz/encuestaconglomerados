@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SilaspReportesUnacModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DatosRecepcion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ideyr_dyr" Type="Int32" Nullable="false" />
+    <Property Name="Idrvp_dyr" Type="Int32" Nullable="false" />
+    <Property Name="dato_dyr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Texto_dyr" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Codigouym_dyr" Type="Int32" />
+    <Property Name="Codigousu_dyr" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_dyr" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Periodoeyr_dyr" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SilaspReportesUnacEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DatosRecepcion" EntityType="Self.DatosRecepcion" />
+  </EntityContainer>
+</Schema>

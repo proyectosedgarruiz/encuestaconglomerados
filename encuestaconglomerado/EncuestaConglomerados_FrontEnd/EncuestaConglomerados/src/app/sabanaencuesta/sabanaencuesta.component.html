@@ -1,0 +1,203 @@
+<div class="container-body">
+
+    <br>
+    <div class="tarjeta" *ngIf="VisualizarTituloSabana">
+        <div class="long-title">
+            <h3>Sábana de Encuestas</h3>
+        </div>
+    </div>
+
+    <div class="tarjeta" *ngIf="VisualizarTituloSabana">
+        <div>
+            <div class="form-row">
+                <label class="labeld" for="dia">Seleccione como desea consultar la sábana de Encuestas :</label>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="radio" value="1" name="tiposabana" [(ngModel)]="tiposabana"
+                            style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"
+                            (change)="VisualizarFechas=false"> Todos
+                        <label></label>
+                        <input type="radio" value="2" name="tiposabana" [(ngModel)]="tiposabana"
+                            style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"
+                            (change)="VisualizarFechas=true;AsignarFechasIniciales()"> Rango de Fechas
+
+
+                        <div class="form-row" *ngIf="VisualizarFechas">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="labeld" for="dia">Fecha Inicial :</label>
+                                    <input required type="date" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="fechainicial" class="form-control" id="fechainicial"
+                                        placeholder="dd/mm/yyyy" datepicker-popup="dd/MM/yyyy" is-open="opened"
+                                        close-text="Close">
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="labeld" for="dia">Fecha Final :</label>
+                                    <input required type="date" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="fechafinal" class="form-control" id="fechafinal"
+                                        placeholder="dd/mm/yyyy" datepicker-popup="dd/MM/yyyy" is-open="opened"
+                                        close-text="Close">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-info active" (click)="Consultarsabana()" style="padding-left: 20px;">Consultar
+                Sábana de Encuestas</button>
+        </div>
+        <br>
+        <br>
+
+        <div *ngIf="VisualizarSabana">
+            <dx-data-grid id="gridContainer" [dataSource]="selectEncuestas" keyExpr="enc_id" showBorders="true"
+                [columnAutoWidth]="true" [rowAlternationEnabled]="true" ng-selected="true"
+                [allowColumnReordering]="true" [allowColumnResizing]="true" [columnAutoWidth]="true"
+                [showBorders]="true">
+
+                <dxi-column caption="Operaciones" cellTemplate="accionCellTemplate" alignment="center">
+                </dxi-column>
+
+                <dxi-column dataField="enc_id" caption="Id"></dxi-column>
+                <dxi-column dataField="enc_fecha" caption="Fecha"></dxi-column>
+                <dxi-column dataField="loc_nombre" caption="Localidad"></dxi-column>
+                <dxi-column dataField="upz_nombre" caption="UPZ"></dxi-column>
+                <dxi-column dataField="bar_nombre" caption="Barrio"></dxi-column>
+                <dxi-column dataField="cua_nombre" caption="Cuadrante"></dxi-column>
+                <dxi-column dataField="enc_muestreadopor" caption="Muestreado por"></dxi-column>
+                <dxi-column dataField="cpm_nombre" caption="Criterio Priorización Muestra"></dxi-column>
+                <dxi-column dataField="enc_nombreencuestado" caption="Nombre Encuestado"></dxi-column>
+                <dxi-column dataField="tpd_nombre" caption="Tipo Documento"></dxi-column>
+                <dxi-column dataField="enc_numerodocumento" caption="Número Documento"></dxi-column>
+                <dxi-column dataField="enc_edad" caption="Edad"></dxi-column>
+                <dxi-column dataField="enc_genero" caption="Género"></dxi-column>
+                <dxi-column dataField="enc_dirresidencia" caption="Dirección Residencia"></dxi-column>
+                <dxi-column dataField="enc_numcelular" caption="Número Celular"></dxi-column>
+                <dxi-column dataField="enc_aseguramiento" caption="Aseguramiento"></dxi-column>
+                <dxi-column dataField="enc_nombreEAPB" caption="Nombre EAPB"></dxi-column>
+                <dxi-column dataField="enc_ocupacion" caption="Ocupación"></dxi-column>
+                <dxi-column dataField="enc_cuantaspersonashabitan" caption="Cuantas personas habitan"></dxi-column>
+                <dxi-column dataField="enc_cuantaspersonasmayores60" caption="Cuantas personas mayores de 60">
+                </dxi-column>
+                <dxi-column dataField="enc_cuantascondicionescronicas" caption="cuantas personas condiciones crónicas">
+                </dxi-column>
+                <dxi-column dataField="enc_cuantashabitacionescuentaresidencia"
+                    caption="Cuantas habitaciones residencia"></dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_fiebre" caption="Sintomas - Fiebre"></dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_tos" caption="Síntomas - Tos"></dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_dolorgarganta" caption="Síntomas - Dolor de Garganta">
+                </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_fatigadebilidad" caption="Síntomas - Fatiga/Debilidad">
+                </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_ahogofaltaaire" caption="Síntomas - Ahogo/Falta Aire">
+                </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_ninguno" caption="Síntomas - Ninguno"></dxi-column>
+                <dxi-column dataField="enc_comoconsideracumplimientocuarentena"
+                    caption="Como considera cumplimiento cuarentena"></dxi-column>
+                <dxi-column dataField="enc_contactopersonas24horas" caption="Contacto personas 24 horas">
+                </dxi-column>
+                <dxi-column dataField="enc_dondedesplazoustedomiembrofamilia" caption="Dónde desplazó ud o su familia">
+                </dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_noaplica" caption="Motivo Salir de Casa - No Aplica">
+                </dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_atrabajar" caption="Motivo Salir de Casa - Trabajar">
+                </dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_compraralimento"
+                    caption="Motivo Salir de Casa - Comprar Alimento"></dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_ahacerdeporte"
+                    caption="Motivo Salir de Casa - Hacer Deporte"></dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_acitamedica" caption="Motivo Salir de Casa - Cita Médica">
+                </dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_sacarmascota"
+                    caption="Motivo Salir de Casa - Sacar Mascota"></dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_diligenciabancaria"
+                    caption="Motivo Salir de Casa - Diligencia Bancaria"></dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_socializar" caption="Motivo Salir de Casa - Socializar">
+                </dxi-column>
+                <dxi-column dataField="enc_motivosalirdecasa_otro" caption="Motivo Salir de Casa - Otro">
+                </dxi-column>
+                <dxi-column dataField="enc_otromotivosalirdecasa" caption="Otro Motivo"></dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_noaplica" caption="Medio Transporte - No Aplica">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_transmilenio"
+                    caption="Medio Transporte - Transmilenio"></dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_sitp" caption="Medio Transporte - SITP">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_moto" caption="Medio Transporte - Moto">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_bicicleta" caption="Medio Transporte - Bicicleta">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_taxi" caption="Medio Transporte - Taxi">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_carro" caption="Medio Transporte - Carro Particular">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_apie" caption="Medio Transporte - A pie">
+                </dxi-column>
+                <dxi-column dataField="enc_mediostransporteutilizo_otro" caption="Medio Transporte - Otro">
+                </dxi-column>
+                <dxi-column dataField="sub_nombre" caption="SubRed"></dxi-column>
+                <dxi-column dataField="usu_nombre" caption="Usuario Registró"></dxi-column>
+                <dxi-column dataField="enc_datetimecreated" caption="Fecha y Hora de Registro"></dxi-column>
+
+                <dxi-column dataField="usu_nombre_modificacion" caption="Usuario Modificó"></dxi-column>
+                <dxi-column dataField="enc_datetimeupdated" caption="Fecha y Hora de Modificación"></dxi-column>
+
+                <dxo-export [enabled]="true" fileName="Sábana de Encuesta"></dxo-export>
+                <dxo-filter-row [visible]="true"></dxo-filter-row>
+                <dxo-header-filter [visible]="true"></dxo-header-filter>
+                <dxo-group-panel [visible]="false"></dxo-group-panel>
+                <dxo-search-panel [visible]="true" placeholder="Buscar..."></dxo-search-panel>
+                <dxo-state-storing [enabled]="true" type="localStorage" storageKey="storage">
+                </dxo-state-storing>
+
+                <dxo-remote-operations [sorting]="true" [paging]="true">
+                </dxo-remote-operations>
+                <dxo-paging [pageSize]="10"></dxo-paging>
+
+                <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 40]"></dxo-pager>
+                <dxo-summary>
+                    <dxi-total-item column="enc_id" summaryType="count" displayFormat="Cantidad: {0}">
+                    </dxi-total-item>
+                </dxo-summary>
+
+                <div *dxTemplate="let d of 'accionCellTemplate'">
+                    <div class="button-cell">
+
+                        <dx-button id="button" class="rounded mx-auto" text="Editar" type="success"
+                            (click)="EditarEncuesta(d.data.enc_id)"></dx-button>
+
+                    </div>
+                </div>
+
+            </dx-data-grid>
+        </div>
+
+        
+
+    </div>
+
+    <div *ngIf="VisualizarEditarEncuesta">
+        <div class="tarjeta">
+            <div class="long-title">
+                <h3>Editar Encuesta</h3>
+            </div>
+        </div>
+     
+        <div class="tarjeta">
+            <app-encuesta #encuesta [publicas]="publicas" [edicion]="edicion" (finalizoedicion)="finalizoedicion($event)">
+            </app-encuesta>
+        </div>
+    </div>
+
+    
+</div>
+
+<!-- Fin Body-->

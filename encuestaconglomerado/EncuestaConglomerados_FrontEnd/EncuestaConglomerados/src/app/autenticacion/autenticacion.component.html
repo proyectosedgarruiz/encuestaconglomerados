@@ -1,0 +1,127 @@
+
+
+<div class="container py-3" *ngIf="VisualizarLogin">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 text-center mb-4">
+          <img src="assets/alcaldiac_logo.png" >
+        </div>
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <!-- form card login -->
+            <div class="card rounded-0" id="login-form">
+              <div class="card-header">
+                <h3 class="mb-0">Autenticación </h3>
+              </div>
+              <div class="card-body">
+                <form #formLogin="ngForm" class="md-float-material" (ngSubmit)="onLogin()">
+                  <div class="form-group">
+                    <label for="uname1">Usuario</label>
+                    <input [(ngModel)]="_loginForm.username" type="text" class="form-control form-control-lg rounded-0"
+                      name="username" #usernme="ngModel" required>
+  
+                  </div>
+                  <div class="form-group">
+                    <label>Clave</label>
+                    <input [(ngModel)]="_loginForm.password" type="password"
+                      class="form-control form-control-lg rounded-0" name="password" #password="ngModel" required>
+  
+                  </div>
+                  <div>
+                    <label class="custom-control custom-checkbox">
+                      <p class="text-inverse text-left m-b-0"><b>Encuesta a residentes seleccionados en las muestras por conveniencia y probabilística en conglomerados en el micro territorio</b></p>
+                    </label>
+                  
+                  </div>
+                  <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Ingresar</button>
+                </form>
+              </div>
+            </div>
+            <!-- /form card login end-->
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  <div class="tarjeta" *ngIf="VisualizarCambioClave">
+    <fieldset style="padding: 10px; border: 1px solid #CCCCCC">
+      <legend>&nbsp;Cambio de clave</legend>
+      <form #formCambioClave="ngForm" (ngSubmit)="onSubmitCambioClave(formCambioClave.valid)">
+        <div class="row">
+          <div class="col-sm-12">
+  
+  
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">*Ingrese la Clave Anterior:</label>
+              <div class="col-xs-6 col-md-4"><!-- col-xs-5-->
+                 <input type="text" class="form-control"
+                  [ngClass]="{'form-control-danger': !clave_anterior.valid, 'form-control-inverse': clave_anterior.valid}"
+                  name="clave_anterior" type="password" #clave_anterior="ngModel"
+                  [(ngModel)]="cambioclave.clave_anterior" placeholder="Por favor ingrese la Clave asignada actualmente">
+                  
+              </div>
+              <div class="col-xs-6 col-md-4" *ngIf="AlertaClaveAnterior">
+                  <label class="col-sm-4 col-form-label alerta">*Ingrese la Clave Anterior</label>
+              </div>
+              <div class="col-xs-6 col-md-4" *ngIf="AlertaClaveErrada">
+                  <label class="col-sm-4 col-form-label alerta">*La Clave Anterior es incorrecta</label>
+              </div>
+            </div>
+  
+  
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">*Ingrese la nueva Clave:</label>
+              <div class="col-xs-6 col-md-4">
+  
+  
+                <input type="text" class="form-control"
+                  [ngClass]="{'form-control-danger': !clave_nueva.valid, 'form-control-inverse': clave_nueva.valid}"
+                  name="clave_nueva" type="password" #clave_nueva="ngModel"
+                  [(ngModel)]="cambioclave.clave_nueva"
+                  placeholder="Por favor ingrese la Clave nueva que desea registrarle al usuario">
+              </div>
+              <div class="col-xs-6 col-md-4" *ngIf="AlertaClaveNueva">
+                  <label class="col-sm-4 col-form-label alerta">*Ingrese la Clave Nueva</label>
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">*Confirme la nueva Clave:</label>
+              <div class="col-xs-6 col-md-4">
+                <input type="text" class="form-control"
+                  [ngClass]="{'form-control-danger': !clave_confirmada.valid, 'form-control-inverse': clave_confirmada.valid}"
+                  name="clave_confirmada" type="password" #clave_confirmada="ngModel"
+                  [(ngModel)]="cambioclave.clave_confirmada"
+                  placeholder="Por favor confirme la Clave nueva que desea registrarle al usuario">
+              </div>
+              <div class="col-xs-6 col-md-4" *ngIf="AlertaClaveConfirmada">
+                  <label class="col-sm-4 col-form-label alerta">*Confirme la nueva Clave</label>
+              </div>
+              <div class="col-xs-6 col-md-4" *ngIf="AlertaClaveDesiguales">
+                  <label class="col-sm-4 col-form-label alerta">*La clave nueva y la clave confirmada no son iguales</label>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+        <!--<button type="submit" class="btn btn-success btn-lg float-center" id="btnCamiarClave">Cambiar clave</button>-->
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary m-b-0">Guardar</button> &nbsp; &nbsp;
+                <button type="button" (click)="VisualizarLogin=true;VisualizarCambioClave=false;"
+                    class="btn btn-primary m-b-0">Volver</button>
+            </div>
+        </div>
+      </form>
+  
+    </fieldset>
+  </div>
+  

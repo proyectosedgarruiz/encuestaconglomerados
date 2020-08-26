@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EncuestaConglomeradosModelStoreContainer" CdmEntityContainer="EncuestaConglomeradosEntities">
+    <EntitySetMapping Name="Barrios">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Barrios">
+        <MappingFragment StoreEntitySet="Barrios">
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="bar_codigo" ColumnName="bar_codigo" />
+          <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+          <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CriterioPriorizacionMuestra">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.CriterioPriorizacionMuestra">
+        <MappingFragment StoreEntitySet="CriterioPriorizacionMuestra">
+          <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+          <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuadrantes">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Cuadrantes">
+        <MappingFragment StoreEntitySet="Cuadrantes">
+          <ScalarProperty Name="cua_cod" ColumnName="cua_cod" />
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+          <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encuesta">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Encuesta">
+        <MappingFragment StoreEntitySet="Encuesta">
+          <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+          <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+          <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+          <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+          <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+          <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+          <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+          <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+          <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+          <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+          <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+          <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+          <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+          <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+          <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+          <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+          <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+          <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+          <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+          <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+          <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+          <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+          <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+          <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+          <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+          <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+          <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+          <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+          <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+          <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+          <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+          <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+          <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localidades">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Localidades">
+        <MappingFragment StoreEntitySet="Localidades">
+          <ScalarProperty Name="loc_estado" ColumnName="loc_estado" />
+          <ScalarProperty Name="loc_codigo" ColumnName="loc_codigo" />
+          <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="rol_nombre" ColumnName="rol_nombre" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subred">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Subred">
+        <MappingFragment StoreEntitySet="Subred">
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDocumento">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.TipoDocumento">
+        <MappingFragment StoreEntitySet="TipoDocumento">
+          <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+          <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upz">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Upz">
+        <MappingFragment StoreEntitySet="Upz">
+          <ScalarProperty Name="upz_estado" ColumnName="upz_estado" />
+          <ScalarProperty Name="loc_codigo" ColumnName="loc_codigo" />
+          <ScalarProperty Name="upz_codigo" ColumnName="upz_codigo" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="usu_datetimecreated" ColumnName="usu_datetimecreated" />
+          <ScalarProperty Name="usu_req_clave" ColumnName="usu_req_clave" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="usu_password" ColumnName="usu_password" />
+          <ScalarProperty Name="usu_login" ColumnName="usu_login" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_ADD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ADD_ENCUESTA" />
+    <FunctionImportMapping FunctionImportName="SP_ADD_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_ADD_USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_CONSULTAR_REGISTRO_EXISTENTE" FunctionName="EncuestaConglomeradosModel.Store.SP_CONSULTAR_REGISTRO_EXISTENTE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_CONSULTAR_REGISTRO_EXISTENTE_Result">
+          <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+          <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+          <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+          <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+          <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+          <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+          <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+          <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+          <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+          <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+          <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+          <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+          <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+          <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+          <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+          <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+          <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+          <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+          <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+          <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+          <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+          <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+          <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+          <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+          <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+          <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+          <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+          <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+          <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+          <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+          <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
+          <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_FIND_ENCUESTAS_FILTER" FunctionName="EncuestaConglomeradosModel.Store.SP_FIND_ENCUESTAS_FILTER" />
+    <FunctionImportMapping FunctionImportName="SP_FIND_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_FIND_USUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_FIND_USUARIO_Result">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_login" ColumnName="usu_login" />
+          <ScalarProperty Name="usu_password" ColumnName="usu_password" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="usu_req_clave" ColumnName="usu_req_clave" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_FIND_USUARIO_AUTORIZADO" FunctionName="EncuestaConglomeradosModel.Store.SP_FIND_USUARIO_AUTORIZADO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_FIND_USUARIO_AUTORIZADO_Result">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_login" ColumnName="usu_login" />
+          <ScalarProperty Name="usu_password" ColumnName="usu_password" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="usu_req_clave" ColumnName="usu_req_clave" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_BARRIOS" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_BARRIOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_BARRIOS_Result">
+          <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+          <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+          <ScalarProperty Name="bar_codigo" ColumnName="bar_codigo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result">
+          <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+          <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_CUADRANTES" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_CUADRANTES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_CUADRANTES_Result">
+          <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+          <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result">
+          <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+          <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+          <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+          <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+          <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+          <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+          <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+          <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+          <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+          <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+          <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+          <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+          <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+          <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+          <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+          <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+          <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+          <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+          <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+          <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+          <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+          <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+          <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+          <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+          <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+          <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+          <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+          <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+          <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+          <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+          <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+          <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+          <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+          <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
+          <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS_SUBRED" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS_SUBRED">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result">
+          <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+          <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+          <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+          <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+          <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+          <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+          <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+          <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+          <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+          <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+          <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+          <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+          <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+          <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+          <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+          <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+          <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+          <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+          <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+          <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+          <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+          <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+          <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+          <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+          <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+          <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+          <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+          <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+          <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+          <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+          <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+          <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+          <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+          <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
+          <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_LOCALIDADES" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_LOCALIDADES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result">
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+          <ScalarProperty Name="loc_codigo" ColumnName="loc_codigo" />
+          <ScalarProperty Name="loc_estado" ColumnName="loc_estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_ROLES" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ROLES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ROLES_Result">
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="rol_nombre" ColumnName="rol_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_SUBREDES" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_SUBREDES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_SUBREDES_Result">
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_TIPODOCUMENTO" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_TIPODOCUMENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_TIPODOCUMENTO_Result">
+          <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+          <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_UPZ" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_UPZ">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_UPZ_Result">
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+          <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="upz_codigo" ColumnName="upz_codigo" />
+          <ScalarProperty Name="loc_codigo" ColumnName="loc_codigo" />
+          <ScalarProperty Name="upz_estado" ColumnName="upz_estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_USUARIOS" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_USUARIOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_USUARIOS_Result">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_login" ColumnName="usu_login" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="rol_nombre" ColumnName="rol_nombre" />
+          <ScalarProperty Name="usu_req_clave" ColumnName="usu_req_clave" />
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_USUARIOS_SUBRED" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_USUARIOS_SUBRED">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_USUARIOS_SUBRED_Result">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_login" ColumnName="usu_login" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="rol_nombre" ColumnName="rol_nombre" />
+          <ScalarProperty Name="usu_req_clave" ColumnName="usu_req_clave" />
+          <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_UPD_CLAVE_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_CLAVE_USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_UPD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_ENCUESTA" />
+    <FunctionImportMapping FunctionImportName="SP_UPD_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_FIND_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_FIND_ENCUESTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result">
+          <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+          <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+          <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+          <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+          <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+          <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+          <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+          <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+          <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+          <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+          <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+          <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+          <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+          <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+          <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+          <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+          <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+          <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+          <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+          <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+          <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+          <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+          <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+          <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+          <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+          <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+          <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+          <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+          <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+          <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+          <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+          <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+          <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+          <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+          <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+          <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

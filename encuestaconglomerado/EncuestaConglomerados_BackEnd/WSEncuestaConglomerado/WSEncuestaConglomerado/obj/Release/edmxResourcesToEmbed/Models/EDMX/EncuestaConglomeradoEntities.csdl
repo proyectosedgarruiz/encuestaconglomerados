@@ -35,10 +35,6 @@
       <End Role="TipoDocumento" EntitySet="TipoDocumento" />
       <End Role="Encuesta" EntitySet="Encuesta" />
     </AssociationSet>
-    <AssociationSet Name="FK_Encuesta_Upz" Association="EncuestaConglomeradosModel.FK_Encuesta_Upz">
-      <End Role="Upz" EntitySet="Upz" />
-      <End Role="Encuesta" EntitySet="Encuesta" />
-    </AssociationSet>
     <AssociationSet Name="FK_Encuesta_Usuarios" Association="EncuestaConglomeradosModel.FK_Encuesta_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Encuesta" EntitySet="Encuesta" />
@@ -109,6 +105,10 @@
       <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
       <Parameter Name="sub_id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SP_CONSULTAR_REGISTRO_EXISTENTE" ReturnType="Collection(EncuestaConglomeradosModel.SP_CONSULTAR_REGISTRO_EXISTENTE_Result)">
+      <Parameter Name="documento" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
     <FunctionImport Name="SP_FIND_ENCUESTAS_FILTER">
       <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
       <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
@@ -122,7 +122,7 @@
       <Parameter Name="password" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SP_LIST_BARRIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_BARRIOS_Result)">
-      <Parameter Name="upz_id" Mode="In" Type="Int32" />
+      <Parameter Name="loc_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result)" />
     <FunctionImport Name="SP_LIST_CUADRANTES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CUADRANTES_Result)">
@@ -135,6 +135,13 @@
       <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
       <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="SP_LIST_ENCUESTAS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result)">
+      <Parameter Name="todos" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="Int32" />
+      <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
+      <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="SP_LIST_LOCALIDADES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result)" />
     <FunctionImport Name="SP_LIST_ROLES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ROLES_Result)" />
     <FunctionImport Name="SP_LIST_SUBREDES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_SUBREDES_Result)" />
@@ -143,9 +150,66 @@
       <Parameter Name="loc_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SP_LIST_USUARIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_Result)" />
+    <FunctionImport Name="SP_LIST_USUARIOS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_SUBRED_Result)">
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="SP_UPD_CLAVE_USUARIO">
       <Parameter Name="usu_id" Mode="In" Type="Int32" />
       <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UPD_ENCUESTA">
+      <Parameter Name="enc_id" Mode="In" Type="Int64" />
+      <Parameter Name="enc_fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="loc_id" Mode="In" Type="Int32" />
+      <Parameter Name="upz_id" Mode="In" Type="Int32" />
+      <Parameter Name="bar_id" Mode="In" Type="Int32" />
+      <Parameter Name="cua_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_muestreadopor" Mode="In" Type="String" />
+      <Parameter Name="cpm_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_nombreencuestado" Mode="In" Type="String" />
+      <Parameter Name="tpd_id" Mode="In" Type="Int32" />
+      <Parameter Name="enc_numerodocumento" Mode="In" Type="String" />
+      <Parameter Name="enc_edad" Mode="In" Type="Int32" />
+      <Parameter Name="enc_genero" Mode="In" Type="String" />
+      <Parameter Name="enc_dirresidencia" Mode="In" Type="String" />
+      <Parameter Name="enc_numcelular" Mode="In" Type="String" />
+      <Parameter Name="enc_aseguramiento" Mode="In" Type="String" />
+      <Parameter Name="enc_nombreEAPB" Mode="In" Type="String" />
+      <Parameter Name="enc_ocupacion" Mode="In" Type="String" />
+      <Parameter Name="enc_cuantaspersonashabitan" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantaspersonasmayores60" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantascondicionescronicas" Mode="In" Type="Int32" />
+      <Parameter Name="enc_cuantashabitacionescuentaresidencia" Mode="In" Type="Int32" />
+      <Parameter Name="enc_hapresentadosintomas_fiebre" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_tos" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_dolorgarganta" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_fatigadebilidad" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_ahogofaltaaire" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_hapresentadosintomas_ninguno" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_comoconsideracumplimientocuarentena" Mode="In" Type="String" />
+      <Parameter Name="enc_contactopersonas24horas" Mode="In" Type="String" />
+      <Parameter Name="enc_dondedesplazoustedomiembrofamilia" Mode="In" Type="String" />
+      <Parameter Name="enc_motivosalirdecasa_noaplica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_atrabajar" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_compraralimento" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_ahacerdeporte" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_acitamedica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_sacarmascota" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_diligenciabancaria" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_socializar" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_motivosalirdecasa_otro" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_otromotivosalirdecasa" Mode="In" Type="String" />
+      <Parameter Name="enc_mediostransporteutilizo_noaplica" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_transmilenio" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_sitp" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_moto" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_bicicleta" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_taxi" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_carro" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_apie" Mode="In" Type="Boolean" />
+      <Parameter Name="enc_mediostransporteutilizo_otro" Mode="In" Type="Boolean" />
+      <Parameter Name="sub_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SP_UPD_USUARIO">
       <Parameter Name="usu_id" Mode="In" Type="Int32" />
@@ -157,6 +221,9 @@
       <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
       <Parameter Name="sub_id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SP_FIND_ENCUESTA" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result)">
+      <Parameter Name="enc_id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Barrios">
     <Key>
@@ -164,9 +231,8 @@
     </Key>
     <Property Name="bar_id" Type="Int32" Nullable="false" />
     <Property Name="bar_nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="upz_id" Type="Int32" Nullable="false" />
     <Property Name="bar_codigo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="upz_codigo" Type="Int32" Nullable="false" />
+    <Property Name="loc_id" Type="Int32" />
     <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Barrios" ToRole="Encuesta" />
   </EntityType>
   <EntityType Name="CriterioPriorizacionMuestra">
@@ -245,13 +311,14 @@
     <Property Name="enc_datetimecreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="cpm_id" Type="Int32" />
     <Property Name="sub_id" Type="Int32" />
+    <Property Name="enc_usu_modificacion" Type="Int32" />
+    <Property Name="enc_datetimeupdated" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Barrios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Encuesta" ToRole="Barrios" />
     <NavigationProperty Name="CriterioPriorizacionMuestra" Relationship="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" FromRole="Encuesta" ToRole="CriterioPriorizacionMuestra" />
     <NavigationProperty Name="Cuadrantes" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Encuesta" ToRole="Cuadrantes" />
     <NavigationProperty Name="Localidades" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Localidades" FromRole="Encuesta" ToRole="Localidades" />
     <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
     <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
-    <NavigationProperty Name="Upz" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Upz" FromRole="Encuesta" ToRole="Upz" />
     <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
   </EntityType>
   <EntityType Name="Localidades">
@@ -298,7 +365,6 @@
     <Property Name="upz_codigo" Type="Int32" Nullable="false" />
     <Property Name="loc_codigo" Type="Int32" Nullable="false" />
     <Property Name="upz_estado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Upz" FromRole="Upz" ToRole="Encuesta" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -388,18 +454,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Encuesta_Upz">
-    <End Type="EncuestaConglomeradosModel.Upz" Role="Upz" Multiplicity="1" />
-    <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Upz">
-        <PropertyRef Name="upz_id" />
-      </Principal>
-      <Dependent Role="Encuesta">
-        <PropertyRef Name="upz_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Encuesta_Usuarios">
     <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="1" />
     <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
@@ -424,6 +478,63 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="SP_CONSULTAR_REGISTRO_EXISTENTE_Result">
+    <Property Type="Int64" Name="enc_id" Nullable="false" />
+    <Property Type="DateTime" Name="enc_fecha" Nullable="false" />
+    <Property Type="Int32" Name="loc_id" Nullable="false" />
+    <Property Type="Int32" Name="upz_id" Nullable="false" />
+    <Property Type="Int32" Name="bar_id" Nullable="false" />
+    <Property Type="Int32" Name="cua_id" Nullable="false" />
+    <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+    <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+    <Property Type="Int32" Name="tpd_id" Nullable="false" />
+    <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+    <Property Type="Int32" Name="enc_edad" Nullable="false" />
+    <Property Type="String" Name="enc_genero" Nullable="false" />
+    <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+    <Property Type="String" Name="enc_numcelular" Nullable="false" />
+    <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+    <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+    <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+    <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+    <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+    <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+    <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="cpm_id" Nullable="true" />
+    <Property Type="Int32" Name="sub_id" Nullable="true" />
+    <Property Type="Int32" Name="enc_usu_modificacion" Nullable="true" />
+    <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+  </ComplexType>
   <ComplexType Name="SP_FIND_USUARIO_Result">
     <Property Type="Int32" Name="usu_id" Nullable="false" />
     <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
@@ -447,9 +558,7 @@
   <ComplexType Name="SP_LIST_BARRIOS_Result">
     <Property Type="Int32" Name="bar_id" Nullable="false" />
     <Property Type="String" Name="bar_nombre" Nullable="false" />
-    <Property Type="Int32" Name="upz_id" Nullable="false" />
     <Property Type="String" Name="bar_codigo" Nullable="false" />
-    <Property Type="Int32" Name="upz_codigo" Nullable="false" />
   </ComplexType>
   <ComplexType Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result">
     <Property Type="Int32" Name="cpm_id" Nullable="false" />
@@ -513,6 +622,65 @@
     <Property Type="String" Name="sub_nombre" Nullable="false" />
     <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
     <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+    <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_ENCUESTAS_SUBRED_Result">
+    <Property Type="Int64" Name="enc_id" Nullable="false" />
+    <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="loc_nombre" Nullable="false" />
+    <Property Type="String" Name="upz_nombre" Nullable="false" />
+    <Property Type="String" Name="bar_nombre" Nullable="false" />
+    <Property Type="String" Name="cua_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+    <Property Type="String" Name="cpm_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+    <Property Type="String" Name="tpd_nombre" Nullable="false" />
+    <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+    <Property Type="Int32" Name="enc_edad" Nullable="false" />
+    <Property Type="String" Name="enc_genero" Nullable="false" />
+    <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+    <Property Type="String" Name="enc_numcelular" Nullable="false" />
+    <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+    <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+    <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+    <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+    <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+    <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+    <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+    <Property Type="String" Name="sub_nombre" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+    <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
   </ComplexType>
   <ComplexType Name="SP_LIST_LOCALIDADES_Result">
     <Property Type="Int32" Name="loc_id" Nullable="false" />
@@ -549,5 +717,68 @@
     <Property Type="String" Name="rol_nombre" Nullable="false" MaxLength="100" />
     <Property Type="Boolean" Name="usu_req_clave" Nullable="false" />
     <Property Type="String" Name="sub_nombre" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_USUARIOS_SUBRED_Result">
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_login" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="usu_estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rol_id" Nullable="false" />
+    <Property Type="String" Name="rol_nombre" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="usu_req_clave" Nullable="false" />
+    <Property Type="String" Name="sub_nombre" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_FIND_ENCUESTA_Result">
+    <Property Type="Int64" Name="enc_id" Nullable="false" />
+    <Property Type="DateTime" Name="enc_fecha" Nullable="false" />
+    <Property Type="Int32" Name="loc_id" Nullable="false" />
+    <Property Type="Int32" Name="upz_id" Nullable="false" />
+    <Property Type="Int32" Name="bar_id" Nullable="false" />
+    <Property Type="Int32" Name="cua_id" Nullable="false" />
+    <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+    <Property Type="Int32" Name="cpm_id" Nullable="true" />
+    <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+    <Property Type="Int32" Name="tpd_id" Nullable="false" />
+    <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+    <Property Type="Int32" Name="enc_edad" Nullable="false" />
+    <Property Type="String" Name="enc_genero" Nullable="false" />
+    <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+    <Property Type="String" Name="enc_numcelular" Nullable="false" />
+    <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+    <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+    <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+    <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+    <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+    <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+    <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+    <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+    <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+    <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+    <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+    <Property Type="Int32" Name="sub_id" Nullable="true" />
   </ComplexType>
 </Schema>

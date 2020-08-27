@@ -32,6 +32,7 @@ export class EncuestaComponent implements OnInit {
   otromotivoseleccionado: boolean = false;
 
   error: any;
+  ValorServicio: any;
 
   errorLabel = false;
   successLabel = false;
@@ -60,37 +61,65 @@ export class EncuestaComponent implements OnInit {
     //Cargue de Datos Iniciales
     this.inicializarEncuesta();
     this.ObtenerFechaMinima();
-    this.GetListaLocalidades();
-    this.GetListaCriterioPriorizacionMuestra();
-    this.GetListaTipoDocumentos();
-    this.GetListaSubRedes();
-   
+
+    if (this.edicion != null || this.edicion != undefined) {
+      //Se determina si proviene de consulta para edición, se Consulta los datos de la Encuesta Realizada
+      if (this.edicion.editar === true && this.edicion.enc_id != 0) {
+        this.VisualizarCerrarSesion = false;
+        this.VisualizarBotonGuardar = false;
+        this.VisualizarBotonActualizar = true;
+        this.GetInformacionEncuesta(this.edicion.enc_id);
+
+      }
+
+    }
+    else {
+      this.GetListaLocalidades(null);
+      this.GetListaCriterioPriorizacionMuestra(null);
+      this.GetListaTipoDocumentos(null);
+      this.GetListaSubRedes(null);
+    }
+
+
   }
 
-  ObtenerInformacionEncuesta(enc_id: number) {
-    this.encuestaservice.GetEncuestaById(enc_id).subscribe(
-      result => {
 
-        this.encuesta = <Encuesta>result;
+  GetInformacionEncuestaResult(enc_id: number): any {
+    return this.encuestaservice.GetEncuestaById(enc_id).toPromise();
+  }
+
+  async GetInformacionEncuesta(enc_id: number) {
+    try {
+   
+      if (!this.ValorServicio) {
+        this.ValorServicio = await this.GetInformacionEncuestaResult(enc_id);
+
+        this.encuesta = <Encuesta>this.ValorServicio;
         this.FechaEdicion = formatDate(this.encuesta.enc_fecha, 'yyyy-MM-dd', 'en-US');
 
+        this.GetListaLocalidades(this.ValorServicio.loc_id);
+        this.GetListaCriterioPriorizacionMuestra(this.ValorServicio.cpm_id);
+        this.GetListaTipoDocumentos(this.ValorServicio.tpd_id);
+        this.GetListaSubRedes(this.ValorServicio.sub_id);
+
+
+
         this.InhabilitadoUPZ = false;
-        this.GetListaUPZs(this.encuesta.loc_id, result.upz_id);
+        this.GetListaUPZs(this.encuesta.loc_id, this.ValorServicio.upz_id);
 
         this.InhabilitadoBarrio = false;
-        this.GetListaBarrios(this.encuesta.loc_id, result.bar_id);
+        this.GetListaBarrios(this.encuesta.loc_id, this.ValorServicio.bar_id);
 
         this.InhabilitadoCuadrante = false;
         this.GetListaCuadrantes(this.encuesta.loc_id, this.encuesta.upz_id, this.encuesta.cua_id);
 
-      },
-      error => {
-        this.error = error;
-        if (error.statusText === 'Unauthorized') {
-        }
-        console.log(<any>error);
       }
-    );
+
+
+    }
+    catch (error) {
+      console.error('[error en GetListaLocalidades] : ' + error);
+    }
   }
 
 
@@ -100,203 +129,214 @@ export class EncuestaComponent implements OnInit {
 
   }
 
-  GetListaLocalidades() {
-    this.encuestaservice.GetListaLocalidades().subscribe(
-      result => {
-        this.selectLocalidades = result.Result.Lista;
-        var objlocalidad: Localidades = new Localidades(0, '', 0, '');
-        objlocalidad.loc_id = 0;
-        objlocalidad.loc_nombre = "-- Seleccione la Localidad --";
-        this.selectLocalidades.push(objlocalidad);
-        this.selectLocalidades.sort((a, b) => (a.loc_nombre > b.loc_nombre) ? 1 : ((b.loc_nombre > a.loc_nombre) ? -1 : 0));
-        this.encuesta.loc_id = 0;
-        this.GetListaTipoDocumentos();
-        
-
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaLocalidades]');
-        console.error(error);
-
-      }
-    );
+  GetListaLocalidadesResult(): any {
+    return this.encuestaservice.GetListaLocalidades().toPromise();
   }
 
-  GetListaUPZs(localidad: number, upz_id: number) {
+  async GetListaLocalidades(loc_id: number) {
+    try {
+      this.ValorServicio = await this.GetListaLocalidadesResult();
+      this.selectLocalidades = this.ValorServicio.Result.Lista;
+      var objlocalidad: Localidades = new Localidades(0, '', 0, '');
+      objlocalidad.loc_id = 0;
+      objlocalidad.loc_nombre = "-- Seleccione la Localidad --";
+      this.selectLocalidades.push(objlocalidad);
+      this.selectLocalidades.sort((a, b) => (a.loc_nombre > b.loc_nombre) ? 1 : ((b.loc_nombre > a.loc_nombre) ? -1 : 0));
+      this.encuesta.loc_id = 0;
+
+      if (loc_id != 0 && loc_id != null)
+        this.encuesta.loc_id = loc_id;
+      else
+        this.encuesta.loc_id = 0;
+
+    }
+    catch (error) {
+      console.error('[error en GetListaLocalidades] : ' + error);
+    }
+  }
+
+  GetListaUpzsResult(localidad: number): any {
+    return this.encuestaservice.GetListaUPZs(localidad).toPromise();
+  }
+
+  async GetListaUPZs(localidad: number, upz_id: number) {
     this.InhabilitadoUPZ = true;
     if (this.encuesta.loc_id != 0)
       this.seleccionadoLocalidad = true;
     else
       this.seleccionadoLocalidad = false;
 
-    this.encuestaservice.GetListaUPZs(localidad).subscribe(
-      result => {
-        this.selectUPZs = result.Result.Lista;
-        var objupz: UPZs = new UPZs(0, '', 0, 0, '');
-        objupz.upz_id = -1;
-        objupz.upz_nombre = "-- Seleccione la UPZ --";
+    try {
+      this.ValorServicio = await this.GetListaUpzsResult(localidad);
+      this.selectUPZs = this.ValorServicio.Result.Lista;
 
-        var objupz2: UPZs = new UPZs(0, '', 0, 0, '');
-        objupz2.upz_id = 0;
-        objupz2.upz_nombre = "SIN UPZ";
-        this.selectUPZs.push(objupz);
-        this.selectUPZs.push(objupz2);
+      var objupz: UPZs = new UPZs(0, '', 0, 0, '');
+      objupz.upz_id = -1;
+      objupz.upz_nombre = "-- Seleccione la UPZ --";
 
-        this.selectUPZs.sort((a, b) => (a.upz_nombre > b.upz_nombre) ? 1 : ((b.upz_nombre > a.upz_nombre) ? -1 : 0));
+      var objupz2: UPZs = new UPZs(0, '', 0, 0, '');
+      objupz2.upz_id = 0;
+      objupz2.upz_nombre = "SIN UPZ";
+      this.selectUPZs.push(objupz);
+      this.selectUPZs.push(objupz2);
 
-        if (upz_id != 0 || upz_id != null)
-          this.encuesta.upz_id = upz_id;
-        else
-          this.encuesta.upz_id = -1;
+      this.selectUPZs.sort((a, b) => (a.upz_nombre > b.upz_nombre) ? 1 : ((b.upz_nombre > a.upz_nombre) ? -1 : 0));
 
+      if (upz_id != 0 && upz_id != null)
+        this.encuesta.upz_id = upz_id;
+      else
+        this.encuesta.upz_id = -1;
 
-        this.InhabilitadoUPZ = false;
+      this.InhabilitadoUPZ = false;
 
+    }
+    catch (error) {
+      console.error('[error en GetListaUPZs] : ' + error);
+    }
 
-
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaUPZs]');
-        console.error(error);
-
-      }
-    );
   }
 
-  GetListaBarrios(localidad: number, bar_id: number) {
+
+  GetListaBarriosResult(localidad: number): any {
+    return this.encuestaservice.GetListaBarrios(localidad).toPromise();
+  }
+
+  async GetListaBarrios(localidad: number, bar_id: number) {
     this.InhabilitadoBarrio = true;
-    this.encuestaservice.GetListaBarrios(localidad).subscribe(
-      result => {
-        this.selectBarrios = result.Result.Lista;
-        var objbarrio: Barrios = new Barrios(0, '', 0, 0, 0);
-        objbarrio.bar_id = 0;
-        objbarrio.bar_nombre = "-- Seleccione el Barrio --";
-        this.selectBarrios.push(objbarrio);
-        this.selectBarrios.sort((a, b) => (a.bar_nombre > b.bar_nombre) ? 1 : ((b.bar_nombre > a.bar_nombre) ? -1 : 0));
 
+    try {
+      this.ValorServicio = await this.GetListaBarriosResult(localidad);
+      this.selectBarrios = this.ValorServicio.Result.Lista;
+      var objbarrio: Barrios = new Barrios(0, '', 0, 0, 0);
+      objbarrio.bar_id = 0;
+      objbarrio.bar_nombre = "-- Seleccione el Barrio --";
+      this.selectBarrios.push(objbarrio);
+      this.selectBarrios.sort((a, b) => (a.bar_nombre > b.bar_nombre) ? 1 : ((b.bar_nombre > a.bar_nombre) ? -1 : 0));
 
-        if (bar_id != 0 || bar_id != null)
-          this.encuesta.bar_id = bar_id;
-        else
-          this.encuesta.bar_id = 0;
+      if (bar_id != 0 && bar_id != null)
+        this.encuesta.bar_id = bar_id;
+      else
+        this.encuesta.bar_id = 0;
 
-        this.InhabilitadoBarrio = false;
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaBarrios]');
-        console.error(error);
-
-      }
-    );
+      this.InhabilitadoBarrio = false;
+    }
+    catch (error) {
+      console.error('[error en GetListaBarrios] : ' + error);
+    }
   }
 
-  GetListaCuadrantes(loc_id: number, upz_id: number, cua_id: number) {
+
+  GetListaCuadrantesResult(loc_id: number, upz_id: number): any {
+    return this.encuestaservice.GetListaCuadrantes(loc_id, upz_id).toPromise();
+  }
+
+  async GetListaCuadrantes(loc_id: number, upz_id: number, cua_id: number) {
     this.InhabilitadoCuadrante = true;
-    this.encuestaservice.GetListaCuadrantes(loc_id, upz_id).subscribe(
-      result => {
-        this.selectCuadrantes = result.Result.Lista;
-        var objcuadrante: Cuadrantes = new Cuadrantes(0, '');
-        objcuadrante.cua_id = 0;
-        objcuadrante.cua_nombre = "-- Seleccione el Cuadrante --";
-        this.selectCuadrantes.push(objcuadrante);
-        this.selectCuadrantes.sort((a, b) => (a.cua_id > b.cua_id) ? 1 : ((b.cua_id > a.cua_id) ? -1 : 0));
+    try {
+      this.ValorServicio = await this.GetListaCuadrantesResult(loc_id, upz_id);
+      this.selectCuadrantes = this.ValorServicio.Result.Lista;
+      var objcuadrante: Cuadrantes = new Cuadrantes(0, '');
+      objcuadrante.cua_id = 0;
+      objcuadrante.cua_nombre = "-- Seleccione el Cuadrante --";
+      this.selectCuadrantes.push(objcuadrante);
+      this.selectCuadrantes.sort((a, b) => (a.cua_id > b.cua_id) ? 1 : ((b.cua_id > a.cua_id) ? -1 : 0));
 
-        if (cua_id != 0 || cua_id != null)
-          this.encuesta.cua_id = cua_id;
-        else
-          this.encuesta.cua_id = 0;
+      if (cua_id != 0 && cua_id != null)
+        this.encuesta.cua_id = cua_id;
+      else
+        this.encuesta.cua_id = 0;
 
-        this.InhabilitadoCuadrante = false;
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaCuadrantes]');
-        console.error(error);
+      this.InhabilitadoCuadrante = false;
+    }
+    catch (error) {
+      console.error('[error en GetListaCuadrantes] : ' + error);
+    }
 
-      }
-    );
   }
 
 
+  GetListaTipoDocumentosResult(): any {
+    return this.encuestaservice.GetListaTipoDocumentos().toPromise();
+  }
 
-  GetListaTipoDocumentos() {
-    this.encuestaservice.GetListaTipoDocumentos().subscribe(
-      result => {
-        this.selectTipoDocumento = result.Result.Lista;
-        var objtipodocumento: TipoDocumento = new TipoDocumento(0, '');
-        objtipodocumento.tpd_id = 0;
-        objtipodocumento.tpd_nombre = "-- Seleccione el Tipo de Documento --";
-        this.selectTipoDocumento.push(objtipodocumento);
-        this.selectTipoDocumento.sort((a, b) => (a.tpd_id > b.tpd_id) ? 1 : ((b.tpd_id > a.tpd_id) ? -1 : 0));
+  async GetListaTipoDocumentos(tpd_id: number) {
+    try {
+      this.ValorServicio = await this.GetListaTipoDocumentosResult();
+      this.selectTipoDocumento = this.ValorServicio.Result.Lista;
+      var objtipodocumento: TipoDocumento = new TipoDocumento(0, '');
+      objtipodocumento.tpd_id = 0;
+      objtipodocumento.tpd_nombre = "-- Seleccione el Tipo de Documento --";
+      this.selectTipoDocumento.push(objtipodocumento);
+      this.selectTipoDocumento.sort((a, b) => (a.tpd_id > b.tpd_id) ? 1 : ((b.tpd_id > a.tpd_id) ? -1 : 0));
+      this.encuesta.tpd_id = 0;
+
+      if (tpd_id != 0 && tpd_id != null)
+        this.encuesta.tpd_id = tpd_id;
+      else
         this.encuesta.tpd_id = 0;
-       
-       
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaTipoDocumentos]');
-        console.error(error);
-
-      }
-    );
+    }
+    catch (error) {
+      console.error('[error en GetListaTipoDocumentos] : ' + error);
+    }
   }
 
 
 
-  GetListaCriterioPriorizacionMuestra() {
-    this.encuestaservice.GetListaCriterioPriorizacionMuestra().subscribe(
-      result => {
-        this.selectCriterioPriorizacionMuestra = result.Result.Lista;
-        var objcriterio: CriterioPriorizacionMuestra = new CriterioPriorizacionMuestra(0, '');
-        objcriterio.cpm_id = 0;
-        objcriterio.cpm_nombre = "-- Seleccione el Criterio Priorización Muestra--";
-        this.selectCriterioPriorizacionMuestra.push(objcriterio);
-        this.selectCriterioPriorizacionMuestra.sort((a, b) => (a.cpm_id > b.cpm_id) ? 1 : ((b.cpm_id > a.cpm_id) ? -1 : 0));
+  GetListaCriterioPriorizacionMuestraResult(): any {
+    return this.encuestaservice.GetListaCriterioPriorizacionMuestra().toPromise();
+  }
+
+  async GetListaCriterioPriorizacionMuestra(cpm_id: number) {
+    try {
+      this.ValorServicio = await this.GetListaCriterioPriorizacionMuestraResult();
+      this.selectCriterioPriorizacionMuestra = this.ValorServicio.Result.Lista;
+      var objcriterio: CriterioPriorizacionMuestra = new CriterioPriorizacionMuestra(0, '');
+      objcriterio.cpm_id = 0;
+      objcriterio.cpm_nombre = "-- Seleccione el Criterio Priorización Muestra--";
+      this.selectCriterioPriorizacionMuestra.push(objcriterio);
+      this.selectCriterioPriorizacionMuestra.sort((a, b) => (a.cpm_id > b.cpm_id) ? 1 : ((b.cpm_id > a.cpm_id) ? -1 : 0));
+      this.encuesta.cpm_id = 0;
+
+      if (cpm_id != 0 && cpm_id != null)
+        this.encuesta.cpm_id = cpm_id;
+      else
         this.encuesta.cpm_id = 0;
-       
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaCriterioPriorizacionMuestra]');
-        console.error(error);
-
-      }
-    );
+    }
+    catch (error) {
+      console.error('[error en GetListaCriterioPriorizacionMuestra] : ' + error);
+    }
   }
 
 
 
-  GetListaSubRedes() {
-    this.encuestaservice.GetListaSubRedes().subscribe(
-      result => {
-        this.selectSubRedes = result.Result.Lista;
-        var objsubred: SubRedes = new SubRedes(0, '');
-        objsubred.sub_id = 0;
-        objsubred.sub_nombre = "-- Seleccione la SubRed--";
-        this.selectSubRedes.push(objsubred);
-        this.selectSubRedes.sort((a, b) => (a.sub_id > b.sub_id) ? 1 : ((b.sub_id > a.sub_id) ? -1 : 0));
+  GetListaSubRedesResult(): any {
+    return this.encuestaservice.GetListaSubRedes().toPromise();
+  }
+
+  async GetListaSubRedes(sub_id: number) {
+    try {
+      this.ValorServicio = await this.GetListaSubRedesResult();
+      this.selectSubRedes = this.ValorServicio.Result.Lista;
+      var objsubred: SubRedes = new SubRedes(0, '');
+      objsubred.sub_id = 0;
+      objsubred.sub_nombre = "-- Seleccione la SubRed--";
+      this.selectSubRedes.push(objsubred);
+      this.selectSubRedes.sort((a, b) => (a.sub_id > b.sub_id) ? 1 : ((b.sub_id > a.sub_id) ? -1 : 0));
+      this.encuesta.sub_id = 0;
+
+      if (sub_id != 0 && sub_id != null)
+        this.encuesta.sub_id = sub_id;
+      else
         this.encuesta.sub_id = 0;
-        
-        //Se determina si proviene de consulta para edición, se Consulta los datos de la Encuesta Realizada
-        if (this.edicion.editar === true && this.edicion.enc_id != 0) {
-          this.VisualizarCerrarSesion = false;
-          this.VisualizarBotonGuardar = false;
-          this.VisualizarBotonActualizar = true;
-          this.ObtenerInformacionEncuesta(this.edicion.enc_id);
-        }
 
-      },
-      error => {
-        this.error = error;
-        console.error('Error [GetListaSubRedes]');
-        console.error(error);
-
-      }
-    );
+    }
+    catch (error) {
+      console.error('[error en GetListaSubRedes] : ' + error);
+    }
   }
+
+
+
 
   soloNumeros(event): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -537,10 +577,10 @@ export class EncuestaComponent implements OnInit {
 
   ActualizarEncuesta() {
     this.encuesta.usu_id = this.publicas.usu_id;
-    this.encuesta.enc_fecha =  new Date(this.FechaEdicion);  
+    this.encuesta.enc_fecha = new Date(this.FechaEdicion);
     if (this.validateForm()) {
       //Se ingresan los datos del formulario y se envian al Web Service
-   
+
       this.encuestaservice.updEncuesta(this.encuesta).subscribe(result => {
         if (result.OperacionExitosa == true) {
           //Debe informar al componente padre que ya guardo y cerrar la ventana
@@ -563,8 +603,7 @@ export class EncuestaComponent implements OnInit {
     }
   }
 
-  volver()
-  {
+  volver() {
     this.finalizoedicion.emit(true);
   }
 
@@ -656,7 +695,7 @@ export class EncuestaComponent implements OnInit {
       enc_mes: '',
       enc_ano: '',
       loc_id: 0,
-      upz_id: 0,
+      upz_id: -1,
       bar_id: 0,
       cua_id: 0,
       enc_muestreadopor: '',

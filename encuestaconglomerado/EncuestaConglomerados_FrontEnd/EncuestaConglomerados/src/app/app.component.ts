@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Publicas } from '../models/parametricas.model';
+import { EdicionEncuesta } from 'src/models/encuesta.model';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
   VisualizarAdministrador : boolean =false;
   pub: Publicas;
   publicas : Publicas;
+  edicion : EdicionEncuesta;
   
   ngOnInit() {
    

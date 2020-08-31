@@ -90,6 +90,7 @@
           <Property Name="sub_id" Type="int" />
           <Property Name="enc_usu_modificacion" Type="int" />
           <Property Name="enc_datetimeupdated" Type="datetime" />
+          <Property Name="enc_estado" Type="nvarchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="Localidades">
           <Key>
@@ -303,6 +304,9 @@
           <Parameter Name="rol_id" Type="int" Mode="In" />
           <Parameter Name="usu_req_clave" Type="bit" Mode="In" />
           <Parameter Name="sub_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_ANULAR_ENCUESTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="enc_id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="SP_CONSULTAR_REGISTRO_EXISTENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="documento" Type="nvarchar(max)" Mode="In" />
@@ -693,6 +697,9 @@
             <Parameter Name="sub_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_FIND_ENCUESTA" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result)">
+          <Parameter Name="enc_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_ENCUESTA">
             <Parameter Name="enc_id" Mode="In" Type="Int64" />
           </FunctionImport>
         </EntityContainer>
@@ -791,6 +798,7 @@
           <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
           <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
           <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
+          <Property Name="enc_estado" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Localidades">
           <Key>
@@ -1290,6 +1298,7 @@
           <EntitySetMapping Name="Encuesta">
             <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Encuesta">
               <MappingFragment StoreEntitySet="Encuesta">
+                <ScalarProperty Name="enc_estado" ColumnName="enc_estado" />
                 <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
                 <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
                 <ScalarProperty Name="sub_id" ColumnName="sub_id" />
@@ -1782,6 +1791,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ANULAR_ENCUESTA" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

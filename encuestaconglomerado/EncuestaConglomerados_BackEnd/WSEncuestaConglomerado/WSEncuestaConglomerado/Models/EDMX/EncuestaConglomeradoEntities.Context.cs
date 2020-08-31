@@ -719,5 +719,14 @@ namespace WSEncuestaConglomerado.Models.EDMX
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_FIND_ENCUESTA_Result>("SP_FIND_ENCUESTA", enc_idParameter);
         }
+    
+        public virtual int SP_ANULAR_ENCUESTA(Nullable<long> enc_id)
+        {
+            var enc_idParameter = enc_id.HasValue ?
+                new ObjectParameter("enc_id", enc_id) :
+                new ObjectParameter("enc_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ENCUESTA", enc_idParameter);
+        }
     }
 }

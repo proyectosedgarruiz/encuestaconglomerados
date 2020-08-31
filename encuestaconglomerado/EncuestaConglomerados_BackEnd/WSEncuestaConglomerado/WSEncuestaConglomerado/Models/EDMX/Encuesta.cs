@@ -69,6 +69,7 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public Nullable<int> sub_id { get; set; }
         public Nullable<int> enc_usu_modificacion { get; set; }
         public Nullable<System.DateTime> enc_datetimeupdated { get; set; }
+        public string enc_estado { get; set; }
     
         public virtual Barrios Barrios { get; set; }
         public virtual CriterioPriorizacionMuestra CriterioPriorizacionMuestra { get; set; }

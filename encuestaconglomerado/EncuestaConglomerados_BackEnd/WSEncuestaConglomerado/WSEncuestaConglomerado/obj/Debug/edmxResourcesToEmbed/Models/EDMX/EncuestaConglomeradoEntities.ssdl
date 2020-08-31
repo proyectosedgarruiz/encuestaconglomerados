@@ -85,6 +85,7 @@
     <Property Name="sub_id" Type="int" />
     <Property Name="enc_usu_modificacion" Type="int" />
     <Property Name="enc_datetimeupdated" Type="datetime" />
+    <Property Name="enc_estado" Type="nvarchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="Localidades">
     <Key>
@@ -298,6 +299,9 @@
     <Parameter Name="rol_id" Type="int" Mode="In" />
     <Parameter Name="usu_req_clave" Type="bit" Mode="In" />
     <Parameter Name="sub_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ANULAR_ENCUESTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="enc_id" Type="bigint" Mode="In" />
   </Function>
   <Function Name="SP_CONSULTAR_REGISTRO_EXISTENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="documento" Type="nvarchar(max)" Mode="In" />

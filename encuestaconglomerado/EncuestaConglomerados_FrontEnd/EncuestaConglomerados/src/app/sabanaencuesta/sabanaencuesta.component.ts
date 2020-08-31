@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EncuestaService } from '../../services/encuesta.service';
-import { ListaEncuesta, EdicionEncuesta } from '../../models/encuesta.model';
+import { ListaEncuesta, EdicionEncuesta, Encuesta } from '../../models/encuesta.model';
 import { DxDataGridModule } from 'devextreme-angular';
 import { Publicas } from 'src/models/parametricas.model';
 @Component({
@@ -11,6 +11,7 @@ import { Publicas } from 'src/models/parametricas.model';
 export class SabanaencuestaComponent implements OnInit {
   @Input() publicas: Publicas;
   edicion: EdicionEncuesta;
+  encuesta: Encuesta;
   selectEncuestas: Array<ListaEncuesta>;
 
   tiposabana: Number = 0;
@@ -142,9 +143,37 @@ export class SabanaencuestaComponent implements OnInit {
   }
 
 
-  finalizoedicion($event)
-  {
-    if($event === true) //Se cierra la ventana de Formulario
+  AnularEncuesta(id) {//Anular Encuesta
+    this.inicializarEncuesta();
+    this.encuesta.enc_id = id;
+    this.encuestaservice.anularEncuesta(this.encuesta).subscribe(
+      result => {
+        if (result.OperacionExitosa) {
+          this.VisualizarSabana = true;
+          this.VisualizarTituloSabana = true;
+          this.VisualizarEditarEncuesta = false;
+          this.Consultarsabana();
+
+        } else {
+          alert('Error al Anular la Encuesta ');
+        }
+
+      }
+    );
+
+  }
+
+  confirmarAnular(id) {
+    var r = confirm("¿Confirma que anular esta encuesta ?");
+    if (r == true) {
+      this.AnularEncuesta(id);
+    }
+  }
+
+
+
+  finalizoedicion($event) {
+    if ($event === true) //Se cierra la ventana de Formulario
     {
       this.edicion.editar = false;
       this.VisualizarEncuesta = false;
@@ -156,12 +185,76 @@ export class SabanaencuestaComponent implements OnInit {
     }
   }
 
-  
+
   InicializarEdicion() {
     this.edicion =
     {
       editar: false,
       enc_id: 0
+    };
+  }
+
+
+
+  inicializarEncuesta() {
+    this.encuesta =
+    {
+      enc_id: 0,
+      enc_fecha: null,
+      enc_dia: '',
+      enc_mes: '',
+      enc_ano: '',
+      loc_id: 0,
+      upz_id: -1,
+      bar_id: 0,
+      cua_id: 0,
+      enc_muestreadopor: '',
+      cpm_id: 0,
+      enc_nombreencuestado: '',
+      tpd_id: 0,
+      enc_numerodocumento: '',
+      enc_edad: 0,
+      enc_genero: '',
+      enc_dirresidencia: '',
+      enc_numcelular: '',
+      enc_aseguramiento: '',
+      enc_nombreEAPB: '',
+      enc_ocupacion: '',
+      enc_cuantaspersonashabitan: 0,
+      enc_cuantaspersonasmayores60: 0,
+      enc_cuantascondicionescronicas: 0,
+      enc_cuantashabitacionescuentaresidencia: 0,
+      enc_hapresentadosintomas_fiebre: false,
+      enc_hapresentadosintomas_tos: false,
+      enc_hapresentadosintomas_dolorgarganta: false,
+      enc_hapresentadosintomas_fatigadebilidad: false,
+      enc_hapresentadosintomas_ahogofaltaaire: false,
+      enc_hapresentadosintomas_ninguno: false,
+      enc_comoconsideracumplimientocuarentena: '',
+      enc_contactopersonas24horas: '',
+      enc_dondedesplazoustedomiembrofamilia: '',
+      enc_motivosalirdecasa_noaplica: false,
+      enc_motivosalirdecasa_atrabajar: false,
+      enc_motivosalirdecasa_compraralimento: false,
+      enc_motivosalirdecasa_ahacerdeporte: false,
+      enc_motivosalirdecasa_acitamedica: false,
+      enc_motivosalirdecasa_sacarmascota: false,
+      enc_motivosalirdecasa_diligenciabancaria: false,
+      enc_motivosalirdecasa_socializar: false,
+      enc_motivosalirdecasa_otro: false,
+      enc_otromotivosalirdecasa: '',
+      enc_mediostransporteutilizo_noaplica: false,
+      enc_mediostransporteutilizo_transmilenio: false,
+      enc_mediostransporteutilizo_sitp: false,
+      enc_mediostransporteutilizo_moto: false,
+      enc_mediostransporteutilizo_bicicleta: false,
+      enc_mediostransporteutilizo_taxi: false,
+      enc_mediostransporteutilizo_carro: false,
+      enc_mediostransporteutilizo_apie: false,
+      enc_mediostransporteutilizo_otro: false,
+      sub_id: 0,
+      usu_id: 0
+
     };
   }
 }

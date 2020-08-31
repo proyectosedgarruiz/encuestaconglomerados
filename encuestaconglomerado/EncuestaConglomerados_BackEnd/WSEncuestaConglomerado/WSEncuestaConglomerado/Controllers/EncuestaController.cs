@@ -65,6 +65,28 @@ namespace WSEncuestaConglomerado.Controllers
         }
 
 
+        [Route("anularEncuesta")] //Anula la encuesta por el Administrador
+        [HttpPost]
+        [ResponseType(typeof(EncuestaRespuesta))]
+        public IHttpActionResult anularEncuesta(string token, EncuestaRespuesta encuesta)
+        {
+            try
+            {
+                if (token.Equals(keyToken))
+                {
+                    var respuesta = srvEncuesta.anularEncuesta(encuesta);
+                    return Ok(respuesta);
+                }
+                else
+                    return null;
+            }
+            catch (Exception e)
+            {
+                string error = "Error desde el servicio anularEncuesta" + e.Message;
+                return Ok(error);
+            }
+        }
+
         [HttpGet]
         [Route("GetEncuestaById")]
         [ResponseType(typeof(EncuestaRespuesta))]

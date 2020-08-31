@@ -213,7 +213,10 @@ MostrarListadoUsuarios()
     if (isValid) {
 
       if(this.publicas.rol_id === 3) //Si es SuperAdministrador, se le permite grabar la SubRed En NULL
+      
+      if(this.usuarios.usu_id === 1)
       this.usuarios.sub_id = null;
+      
 
       if (this.operacion === 'C') {
         this.usuarioservice.addUsuario(this.usuarios).subscribe(

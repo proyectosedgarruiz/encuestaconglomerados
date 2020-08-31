@@ -224,6 +224,9 @@
     <FunctionImport Name="SP_FIND_ENCUESTA" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result)">
       <Parameter Name="enc_id" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="SP_ANULAR_ENCUESTA">
+      <Parameter Name="enc_id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Barrios">
     <Key>
@@ -320,6 +323,7 @@
     <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
     <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
     <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
+    <Property Name="enc_estado" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Localidades">
     <Key>

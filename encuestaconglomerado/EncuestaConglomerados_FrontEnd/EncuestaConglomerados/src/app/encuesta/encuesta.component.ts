@@ -54,6 +54,8 @@ export class EncuestaComponent implements OnInit {
   VisualizarBotonGuardar: boolean = true;
   VisualizarBotonActualizar: boolean = false;
 
+  SolicitudGrabacion : boolean = false;
+
 
   constructor(private encuestaservice: EncuestaService) { }
 
@@ -74,10 +76,18 @@ export class EncuestaComponent implements OnInit {
 
     }
     else {
+
       this.GetListaLocalidades(null);
       this.GetListaCriterioPriorizacionMuestra(null);
       this.GetListaTipoDocumentos(null);
-      this.GetListaSubRedes(null);
+     
+      if(this.publicas.sub_id != 0 && this.publicas.sub_id != null){
+        this.GetListaSubRedes(this.publicas.sub_id);
+      }
+      else
+      {
+        this.GetListaSubRedes(null);
+      }
     }
 
 
@@ -184,6 +194,8 @@ export class EncuestaComponent implements OnInit {
 
       if (upz_id != 0 && upz_id != null)
         this.encuesta.upz_id = upz_id;
+        else if (upz_id ==0)
+        this.encuesta.upz_id =0;
       else
         this.encuesta.upz_id = -1;
 
@@ -555,6 +567,7 @@ export class EncuestaComponent implements OnInit {
       //Se ingresan los datos del formulario y se envian al Web Service
       this.encuestaservice.addEncuesta(this.encuesta).subscribe(result => {
         if (result.OperacionExitosa == true) {
+          this.SolicitudGrabacion = true;
           this.formSaved = true;
         }
         else {
@@ -616,10 +629,15 @@ export class EncuestaComponent implements OnInit {
   }
 
   confirmar() {
+    
+    if(this.SolicitudGrabacion === false)
+    {
     var r = confirm("¿Confirma que la información registrada es correcta ?");
     if (r == true) {
+      
       this.saveForm();
     }
+  }
   }
 
 
@@ -682,6 +700,7 @@ export class EncuestaComponent implements OnInit {
     this.otromotivoseleccionado = false;
     this.seleccionadoLocalidad = false;
     this.seleccionadoUPZ = false;
+    this.SolicitudGrabacion = false;
     this.ngOnInit();
   }
 

@@ -90,6 +90,25 @@ namespace WSEncuestaConglomerado.Services
         }
 
 
+        public EncuestaRespuesta anularEncuesta(EncuestaRespuesta encuesta)
+        {
+
+            EncuestaRespuesta respuesta = new EncuestaRespuesta();
+            try
+            {
+                var accion = db.SP_ANULAR_ENCUESTA(encuesta.enc_id);
+                respuesta.OperacionExitosa = true;
+
+            }
+            catch (Exception ex)
+            {
+                respuesta.Mensaje = "Error al Anular la Encuesta -" + ex.ToString() + "-";
+                respuesta.OperacionExitosa = false;
+            }
+            return respuesta;
+        }
+
+
         public EncuestaRespuesta updEncuesta(EncuestaRespuesta encuesta)
         {
 

@@ -33,6 +33,7 @@
     <EntitySetMapping Name="Encuesta">
       <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Encuesta">
         <MappingFragment StoreEntitySet="Encuesta">
+          <ScalarProperty Name="enc_estado" ColumnName="enc_estado" />
           <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
           <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
           <ScalarProperty Name="sub_id" ColumnName="sub_id" />
@@ -525,5 +526,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ANULAR_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ANULAR_ENCUESTA" />
   </EntityContainerMapping>
 </Mapping>

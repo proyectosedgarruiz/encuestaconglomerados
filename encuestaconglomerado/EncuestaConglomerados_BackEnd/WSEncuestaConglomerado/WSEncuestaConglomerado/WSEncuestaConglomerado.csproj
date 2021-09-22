@@ -234,6 +234,15 @@
     <Compile Include="Models\EDMX\SP_FIND_ENCUESTA_Result.cs">
       <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EDMX\SP_FIND_ENCUESTA_Result1.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_FIND_ENCUESTA_Result2.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_FIND_ENCUESTA_Result3.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EDMX\SP_FIND_USUARIO_AUTORIZADO_Result.cs">
       <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
     </Compile>
@@ -249,10 +258,28 @@
     <Compile Include="Models\EDMX\SP_LIST_CUADRANTES_Result.cs">
       <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS1_Result.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_Result.cs">
       <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_Result1.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_Result2.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_SUBRED1_Result.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_SUBRED_Result.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_SUBRED_Result1.cs">
+      <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SP_LIST_ENCUESTAS_SUBRED_Result2.cs">
       <DependentUpon>EncuestaConglomeradoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EDMX\SP_LIST_LOCALIDADES_Result.cs">

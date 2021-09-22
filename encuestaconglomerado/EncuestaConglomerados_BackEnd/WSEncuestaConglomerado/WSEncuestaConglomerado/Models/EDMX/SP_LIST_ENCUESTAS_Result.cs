@@ -68,5 +68,28 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public System.DateTime enc_datetimecreated { get; set; }
         public string usu_nombre_modificacion { get; set; }
         public Nullable<System.DateTime> enc_datetimeupdated { get; set; }
+        public string enc_estadoembarazo { get; set; }
+        public string enc_etnia { get; set; }
+        public string enc_condiciondiscapacidad { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_hipertension { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_diabetesmellitus { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_obesidad { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_epoc { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_asma { get; set; }
+        public Nullable<bool> enc_presentaenfermedad_otro { get; set; }
+        public Nullable<bool> enc_hapresentadosintomas_diarrea { get; set; }
+        public Nullable<bool> enc_hapresentadosintomas_perdidaolfato { get; set; }
+        public string enc_contactopersonascuantas { get; set; }
+        public string enc_dispuestoaislamiento { get; set; }
+        public string enc_vacunadocovid { get; set; }
+        public string enc_accedetomamuestra { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_fiebre { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_tos { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_dolorgarganta { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_fatigadebilidad { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_ahogofaltaaire { get; set; }
+        public Nullable<bool> enc_convivepresentadosintomas_ninguno { get; set; }
+        public Nullable<bool> enc_convivehapresentadosintomas_diarrea { get; set; }
+        public Nullable<bool> enc_convivehapresentadosintomas_perdidaolfato { get; set; }
     }
 }

@@ -54,9 +54,37 @@ export class Encuesta {
         public enc_mediostransporteutilizo_apie: boolean,
         public enc_mediostransporteutilizo_otro: boolean,
         public sub_id: number,
-        public usu_id : number
-
-
+        public usu_id : number,
+        public enc_estadoembarazo: string,
+        public enc_etnia: string,
+        public enc_condiciondiscapacidad: string,
+        public enc_presentaenfermedad_hipertension: boolean,
+        public enc_presentaenfermedad_diabetesmellitus: boolean,
+        public enc_presentaenfermedad_obesidad: boolean,
+        public enc_presentaenfermedad_epoc: boolean,
+        public enc_presentaenfermedad_asma: boolean,
+        public enc_presentaenfermedad_otro: boolean,
+        public enc_presentaenfermead_otrocuales: string,
+        public enc_hapresentadosintomas_diarrea: boolean,
+        public enc_hapresentadosintomas_perdidaolfato: boolean,
+        public enc_contactopersonascuantas: string,
+        public enc_dispuestoaislamiento: string,
+        public enc_vacunadocovid: string,
+        public enc_accedetomamuestra: string,
+        public enc_convivepresentadosintomas_fiebre: boolean,
+        public enc_convivepresentadosintomas_tos: boolean,
+        public enc_convivepresentadosintomas_dolorgarganta: boolean,
+        public enc_convivepresentadosintomas_fatigadebilidad: boolean,
+        public enc_convivepresentadosintomas_ahogofaltaaire: boolean,
+        public enc_convivepresentadosintomas_ninguno: boolean,
+        public enc_convivehapresentadosintomas_diarrea: boolean,
+        public enc_convivehapresentadosintomas_perdidaolfato : boolean,
+        public enc_presentaenfermedad_ninguno: boolean,
+        public enc_compartehabitacion: string, 
+        public enc_hapresentadosintomas_dolorestomago: boolean,
+        public enc_convivepresentadosintomas_dolorestomago: boolean,
+        public enc_frecuenciadesplazamiento: string,
+        public enc_esquemavacunacioncompleto: string
     ) { }
 }
 
@@ -119,7 +147,39 @@ export class ListaEncuesta {
         public sub_nombre: string,
         public usu_nombre : string,
         public usu_nombre_modificacion: string,
-        public enc_datetimeupdate : Date
+        public enc_datetimeupdate : Date,
+        public enc_estadoembarazo: string,
+        public enc_etnia: string,
+        public enc_condiciondiscapacidad: string,
+        public enc_presentaenfermedad_hipertension: boolean,
+        public enc_presentaenfermedad_diabetesmellitus: boolean,
+        public enc_presentaenfermedad_obesidad: boolean,
+        public enc_presentaenfermedad_epoc: boolean,
+        public enc_presentaenfermedad_asma: boolean,
+        public enc_presentaenfermedad_otro: boolean,
+        public enc_presentaenfermead_otrocuales: string,
+        public enc_hapresentadosintomas_diarrea: boolean,
+        public enc_hapresentadosintomas_perdidaolfato: boolean,
+        public enc_contactopersonascuantas: string,
+        public enc_dispuestoaislamiento: string,
+        public enc_vacunadocovid: string,
+        public enc_accedetomamuestra: string,
+        public enc_convivepresentadosintomas_fiebre: boolean,
+        public enc_convivepresentadosintomas_tos: boolean,
+        public enc_convivepresentadosintomas_dolorgarganta: boolean,
+        public enc_convivepresentadosintomas_fatigadebilidad: boolean,
+        public enc_convivepresentadosintomas_ahogofaltaaire: boolean,
+        public enc_convivepresentadosintomas_ninguno: boolean,
+        public enc_convivehapresentadosintomas_diarrea: boolean,
+        public enc_convivehapresentadosintomas_perdidaolfato : boolean,
+
+        public enc_presentaenfermedad_ninguno: boolean,
+        public enc_compartehabitacion: string, 
+        public enc_hapresentadosintomas_dolorestomago: boolean,
+        public enc_convivepresentadosintomas_dolorestomago: boolean,
+        public enc_frecuenciadesplazamiento: string,
+        public enc_esquemavacunacioncompleto: string
+
     ) { }
 }
 

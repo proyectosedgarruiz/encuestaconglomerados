@@ -58,6 +58,27 @@
     box-shadow: 1px 2px 2px black;
 }
 
+.contenedorsecundarioleyenda {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    outline: none;
+    vertical-align: middle;
+    background-color: lightcyan;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #000000;
+    text-shadow: #CCCCCC 0px 1px 1px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 1px 2px 2px black;
+}
 .api-response-alert2 {
     max-width: 100%;
     left: 2%;

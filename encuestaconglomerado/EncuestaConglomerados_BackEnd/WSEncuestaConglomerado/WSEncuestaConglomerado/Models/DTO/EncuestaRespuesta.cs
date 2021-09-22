@@ -61,7 +61,37 @@ namespace WSEncuestaConglomerado.Models.DTO
         public int? sub_id;
         public int? usu_id;
         public int? enc_usu_modificacion;
-       
+        //Nuevos atributos
+        public string enc_estadoembarazo;
+        public string enc_etnia;
+        public string enc_condiciondiscapacidad;
+        public bool? enc_presentaenfermedad_hipertension;
+        public bool? enc_presentaenfermedad_diabetesmellitus;
+        public bool? enc_presentaenfermedad_obesidad;
+        public bool? enc_presentaenfermedad_epoc;
+        public bool? enc_presentaenfermedad_asma;
+        public bool? enc_presentaenfermedad_otro;
+        public string enc_presentaenfermedad_otrocuales;
+        public bool? enc_hapresentadosintomas_diarrea;
+        public bool? enc_hapresentadosintomas_perdidaolfato;
+        public string enc_contactopersonascuantas;
+        public string enc_dispuestoaislamiento;
+        public string enc_vacunadocovid;
+        public string enc_accedetomamuestra;
+        public bool? enc_convivepresentadosintomas_fiebre;
+        public bool? enc_convivepresentadosintomas_tos;
+        public bool? enc_convivepresentadosintomas_dolorgarganta;
+        public bool? enc_convivepresentadosintomas_fatigadebilidad;
+        public bool? enc_convivepresentadosintomas_ahogofaltaaire;
+        public bool? enc_convivepresentadosintomas_ninguno;
+        public bool? enc_convivehapresentadosintomas_diarrea;
+        public bool? enc_convivehapresentadosintomas_perdidaolfato;
+        public bool? enc_presentaenfermedad_ninguno;
+        public string enc_compartehabitacion;
+        public bool? enc_hapresentadosintomas_dolorestomago;
+        public bool? enc_convivepresentadosintomas_dolorestomago;
+        public string enc_frecuenciadesplazamiento;
+        public string enc_esquemavacunacioncompleto;
 
     }
 
@@ -134,6 +164,38 @@ namespace WSEncuestaConglomerado.Models.DTO
         public DateTime enc_datetimecreated;
         public string usu_nombre_modificacion;
         public DateTime? enc_datetimeupdated;
+
+        //Nuevos atributos
+        public string enc_estadoembarazo;
+        public string enc_etnia;
+        public string enc_condiciondiscapacidad;
+        public bool? enc_presentaenfermedad_hipertension;
+        public bool? enc_presentaenfermedad_diabetesmellitus;
+        public bool? enc_presentaenfermedad_obesidad;
+        public bool? enc_presentaenfermedad_epoc;
+        public bool? enc_presentaenfermedad_asma;
+        public bool? enc_presentaenfermedad_otro;
+        public string enc_presentaenfermedad_otrocuales;
+        public bool? enc_hapresentadosintomas_diarrea;
+        public bool? enc_hapresentadosintomas_perdidaolfato;
+        public string enc_contactopersonascuantas;
+        public string enc_dispuestoaislamiento;
+        public string enc_vacunadocovid;
+        public string enc_accedetomamuestra;
+        public bool? enc_convivepresentadosintomas_fiebre;
+        public bool? enc_convivepresentadosintomas_tos;
+        public bool? enc_convivepresentadosintomas_dolorgarganta;
+        public bool? enc_convivepresentadosintomas_fatigadebilidad;
+        public bool? enc_convivepresentadosintomas_ahogofaltaaire;
+        public bool? enc_convivepresentadosintomas_ninguno;
+        public bool? enc_convivehapresentadosintomas_diarrea;
+        public bool? enc_convivehapresentadosintomas_perdidaolfato;
+        public bool? enc_presentaenfermedad_ninguno;
+        public string enc_compartehabitacion;
+        public bool? enc_hapresentadosintomas_dolorestomago;
+        public bool? enc_convivepresentadosintomas_dolorestomago;
+        public string enc_frecuenciadesplazamiento;
+        public string enc_esquemavacunacioncompleto;
 
 
 

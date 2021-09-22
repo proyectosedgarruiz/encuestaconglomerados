@@ -30,8 +30,8 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public Nullable<System.DateTime> usu_datetimecreated { get; set; }
         public Nullable<int> sub_id { get; set; }
     
+        public virtual Roles Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Encuesta> Encuesta { get; set; }
-        public virtual Roles Roles { get; set; }
     }
 }

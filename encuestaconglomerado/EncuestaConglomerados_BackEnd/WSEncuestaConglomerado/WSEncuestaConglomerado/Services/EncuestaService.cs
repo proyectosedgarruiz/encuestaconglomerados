@@ -76,7 +76,39 @@ namespace WSEncuestaConglomerado.Services
                     encuesta.enc_mediostransporteutilizo_apie,
                     encuesta.enc_mediostransporteutilizo_otro,
                     encuesta.sub_id,
-                    encuesta.usu_id
+                    encuesta.usu_id,
+                    encuesta.enc_estadoembarazo,
+encuesta.enc_etnia,
+encuesta.enc_condiciondiscapacidad,
+encuesta.enc_presentaenfermedad_hipertension,
+encuesta.enc_presentaenfermedad_diabetesmellitus,
+encuesta.enc_presentaenfermedad_obesidad,
+encuesta.enc_presentaenfermedad_epoc,
+encuesta.enc_presentaenfermedad_asma,
+encuesta.enc_presentaenfermedad_otro,
+encuesta.enc_presentaenfermedad_otrocuales,
+
+encuesta.enc_hapresentadosintomas_diarrea,
+encuesta.enc_hapresentadosintomas_perdidaolfato,
+encuesta.enc_contactopersonascuantas,
+encuesta.enc_dispuestoaislamiento,
+encuesta.enc_vacunadocovid,
+encuesta.enc_accedetomamuestra,
+encuesta.enc_convivepresentadosintomas_fiebre,
+encuesta.enc_convivepresentadosintomas_tos,
+encuesta.enc_convivepresentadosintomas_dolorgarganta,
+encuesta.enc_convivepresentadosintomas_fatigadebilidad,
+encuesta.enc_convivepresentadosintomas_ahogofaltaaire,
+encuesta.enc_convivepresentadosintomas_ninguno,
+encuesta.enc_convivehapresentadosintomas_diarrea,
+encuesta.enc_convivehapresentadosintomas_perdidaolfato,
+encuesta.enc_presentaenfermedad_ninguno,
+encuesta.enc_compartehabitacion,
+encuesta.enc_hapresentadosintomas_dolorestomago,
+encuesta.enc_convivepresentadosintomas_dolorestomago,
+encuesta.enc_frecuenciadesplazamiento,
+encuesta.enc_esquemavacunacioncompleto
+
                     );
                 respuesta.OperacionExitosa = true;
 
@@ -171,7 +203,38 @@ namespace WSEncuestaConglomerado.Services
                     encuesta.enc_mediostransporteutilizo_apie,
                     encuesta.enc_mediostransporteutilizo_otro,
                     encuesta.sub_id,
-                    encuesta.usu_id
+                    encuesta.usu_id,
+                    encuesta.enc_estadoembarazo,    
+                    encuesta.enc_etnia,
+                    encuesta.enc_condiciondiscapacidad,
+                    encuesta.enc_presentaenfermedad_hipertension,
+                    encuesta.enc_presentaenfermedad_diabetesmellitus,
+                    encuesta.enc_presentaenfermedad_obesidad,
+                    encuesta.enc_presentaenfermedad_epoc,
+                    encuesta.enc_presentaenfermedad_asma,
+                    encuesta.enc_presentaenfermedad_otro,
+                    encuesta.enc_presentaenfermedad_otrocuales,
+                    encuesta.enc_hapresentadosintomas_diarrea,
+                    encuesta.enc_hapresentadosintomas_perdidaolfato,
+                    encuesta.enc_contactopersonascuantas,
+                    encuesta.enc_dispuestoaislamiento,  
+                    encuesta.enc_vacunadocovid,
+                    encuesta.enc_accedetomamuestra,
+                    encuesta.enc_convivepresentadosintomas_fiebre,
+                    encuesta.enc_convivepresentadosintomas_tos,
+                    encuesta.enc_convivepresentadosintomas_dolorgarganta,
+                    encuesta.enc_convivepresentadosintomas_fatigadebilidad,
+                    encuesta.enc_convivepresentadosintomas_ahogofaltaaire,
+                    encuesta.enc_convivepresentadosintomas_ninguno,
+                    encuesta.enc_convivehapresentadosintomas_diarrea,
+                    encuesta.enc_convivehapresentadosintomas_perdidaolfato,
+                    encuesta.enc_presentaenfermedad_ninguno,
+encuesta.enc_compartehabitacion,
+encuesta.enc_hapresentadosintomas_dolorestomago,
+encuesta.enc_convivepresentadosintomas_dolorestomago,
+encuesta.enc_frecuenciadesplazamiento,
+encuesta.enc_esquemavacunacioncompleto
+
                     );
                 respuesta.OperacionExitosa = true;
 
@@ -239,7 +302,13 @@ namespace WSEncuestaConglomerado.Services
             respuesta.enc_mediostransporteutilizo_apie = info.enc_mediostransporteutilizo_apie;
             respuesta.enc_mediostransporteutilizo_otro = info.enc_mediostransporteutilizo_otro;
             respuesta.sub_id = info.sub_id;
-           
+            respuesta.enc_presentaenfermedad_ninguno = info.enc_presentaenfermedad_ninguno;
+            respuesta.enc_compartehabitacion = info.enc_compartehabitacion;
+            respuesta.enc_hapresentadosintomas_dolorestomago = info.enc_hapresentadosintomas_dolorestomago;
+            respuesta.enc_convivepresentadosintomas_dolorestomago = info.enc_convivepresentadosintomas_dolorestomago;
+            respuesta.enc_frecuenciadesplazamiento = info.enc_frecuenciadesplazamiento;
+            respuesta.enc_esquemavacunacioncompleto = info.enc_esquemavacunacioncompleto;
+
             return respuesta;
         }
 
@@ -308,7 +377,37 @@ namespace WSEncuestaConglomerado.Services
                                        usu_nombre = l.usu_nombre,
                                        enc_datetimecreated = l.enc_datetimecreated,
                                        usu_nombre_modificacion = l.usu_nombre_modificacion,
-                                       enc_datetimeupdated = l.enc_datetimeupdated
+                                       enc_datetimeupdated = l.enc_datetimeupdated,
+                                       enc_estadoembarazo = l.enc_estadoembarazo,
+                                       enc_etnia = l.enc_etnia,
+                                       enc_condiciondiscapacidad = l.enc_condiciondiscapacidad,
+                                       enc_presentaenfermedad_hipertension = l.enc_presentaenfermedad_hipertension,
+                                       enc_presentaenfermedad_diabetesmellitus = l.enc_presentaenfermedad_diabetesmellitus,
+                                       enc_presentaenfermedad_obesidad = l.enc_presentaenfermedad_obesidad,
+                                       enc_presentaenfermedad_epoc = l.enc_presentaenfermedad_epoc,
+                                       enc_presentaenfermedad_asma = l.enc_presentaenfermedad_asma,
+                                       enc_presentaenfermedad_otro = l.enc_presentaenfermedad_otro,
+                                       enc_presentaenfermedad_otrocuales = l.enc_presentaenfermedad_otrocuales,
+                                       enc_hapresentadosintomas_diarrea = l.enc_hapresentadosintomas_diarrea,
+                                       enc_hapresentadosintomas_perdidaolfato = l.enc_hapresentadosintomas_perdidaolfato,
+                                       enc_contactopersonascuantas = l.enc_contactopersonascuantas,
+                                       enc_dispuestoaislamiento = l.enc_dispuestoaislamiento,
+                                       enc_vacunadocovid = l.enc_vacunadocovid,
+                                       enc_accedetomamuestra = l.enc_accedetomamuestra,
+                                       enc_convivepresentadosintomas_fiebre = l.enc_convivepresentadosintomas_fiebre,
+                                       enc_convivepresentadosintomas_tos = l.enc_convivepresentadosintomas_tos,
+                                       enc_convivepresentadosintomas_dolorgarganta = l.enc_convivepresentadosintomas_dolorgarganta,
+                                       enc_convivepresentadosintomas_fatigadebilidad = l.enc_convivepresentadosintomas_fatigadebilidad,
+                                       enc_convivepresentadosintomas_ahogofaltaaire = l.enc_convivepresentadosintomas_ahogofaltaaire,
+                                       enc_convivepresentadosintomas_ninguno = l.enc_convivepresentadosintomas_ninguno,
+                                       enc_convivehapresentadosintomas_diarrea = l.enc_convivehapresentadosintomas_diarrea,
+                                       enc_convivehapresentadosintomas_perdidaolfato = l.enc_convivehapresentadosintomas_perdidaolfato,
+                                       enc_presentaenfermedad_ninguno = l.enc_presentaenfermedad_ninguno,
+enc_compartehabitacion = l.enc_compartehabitacion,
+enc_hapresentadosintomas_dolorestomago = l.enc_hapresentadosintomas_dolorestomago,
+enc_convivepresentadosintomas_dolorestomago = l.enc_convivepresentadosintomas_dolorestomago,
+enc_frecuenciadesplazamiento = l.enc_frecuenciadesplazamiento,
+enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
 
                                    }
                                    ).ToList();
@@ -423,7 +522,7 @@ namespace WSEncuestaConglomerado.Services
             return respuesta;
         }
 
-        public async Task<List<EncuestaListaRespuesta>> GetListaEncuestasSubRed(int todos, int fecha, DateTime fechainicial, DateTime fechafinal , int sub_id)
+        public async Task<List<EncuestaListaRespuesta>> GetListaEncuestasSubRed(int todos, int fecha, DateTime fechainicial, DateTime fechafinal, int sub_id)
         {
             List<EncuestaListaRespuesta> respuesta = new List<EncuestaListaRespuesta>();
             int IdDatoReferenciado = 0;
@@ -486,7 +585,37 @@ namespace WSEncuestaConglomerado.Services
                                        usu_nombre = l.usu_nombre,
                                        enc_datetimecreated = l.enc_datetimecreated,
                                        usu_nombre_modificacion = l.usu_nombre_modificacion,
-                                       enc_datetimeupdated = l.enc_datetimeupdated
+                                       enc_datetimeupdated = l.enc_datetimeupdated,
+                                       enc_estadoembarazo = l.enc_estadoembarazo,
+                                       enc_etnia = l.enc_etnia,
+                                       enc_condiciondiscapacidad = l.enc_condiciondiscapacidad,
+                                       enc_presentaenfermedad_hipertension = l.enc_presentaenfermedad_hipertension,
+                                       enc_presentaenfermedad_diabetesmellitus = l.enc_presentaenfermedad_diabetesmellitus,
+                                       enc_presentaenfermedad_obesidad = l.enc_presentaenfermedad_obesidad,
+                                       enc_presentaenfermedad_epoc = l.enc_presentaenfermedad_epoc,
+                                       enc_presentaenfermedad_asma = l.enc_presentaenfermedad_asma,
+                                       enc_presentaenfermedad_otro = l.enc_presentaenfermedad_otro,
+                                       enc_presentaenfermedad_otrocuales = l.enc_presentaenfermedad_otrocuales,
+                                       enc_hapresentadosintomas_diarrea = l.enc_hapresentadosintomas_diarrea,
+                                       enc_hapresentadosintomas_perdidaolfato = l.enc_hapresentadosintomas_perdidaolfato,
+                                       enc_contactopersonascuantas = l.enc_contactopersonascuantas,
+                                       enc_dispuestoaislamiento = l.enc_dispuestoaislamiento,
+                                       enc_vacunadocovid = l.enc_vacunadocovid,
+                                       enc_accedetomamuestra = l.enc_accedetomamuestra,
+                                       enc_convivepresentadosintomas_fiebre = l.enc_convivepresentadosintomas_fiebre,
+                                       enc_convivepresentadosintomas_tos = l.enc_convivepresentadosintomas_tos,
+                                       enc_convivepresentadosintomas_dolorgarganta = l.enc_convivepresentadosintomas_dolorgarganta,
+                                       enc_convivepresentadosintomas_fatigadebilidad = l.enc_convivepresentadosintomas_fatigadebilidad,
+                                       enc_convivepresentadosintomas_ahogofaltaaire = l.enc_convivepresentadosintomas_ahogofaltaaire,
+                                       enc_convivepresentadosintomas_ninguno = l.enc_convivepresentadosintomas_ninguno,
+                                       enc_convivehapresentadosintomas_diarrea = l.enc_convivehapresentadosintomas_diarrea,
+                                       enc_convivehapresentadosintomas_perdidaolfato = l.enc_convivehapresentadosintomas_perdidaolfato,
+                                       enc_presentaenfermedad_ninguno = l.enc_presentaenfermedad_ninguno,
+                                       enc_compartehabitacion = l.enc_compartehabitacion,
+                                       enc_hapresentadosintomas_dolorestomago = l.enc_hapresentadosintomas_dolorestomago,
+                                       enc_convivepresentadosintomas_dolorestomago = l.enc_convivepresentadosintomas_dolorestomago,
+                                       enc_frecuenciadesplazamiento = l.enc_frecuenciadesplazamiento,
+                                       enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
 
 
                                    }

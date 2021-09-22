@@ -91,6 +91,36 @@
           <Property Name="enc_usu_modificacion" Type="int" />
           <Property Name="enc_datetimeupdated" Type="datetime" />
           <Property Name="enc_estado" Type="nvarchar" MaxLength="1" />
+          <Property Name="enc_etnia" Type="nvarchar(max)" />
+          <Property Name="enc_estadoembarazo" Type="nvarchar(max)" />
+          <Property Name="enc_condiciondiscapacidad" Type="nvarchar(max)" />
+          <Property Name="enc_presentaenfermedad_hipertension" Type="bit" />
+          <Property Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" />
+          <Property Name="enc_presentaenfermedad_obesidad" Type="bit" />
+          <Property Name="enc_presentaenfermedad_epoc" Type="bit" />
+          <Property Name="enc_presentaenfermedad_asma" Type="bit" />
+          <Property Name="enc_presentaenfermedad_otro" Type="bit" />
+          <Property Name="enc_hapresentadosintomas_diarrea" Type="bit" />
+          <Property Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" />
+          <Property Name="enc_contactopersonascuantas" Type="nvarchar(max)" />
+          <Property Name="enc_dispuestoaislamiento" Type="nvarchar(max)" />
+          <Property Name="enc_vacunadocovid" Type="nvarchar(max)" />
+          <Property Name="enc_accedetomamuestra" Type="nvarchar(max)" />
+          <Property Name="enc_convivepresentadosintomas_fiebre" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_tos" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_ninguno" Type="bit" />
+          <Property Name="enc_convivehapresentadosintomas_diarrea" Type="bit" />
+          <Property Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" />
+          <Property Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" />
+          <Property Name="enc_presentaenfermedad_ninguno" Type="bit" />
+          <Property Name="enc_compartehabitacion" Type="nvarchar(max)" />
+          <Property Name="enc_hapresentadosintomas_dolorestomago" Type="bit" />
+          <Property Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" />
+          <Property Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" />
+          <Property Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Localidades">
           <Key>
@@ -295,6 +325,36 @@
           <Parameter Name="enc_mediostransporteutilizo_otro" Type="bit" Mode="In" />
           <Parameter Name="sub_id" Type="int" Mode="In" />
           <Parameter Name="usu_id" Type="int" Mode="In" />
+          <Parameter Name="enc_estadoembarazo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_etnia" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_condiciondiscapacidad" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_hipertension" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_obesidad" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_epoc" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_asma" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_otro" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_diarrea" Type="bit" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+          <Parameter Name="enc_contactopersonascuantas" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_dispuestoaislamiento" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_vacunadocovid" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_accedetomamuestra" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_fiebre" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_tos" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_ninguno" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivehapresentadosintomas_diarrea" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_ninguno" Type="bit" Mode="In" />
+          <Parameter Name="enc_compartehabitacion" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+          <Parameter Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="SP_ADD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="usu_nombre" Type="nvarchar" Mode="In" />
@@ -416,6 +476,36 @@
           <Parameter Name="enc_mediostransporteutilizo_otro" Type="bit" Mode="In" />
           <Parameter Name="sub_id" Type="int" Mode="In" />
           <Parameter Name="usu_id" Type="int" Mode="In" />
+          <Parameter Name="enc_estadoembarazo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_etnia" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_condiciondiscapacidad" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_hipertension" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_obesidad" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_epoc" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_asma" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_otro" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_diarrea" Type="bit" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+          <Parameter Name="enc_contactopersonascuantas" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_dispuestoaislamiento" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_vacunadocovid" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_accedetomamuestra" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_fiebre" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_tos" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_ninguno" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivehapresentadosintomas_diarrea" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+          <Parameter Name="enc_presentaenfermedad_ninguno" Type="bit" Mode="In" />
+          <Parameter Name="enc_compartehabitacion" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_hapresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+          <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+          <Parameter Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="SP_UPD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="usu_id" Type="int" Mode="In" />
@@ -479,13 +569,78 @@
           <EntitySet Name="Barrios" EntityType="EncuestaConglomeradosModel.Barrios" />
           <EntitySet Name="CriterioPriorizacionMuestra" EntityType="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" />
           <EntitySet Name="Cuadrantes" EntityType="EncuestaConglomeradosModel.Cuadrantes" />
-          <EntitySet Name="Encuesta" EntityType="EncuestaConglomeradosModel.Encuesta" />
           <EntitySet Name="Localidades" EntityType="EncuestaConglomeradosModel.Localidades" />
           <EntitySet Name="Roles" EntityType="EncuestaConglomeradosModel.Roles" />
           <EntitySet Name="Subred" EntityType="EncuestaConglomeradosModel.Subred" />
           <EntitySet Name="TipoDocumento" EntityType="EncuestaConglomeradosModel.TipoDocumento" />
           <EntitySet Name="Upz" EntityType="EncuestaConglomeradosModel.Upz" />
           <EntitySet Name="Usuarios" EntityType="EncuestaConglomeradosModel.Usuarios" />
+          <AssociationSet Name="FK_Usuarios_Roles" Association="EncuestaConglomeradosModel.FK_Usuarios_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <FunctionImport Name="SP_ADD_USUARIO">
+            <Parameter Name="usu_nombre" Mode="In" Type="String" />
+            <Parameter Name="usu_login" Mode="In" Type="String" />
+            <Parameter Name="usu_password" Mode="In" Type="String" />
+            <Parameter Name="usu_estado" Mode="In" Type="String" />
+            <Parameter Name="rol_id" Mode="In" Type="Int32" />
+            <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
+            <Parameter Name="sub_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_REGISTRO_EXISTENTE" ReturnType="Collection(EncuestaConglomeradosModel.SP_CONSULTAR_REGISTRO_EXISTENTE_Result)">
+            <Parameter Name="documento" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_FIND_ENCUESTAS_FILTER">
+            <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
+            <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
+            <Parameter Name="usuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_FIND_USUARIO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_Result)">
+          <Parameter Name="usu_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_FIND_USUARIO_AUTORIZADO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_AUTORIZADO_Result)">
+            <Parameter Name="login" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LIST_BARRIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_BARRIOS_Result)">
+          <Parameter Name="loc_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result)" />
+          <FunctionImport Name="SP_LIST_CUADRANTES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CUADRANTES_Result)">
+            <Parameter Name="loc_id" Mode="In" Type="Int32" />
+            <Parameter Name="upz_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LIST_LOCALIDADES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result)" />
+          <FunctionImport Name="SP_LIST_ROLES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ROLES_Result)" />
+          <FunctionImport Name="SP_LIST_SUBREDES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_SUBREDES_Result)" />
+          <FunctionImport Name="SP_LIST_TIPODOCUMENTO" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_TIPODOCUMENTO_Result)" />
+          <FunctionImport Name="SP_LIST_UPZ" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_UPZ_Result)">
+          <Parameter Name="loc_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LIST_USUARIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_Result)" />
+          <FunctionImport Name="SP_LIST_USUARIOS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_SUBRED_Result)">
+          <Parameter Name="sub_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPD_CLAVE_USUARIO">
+            <Parameter Name="usu_id" Mode="In" Type="Int32" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPD_USUARIO">
+            <Parameter Name="usu_id" Mode="In" Type="Int32" />
+            <Parameter Name="usu_nombre" Mode="In" Type="String" />
+            <Parameter Name="usu_login" Mode="In" Type="String" />
+            <Parameter Name="usu_password" Mode="In" Type="String" />
+            <Parameter Name="usu_estado" Mode="In" Type="String" />
+            <Parameter Name="rol_id" Mode="In" Type="Int32" />
+            <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
+            <Parameter Name="sub_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_ENCUESTA">
+          <Parameter Name="enc_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="Encuesta" EntityType="EncuestaConglomeradosModel.Encuesta" />
           <AssociationSet Name="FK_Encuesta_Barrios" Association="EncuestaConglomeradosModel.FK_Encuesta_Barrios">
             <End Role="Barrios" EntitySet="Barrios" />
             <End Role="Encuesta" EntitySet="Encuesta" />
@@ -513,10 +668,6 @@
           <AssociationSet Name="FK_Encuesta_Usuarios" Association="EncuestaConglomeradosModel.FK_Encuesta_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Encuesta" EntitySet="Encuesta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuarios_Roles" Association="EncuestaConglomeradosModel.FK_Usuarios_Roles">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
           <FunctionImport Name="SP_ADD_ENCUESTA">
             <Parameter Name="enc_fecha" Mode="In" Type="DateTime" />
@@ -570,67 +721,52 @@
             <Parameter Name="enc_mediostransporteutilizo_otro" Mode="In" Type="Boolean" />
             <Parameter Name="sub_id" Mode="In" Type="Int32" />
             <Parameter Name="usu_id" Mode="In" Type="Int32" />
+            <Parameter Name="enc_estadoembarazo" Mode="In" Type="String" />
+            <Parameter Name="enc_etnia" Mode="In" Type="String" />
+            <Parameter Name="enc_condiciondiscapacidad" Mode="In" Type="String" />
+            <Parameter Name="enc_presentaenfermedad_hipertension" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_obesidad" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_epoc" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_asma" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_otro" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_otrocuales" Mode="In" Type="String" />
+            <Parameter Name="enc_hapresentadosintomas_diarrea" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_contactopersonascuantas" Mode="In" Type="String" />
+            <Parameter Name="enc_dispuestoaislamiento" Mode="In" Type="String" />
+            <Parameter Name="enc_vacunadocovid" Mode="In" Type="String" />
+            <Parameter Name="enc_accedetomamuestra" Mode="In" Type="String" />
+            <Parameter Name="enc_convivepresentadosintomas_fiebre" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_tos" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_ninguno" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivehapresentadosintomas_diarrea" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_ninguno" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_compartehabitacion" Mode="In" Type="String" />
+            <Parameter Name="enc_hapresentadosintomas_dolorestomago" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_frecuenciadesplazamiento" Mode="In" Type="String" />
+            <Parameter Name="enc_esquemavacunacioncompleto" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_ADD_USUARIO">
-            <Parameter Name="usu_nombre" Mode="In" Type="String" />
-            <Parameter Name="usu_login" Mode="In" Type="String" />
-            <Parameter Name="usu_password" Mode="In" Type="String" />
-            <Parameter Name="usu_estado" Mode="In" Type="String" />
-            <Parameter Name="rol_id" Mode="In" Type="Int32" />
-            <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
-            <Parameter Name="sub_id" Mode="In" Type="Int32" />
+          <FunctionImport Name="SP_FIND_ENCUESTA" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result3)">
+            <Parameter Name="enc_id" Mode="In" Type="Int64" />
           </FunctionImport>
-          <FunctionImport Name="SP_CONSULTAR_REGISTRO_EXISTENTE" ReturnType="Collection(EncuestaConglomeradosModel.SP_CONSULTAR_REGISTRO_EXISTENTE_Result)">
-            <Parameter Name="documento" Mode="In" Type="String" />
-            <Parameter Name="fecha" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_FIND_ENCUESTAS_FILTER">
-            <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
-            <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
-            <Parameter Name="usuario" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_FIND_USUARIO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_Result)">
-          <Parameter Name="usu_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_FIND_USUARIO_AUTORIZADO" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_USUARIO_AUTORIZADO_Result)">
-            <Parameter Name="login" Mode="In" Type="String" />
-            <Parameter Name="password" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LIST_BARRIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_BARRIOS_Result)">
-          <Parameter Name="loc_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LIST_CRITERIO_PRIORIZACION_MUESTRA" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CRITERIO_PRIORIZACION_MUESTRA_Result)" />
-          <FunctionImport Name="SP_LIST_CUADRANTES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_CUADRANTES_Result)">
-            <Parameter Name="loc_id" Mode="In" Type="Int32" />
-            <Parameter Name="upz_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LIST_ENCUESTAS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result)">
+          <FunctionImport Name="SP_LIST_ENCUESTAS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result2)">
             <Parameter Name="todos" Mode="In" Type="Int32" />
             <Parameter Name="fecha" Mode="In" Type="Int32" />
             <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
             <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SP_LIST_ENCUESTAS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result)">
+          <FunctionImport Name="SP_LIST_ENCUESTAS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result2)">
             <Parameter Name="todos" Mode="In" Type="Int32" />
             <Parameter Name="fecha" Mode="In" Type="Int32" />
             <Parameter Name="fechainicial" Mode="In" Type="DateTime" />
             <Parameter Name="fechafinal" Mode="In" Type="DateTime" />
             <Parameter Name="sub_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LIST_LOCALIDADES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result)" />
-          <FunctionImport Name="SP_LIST_ROLES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_ROLES_Result)" />
-          <FunctionImport Name="SP_LIST_SUBREDES" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_SUBREDES_Result)" />
-          <FunctionImport Name="SP_LIST_TIPODOCUMENTO" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_TIPODOCUMENTO_Result)" />
-          <FunctionImport Name="SP_LIST_UPZ" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_UPZ_Result)">
-          <Parameter Name="loc_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LIST_USUARIOS" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_Result)" />
-          <FunctionImport Name="SP_LIST_USUARIOS_SUBRED" ReturnType="Collection(EncuestaConglomeradosModel.SP_LIST_USUARIOS_SUBRED_Result)">
-          <Parameter Name="sub_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_UPD_CLAVE_USUARIO">
-            <Parameter Name="usu_id" Mode="In" Type="Int32" />
-            <Parameter Name="clave" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_UPD_ENCUESTA">
             <Parameter Name="enc_id" Mode="In" Type="Int64" />
@@ -685,22 +821,36 @@
             <Parameter Name="enc_mediostransporteutilizo_otro" Mode="In" Type="Boolean" />
             <Parameter Name="sub_id" Mode="In" Type="Int32" />
             <Parameter Name="usu_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_UPD_USUARIO">
-            <Parameter Name="usu_id" Mode="In" Type="Int32" />
-            <Parameter Name="usu_nombre" Mode="In" Type="String" />
-            <Parameter Name="usu_login" Mode="In" Type="String" />
-            <Parameter Name="usu_password" Mode="In" Type="String" />
-            <Parameter Name="usu_estado" Mode="In" Type="String" />
-            <Parameter Name="rol_id" Mode="In" Type="Int32" />
-            <Parameter Name="usu_req_clave" Mode="In" Type="Boolean" />
-            <Parameter Name="sub_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_FIND_ENCUESTA" ReturnType="Collection(EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result)">
-          <Parameter Name="enc_id" Mode="In" Type="Int64" />
-          </FunctionImport>
-          <FunctionImport Name="SP_ANULAR_ENCUESTA">
-            <Parameter Name="enc_id" Mode="In" Type="Int64" />
+            <Parameter Name="enc_estadoembarazo" Mode="In" Type="String" />
+            <Parameter Name="enc_etnia" Mode="In" Type="String" />
+            <Parameter Name="enc_condiciondiscapacidad" Mode="In" Type="String" />
+            <Parameter Name="enc_presentaenfermedad_hipertension" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_obesidad" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_epoc" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_asma" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_otro" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_otrocuales" Mode="In" Type="String" />
+            <Parameter Name="enc_hapresentadosintomas_diarrea" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_contactopersonascuantas" Mode="In" Type="String" />
+            <Parameter Name="enc_dispuestoaislamiento" Mode="In" Type="String" />
+            <Parameter Name="enc_vacunadocovid" Mode="In" Type="String" />
+            <Parameter Name="enc_accedetomamuestra" Mode="In" Type="String" />
+            <Parameter Name="enc_convivepresentadosintomas_fiebre" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_tos" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_ninguno" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivehapresentadosintomas_diarrea" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_presentaenfermedad_ninguno" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_compartehabitacion" Mode="In" Type="String" />
+            <Parameter Name="enc_hapresentadosintomas_dolorestomago" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Mode="In" Type="Boolean" />
+            <Parameter Name="enc_frecuenciadesplazamiento" Mode="In" Type="String" />
+            <Parameter Name="enc_esquemavacunacioncompleto" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Barrios">
@@ -731,74 +881,6 @@
           <Property Name="upz_id" Type="Int32" />
           <Property Name="cua_cod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Cuadrantes" ToRole="Encuesta" />
-        </EntityType>
-        <EntityType Name="Encuesta">
-          <Key>
-            <PropertyRef Name="enc_id" />
-          </Key>
-          <Property Name="enc_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="enc_fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="loc_id" Type="Int32" Nullable="false" />
-          <Property Name="upz_id" Type="Int32" Nullable="false" />
-          <Property Name="bar_id" Type="Int32" Nullable="false" />
-          <Property Name="cua_id" Type="Int32" Nullable="false" />
-          <Property Name="enc_muestreadopor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_nombreencuestado" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="tpd_id" Type="Int32" Nullable="false" />
-          <Property Name="enc_numerodocumento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_edad" Type="Int32" Nullable="false" />
-          <Property Name="enc_genero" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_dirresidencia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_numcelular" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_aseguramiento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_nombreEAPB" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_ocupacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_cuantaspersonashabitan" Type="Int32" Nullable="false" />
-          <Property Name="enc_cuantaspersonasmayores60" Type="Int32" Nullable="false" />
-          <Property Name="enc_cuantascondicionescronicas" Type="Int32" Nullable="false" />
-          <Property Name="enc_cuantashabitacionescuentaresidencia" Type="Int32" Nullable="false" />
-          <Property Name="enc_hapresentadosintomas_fiebre" Type="Boolean" />
-          <Property Name="enc_hapresentadosintomas_tos" Type="Boolean" />
-          <Property Name="enc_hapresentadosintomas_dolorgarganta" Type="Boolean" />
-          <Property Name="enc_hapresentadosintomas_fatigadebilidad" Type="Boolean" />
-          <Property Name="enc_hapresentadosintomas_ahogofaltaaire" Type="Boolean" />
-          <Property Name="enc_hapresentadosintomas_ninguno" Type="Boolean" />
-          <Property Name="enc_comoconsideracumplimientocuarentena" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_contactopersonas24horas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_dondedesplazoustedomiembrofamilia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_motivosalirdecasa_noaplica" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_atrabajar" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_compraralimento" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_ahacerdeporte" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_acitamedica" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_sacarmascota" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_diligenciabancaria" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_socializar" Type="Boolean" />
-          <Property Name="enc_motivosalirdecasa_otro" Type="Boolean" />
-          <Property Name="enc_otromotivosalirdecasa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="enc_mediostransporteutilizo_noaplica" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_transmilenio" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_sitp" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_moto" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_bicicleta" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_taxi" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_carro" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_apie" Type="Boolean" />
-          <Property Name="enc_mediostransporteutilizo_otro" Type="Boolean" />
-          <Property Name="usu_id" Type="Int32" Nullable="false" />
-          <Property Name="enc_datetimecreated" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="cpm_id" Type="Int32" />
-          <Property Name="sub_id" Type="Int32" />
-          <Property Name="enc_usu_modificacion" Type="Int32" />
-          <Property Name="enc_datetimeupdated" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Barrios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Encuesta" ToRole="Barrios" />
-          <NavigationProperty Name="CriterioPriorizacionMuestra" Relationship="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" FromRole="Encuesta" ToRole="CriterioPriorizacionMuestra" />
-          <NavigationProperty Name="Cuadrantes" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Encuesta" ToRole="Cuadrantes" />
-          <NavigationProperty Name="Localidades" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Localidades" FromRole="Encuesta" ToRole="Localidades" />
-          <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
-          <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
-          <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
-          <Property Name="enc_estado" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Localidades">
           <Key>
@@ -858,93 +940,9 @@
           <Property Name="usu_req_clave" Type="Boolean" Nullable="false" />
           <Property Name="usu_datetimecreated" Type="DateTime" Precision="3" />
           <Property Name="sub_id" Type="Int32" />
-          <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Usuarios" ToRole="Encuesta" />
           <NavigationProperty Name="Roles" Relationship="EncuestaConglomeradosModel.FK_Usuarios_Roles" FromRole="Usuarios" ToRole="Roles" />
+          <NavigationProperty Name="Encuesta" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Usuarios" ToRole="Encuesta" />
         </EntityType>
-        <Association Name="FK_Encuesta_Barrios">
-          <End Type="EncuestaConglomeradosModel.Barrios" Role="Barrios" Multiplicity="1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Barrios">
-              <PropertyRef Name="bar_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="bar_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_CriterioPriorizacionMuestra">
-          <End Type="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" Role="CriterioPriorizacionMuestra" Multiplicity="0..1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CriterioPriorizacionMuestra">
-              <PropertyRef Name="cpm_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="cpm_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_Cuadrantes">
-          <End Type="EncuestaConglomeradosModel.Cuadrantes" Role="Cuadrantes" Multiplicity="1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cuadrantes">
-              <PropertyRef Name="cua_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="cua_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_Localidades">
-          <End Type="EncuestaConglomeradosModel.Localidades" Role="Localidades" Multiplicity="1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Localidades">
-              <PropertyRef Name="loc_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="loc_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_Subred">
-          <End Type="EncuestaConglomeradosModel.Subred" Role="Subred" Multiplicity="0..1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Subred">
-              <PropertyRef Name="sub_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="sub_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_TipoDocumento">
-          <End Type="EncuestaConglomeradosModel.TipoDocumento" Role="TipoDocumento" Multiplicity="1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoDocumento">
-              <PropertyRef Name="tpd_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="tpd_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Encuesta_Usuarios">
-          <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="usu_id" />
-            </Principal>
-            <Dependent Role="Encuesta">
-              <PropertyRef Name="usu_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Usuarios_Roles">
           <End Type="EncuestaConglomeradosModel.Roles" Role="Roles" Multiplicity="1" />
           <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="*" />
@@ -1103,6 +1101,29 @@
           <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
           <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
           <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
         </ComplexType>
         <ComplexType Name="SP_LIST_ENCUESTAS_SUBRED_Result">
           <Property Type="Int64" Name="enc_id" Nullable="false" />
@@ -1160,6 +1181,29 @@
           <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
           <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
           <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
         </ComplexType>
         <ComplexType Name="SP_LIST_LOCALIDADES_Result">
           <Property Type="Int32" Name="loc_id" Nullable="false" />
@@ -1259,6 +1303,943 @@
           <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
           <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
           <Property Type="Int32" Name="sub_id" Nullable="true" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_FIND_ENCUESTA_Result1">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="DateTime" Name="enc_fecha" Nullable="false" />
+          <Property Type="Int32" Name="loc_id" Nullable="false" />
+          <Property Type="Int32" Name="upz_id" Nullable="false" />
+          <Property Type="Int32" Name="bar_id" Nullable="false" />
+          <Property Type="Int32" Name="cua_id" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="Int32" Name="cpm_id" Nullable="true" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="Int32" Name="tpd_id" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="Int32" Name="sub_id" Nullable="true" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS1_Result">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS_SUBRED1_Result">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_FIND_ENCUESTA_Result2">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="DateTime" Name="enc_fecha" Nullable="false" />
+          <Property Type="Int32" Name="loc_id" Nullable="false" />
+          <Property Type="Int32" Name="upz_id" Nullable="false" />
+          <Property Type="Int32" Name="bar_id" Nullable="false" />
+          <Property Type="Int32" Name="cua_id" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="Int32" Name="cpm_id" Nullable="true" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="Int32" Name="tpd_id" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="Int32" Name="sub_id" Nullable="true" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS_Result1">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS_SUBRED_Result1">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Encuesta">
+          <Key>
+            <PropertyRef Name="enc_id" />
+          </Key>
+          <Property Name="enc_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="enc_fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="loc_id" Type="Int32" Nullable="false" />
+          <Property Name="upz_id" Type="Int32" Nullable="false" />
+          <Property Name="bar_id" Type="Int32" Nullable="false" />
+          <Property Name="cua_id" Type="Int32" Nullable="false" />
+          <Property Name="enc_muestreadopor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_nombreencuestado" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tpd_id" Type="Int32" Nullable="false" />
+          <Property Name="enc_numerodocumento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_edad" Type="Int32" Nullable="false" />
+          <Property Name="enc_genero" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_dirresidencia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_numcelular" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_aseguramiento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_nombreEAPB" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_ocupacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_cuantaspersonashabitan" Type="Int32" Nullable="false" />
+          <Property Name="enc_cuantaspersonasmayores60" Type="Int32" Nullable="false" />
+          <Property Name="enc_cuantascondicionescronicas" Type="Int32" Nullable="false" />
+          <Property Name="enc_cuantashabitacionescuentaresidencia" Type="Int32" Nullable="false" />
+          <Property Name="enc_hapresentadosintomas_fiebre" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_tos" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_dolorgarganta" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_fatigadebilidad" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_ahogofaltaaire" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_ninguno" Type="Boolean" />
+          <Property Name="enc_comoconsideracumplimientocuarentena" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_contactopersonas24horas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_dondedesplazoustedomiembrofamilia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_motivosalirdecasa_noaplica" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_atrabajar" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_compraralimento" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_ahacerdeporte" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_acitamedica" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_sacarmascota" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_diligenciabancaria" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_socializar" Type="Boolean" />
+          <Property Name="enc_motivosalirdecasa_otro" Type="Boolean" />
+          <Property Name="enc_otromotivosalirdecasa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_mediostransporteutilizo_noaplica" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_transmilenio" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_sitp" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_moto" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_bicicleta" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_taxi" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_carro" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_apie" Type="Boolean" />
+          <Property Name="enc_mediostransporteutilizo_otro" Type="Boolean" />
+          <Property Name="usu_id" Type="Int32" Nullable="false" />
+          <Property Name="enc_datetimecreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cpm_id" Type="Int32" />
+          <Property Name="sub_id" Type="Int32" />
+          <Property Name="enc_usu_modificacion" Type="Int32" />
+          <Property Name="enc_datetimeupdated" Type="DateTime" Precision="3" />
+          <Property Name="enc_estado" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="enc_etnia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_estadoembarazo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_condiciondiscapacidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_presentaenfermedad_hipertension" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_diabetesmellitus" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_obesidad" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_epoc" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_asma" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_otro" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_diarrea" Type="Boolean" />
+          <Property Name="enc_hapresentadosintomas_perdidaolfato" Type="Boolean" />
+          <Property Name="enc_contactopersonascuantas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_dispuestoaislamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_vacunadocovid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_accedetomamuestra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_convivepresentadosintomas_fiebre" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_tos" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_dolorgarganta" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_fatigadebilidad" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_ninguno" Type="Boolean" />
+          <Property Name="enc_convivehapresentadosintomas_diarrea" Type="Boolean" />
+          <Property Name="enc_convivehapresentadosintomas_perdidaolfato" Type="Boolean" />
+          <Property Name="enc_presentaenfermedad_otrocuales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_presentaenfermedad_ninguno" Type="Boolean" />
+          <Property Name="enc_compartehabitacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_hapresentadosintomas_dolorestomago" Type="Boolean" />
+          <Property Name="enc_convivepresentadosintomas_dolorestomago" Type="Boolean" />
+          <Property Name="enc_frecuenciadesplazamiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enc_esquemavacunacioncompleto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Barrios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Barrios" FromRole="Encuesta" ToRole="Barrios" />
+          <NavigationProperty Name="CriterioPriorizacionMuestra" Relationship="EncuestaConglomeradosModel.FK_Encuesta_CriterioPriorizacionMuestra" FromRole="Encuesta" ToRole="CriterioPriorizacionMuestra" />
+          <NavigationProperty Name="Cuadrantes" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Cuadrantes" FromRole="Encuesta" ToRole="Cuadrantes" />
+          <NavigationProperty Name="Localidades" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Localidades" FromRole="Encuesta" ToRole="Localidades" />
+          <NavigationProperty Name="Subred" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Subred" FromRole="Encuesta" ToRole="Subred" />
+          <NavigationProperty Name="TipoDocumento" Relationship="EncuestaConglomeradosModel.FK_Encuesta_TipoDocumento" FromRole="Encuesta" ToRole="TipoDocumento" />
+          <NavigationProperty Name="Usuarios" Relationship="EncuestaConglomeradosModel.FK_Encuesta_Usuarios" FromRole="Encuesta" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_Encuesta_Barrios">
+          <End Type="EncuestaConglomeradosModel.Barrios" Role="Barrios" Multiplicity="1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Barrios">
+              <PropertyRef Name="bar_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="bar_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_CriterioPriorizacionMuestra">
+          <End Type="EncuestaConglomeradosModel.CriterioPriorizacionMuestra" Role="CriterioPriorizacionMuestra" Multiplicity="0..1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CriterioPriorizacionMuestra">
+              <PropertyRef Name="cpm_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="cpm_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Cuadrantes">
+          <End Type="EncuestaConglomeradosModel.Cuadrantes" Role="Cuadrantes" Multiplicity="1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuadrantes">
+              <PropertyRef Name="cua_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="cua_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Localidades">
+          <End Type="EncuestaConglomeradosModel.Localidades" Role="Localidades" Multiplicity="1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="loc_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="loc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Subred">
+          <End Type="EncuestaConglomeradosModel.Subred" Role="Subred" Multiplicity="0..1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subred">
+              <PropertyRef Name="sub_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="sub_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_TipoDocumento">
+          <End Type="EncuestaConglomeradosModel.TipoDocumento" Role="TipoDocumento" Multiplicity="1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDocumento">
+              <PropertyRef Name="tpd_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="tpd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Usuarios">
+          <End Type="EncuestaConglomeradosModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="EncuestaConglomeradosModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="usu_id" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="usu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SP_FIND_ENCUESTA_Result3">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="DateTime" Name="enc_fecha" Nullable="false" />
+          <Property Type="Int32" Name="loc_id" Nullable="false" />
+          <Property Type="Int32" Name="upz_id" Nullable="false" />
+          <Property Type="Int32" Name="bar_id" Nullable="false" />
+          <Property Type="Int32" Name="cua_id" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="Int32" Name="cpm_id" Nullable="true" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="Int32" Name="tpd_id" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="Int32" Name="sub_id" Nullable="true" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_compartehabitacion" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="String" Name="enc_frecuenciadesplazamiento" Nullable="true" />
+          <Property Type="String" Name="enc_esquemavacunacioncompleto" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS_Result2">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_compartehabitacion" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="String" Name="enc_frecuenciadesplazamiento" Nullable="true" />
+          <Property Type="String" Name="enc_esquemavacunacioncompleto" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_ENCUESTAS_SUBRED_Result2">
+          <Property Type="Int64" Name="enc_id" Nullable="false" />
+          <Property Type="String" Name="enc_fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="loc_nombre" Nullable="false" />
+          <Property Type="String" Name="upz_nombre" Nullable="false" />
+          <Property Type="String" Name="bar_nombre" Nullable="false" />
+          <Property Type="String" Name="cua_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_muestreadopor" Nullable="false" />
+          <Property Type="String" Name="cpm_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_nombreencuestado" Nullable="false" />
+          <Property Type="String" Name="tpd_nombre" Nullable="false" />
+          <Property Type="String" Name="enc_numerodocumento" Nullable="false" />
+          <Property Type="Int32" Name="enc_edad" Nullable="false" />
+          <Property Type="String" Name="enc_genero" Nullable="false" />
+          <Property Type="String" Name="enc_dirresidencia" Nullable="false" />
+          <Property Type="String" Name="enc_numcelular" Nullable="false" />
+          <Property Type="String" Name="enc_aseguramiento" Nullable="false" />
+          <Property Type="String" Name="enc_nombreEAPB" Nullable="false" />
+          <Property Type="String" Name="enc_ocupacion" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonashabitan" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantaspersonasmayores60" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantascondicionescronicas" Nullable="false" />
+          <Property Type="Int32" Name="enc_cuantashabitacionescuentaresidencia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_comoconsideracumplimientocuarentena" Nullable="false" />
+          <Property Type="String" Name="enc_contactopersonas24horas" Nullable="false" />
+          <Property Type="String" Name="enc_dondedesplazoustedomiembrofamilia" Nullable="false" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_atrabajar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_compraralimento" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_ahacerdeporte" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_acitamedica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_sacarmascota" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_diligenciabancaria" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_socializar" Nullable="true" />
+          <Property Type="Boolean" Name="enc_motivosalirdecasa_otro" Nullable="true" />
+          <Property Type="String" Name="enc_otromotivosalirdecasa" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_noaplica" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_transmilenio" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_sitp" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_moto" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_bicicleta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_taxi" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_carro" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_apie" Nullable="true" />
+          <Property Type="Boolean" Name="enc_mediostransporteutilizo_otro" Nullable="true" />
+          <Property Type="String" Name="sub_nombre" Nullable="false" />
+          <Property Type="String" Name="usu_nombre" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimecreated" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usu_nombre_modificacion" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="enc_datetimeupdated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="enc_estadoembarazo" Nullable="true" />
+          <Property Type="String" Name="enc_etnia" Nullable="true" />
+          <Property Type="String" Name="enc_condiciondiscapacidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_hipertension" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_diabetesmellitus" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_obesidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_epoc" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_asma" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_otro" Nullable="true" />
+          <Property Type="String" Name="enc_presentaenfermedad_otrocuales" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="String" Name="enc_contactopersonascuantas" Nullable="true" />
+          <Property Type="String" Name="enc_dispuestoaislamiento" Nullable="true" />
+          <Property Type="String" Name="enc_vacunadocovid" Nullable="true" />
+          <Property Type="String" Name="enc_accedetomamuestra" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fiebre" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_tos" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorgarganta" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_fatigadebilidad" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ahogofaltaaire" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_ninguno" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_diarrea" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivehapresentadosintomas_perdidaolfato" Nullable="true" />
+          <Property Type="Boolean" Name="enc_presentaenfermedad_ninguno" Nullable="true" />
+          <Property Type="String" Name="enc_compartehabitacion" Nullable="true" />
+          <Property Type="Boolean" Name="enc_hapresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="Boolean" Name="enc_convivepresentadosintomas_dolorestomago" Nullable="true" />
+          <Property Type="String" Name="enc_frecuenciadesplazamiento" Nullable="true" />
+          <Property Type="String" Name="enc_esquemavacunacioncompleto" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1292,68 +2273,6 @@
                 <ScalarProperty Name="loc_id" ColumnName="loc_id" />
                 <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
                 <ScalarProperty Name="cua_id" ColumnName="cua_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Encuesta">
-            <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Encuesta">
-              <MappingFragment StoreEntitySet="Encuesta">
-                <ScalarProperty Name="enc_estado" ColumnName="enc_estado" />
-                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
-                <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
-                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
-                <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
-                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
-                <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
-                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
-                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
-                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
-                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
-                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
-                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
-                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
-                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
-                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
-                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
-                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
-                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
-                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
-                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
-                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
-                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
-                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
-                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
-                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
-                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
-                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
-                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
-                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
-                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
-                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
-                <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
-                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
-                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
-                <ScalarProperty Name="cua_id" ColumnName="cua_id" />
-                <ScalarProperty Name="bar_id" ColumnName="bar_id" />
-                <ScalarProperty Name="upz_id" ColumnName="upz_id" />
-                <ScalarProperty Name="loc_id" ColumnName="loc_id" />
-                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
-                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1418,7 +2337,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_ADD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ADD_ENCUESTA" />
           <FunctionImportMapping FunctionImportName="SP_ADD_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_ADD_USUARIO" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_REGISTRO_EXISTENTE" FunctionName="EncuestaConglomeradosModel.Store.SP_CONSULTAR_REGISTRO_EXISTENTE">
             <ResultMapping>
@@ -1535,128 +2453,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result">
-                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
-                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
-                <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
-                <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
-                <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
-                <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
-                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
-                <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
-                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
-                <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
-                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
-                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
-                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
-                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
-                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
-                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
-                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
-                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
-                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
-                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
-                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
-                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
-                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
-                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
-                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
-                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
-                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
-                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
-                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
-                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
-                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
-                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
-                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
-                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
-                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
-                <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
-                <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
-                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
-                <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
-                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS_SUBRED" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS_SUBRED">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result">
-                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
-                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
-                <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
-                <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
-                <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
-                <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
-                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
-                <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
-                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
-                <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
-                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
-                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
-                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
-                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
-                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
-                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
-                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
-                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
-                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
-                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
-                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
-                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
-                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
-                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
-                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
-                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
-                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
-                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
-                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
-                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
-                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
-                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
-                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
-                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
-                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
-                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
-                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
-                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
-                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
-                <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
-                <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
-                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
-                <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
-                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_LIST_LOCALIDADES" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_LOCALIDADES">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_LOCALIDADES_Result">
@@ -1732,11 +2528,104 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_UPD_CLAVE_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_CLAVE_USUARIO" />
-          <FunctionImportMapping FunctionImportName="SP_UPD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_ENCUESTA" />
           <FunctionImportMapping FunctionImportName="SP_UPD_USUARIO" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_USUARIO" />
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ANULAR_ENCUESTA" />
+          <EntitySetMapping Name="Encuesta">
+            <EntityTypeMapping TypeName="EncuestaConglomeradosModel.Encuesta">
+              <MappingFragment StoreEntitySet="Encuesta">
+                <ScalarProperty Name="enc_esquemavacunacioncompleto" ColumnName="enc_esquemavacunacioncompleto" />
+                <ScalarProperty Name="enc_frecuenciadesplazamiento" ColumnName="enc_frecuenciadesplazamiento" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorestomago" ColumnName="enc_convivepresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorestomago" ColumnName="enc_hapresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_compartehabitacion" ColumnName="enc_compartehabitacion" />
+                <ScalarProperty Name="enc_presentaenfermedad_ninguno" ColumnName="enc_presentaenfermedad_ninguno" />
+                <ScalarProperty Name="enc_presentaenfermedad_otrocuales" ColumnName="enc_presentaenfermedad_otrocuales" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_perdidaolfato" ColumnName="enc_convivehapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_diarrea" ColumnName="enc_convivehapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ninguno" ColumnName="enc_convivepresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ahogofaltaaire" ColumnName="enc_convivepresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fatigadebilidad" ColumnName="enc_convivepresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorgarganta" ColumnName="enc_convivepresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_tos" ColumnName="enc_convivepresentadosintomas_tos" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fiebre" ColumnName="enc_convivepresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_accedetomamuestra" ColumnName="enc_accedetomamuestra" />
+                <ScalarProperty Name="enc_vacunadocovid" ColumnName="enc_vacunadocovid" />
+                <ScalarProperty Name="enc_dispuestoaislamiento" ColumnName="enc_dispuestoaislamiento" />
+                <ScalarProperty Name="enc_contactopersonascuantas" ColumnName="enc_contactopersonascuantas" />
+                <ScalarProperty Name="enc_hapresentadosintomas_perdidaolfato" ColumnName="enc_hapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_hapresentadosintomas_diarrea" ColumnName="enc_hapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_presentaenfermedad_otro" ColumnName="enc_presentaenfermedad_otro" />
+                <ScalarProperty Name="enc_presentaenfermedad_asma" ColumnName="enc_presentaenfermedad_asma" />
+                <ScalarProperty Name="enc_presentaenfermedad_epoc" ColumnName="enc_presentaenfermedad_epoc" />
+                <ScalarProperty Name="enc_presentaenfermedad_obesidad" ColumnName="enc_presentaenfermedad_obesidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_diabetesmellitus" ColumnName="enc_presentaenfermedad_diabetesmellitus" />
+                <ScalarProperty Name="enc_presentaenfermedad_hipertension" ColumnName="enc_presentaenfermedad_hipertension" />
+                <ScalarProperty Name="enc_condiciondiscapacidad" ColumnName="enc_condiciondiscapacidad" />
+                <ScalarProperty Name="enc_estadoembarazo" ColumnName="enc_estadoembarazo" />
+                <ScalarProperty Name="enc_etnia" ColumnName="enc_etnia" />
+                <ScalarProperty Name="enc_estado" ColumnName="enc_estado" />
+                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+                <ScalarProperty Name="enc_usu_modificacion" ColumnName="enc_usu_modificacion" />
+                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="cpm_id" ColumnName="cpm_id" />
+                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+                <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+                <ScalarProperty Name="tpd_id" ColumnName="tpd_id" />
+                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+                <ScalarProperty Name="cua_id" ColumnName="cua_id" />
+                <ScalarProperty Name="bar_id" ColumnName="bar_id" />
+                <ScalarProperty Name="upz_id" ColumnName="upz_id" />
+                <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ADD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ADD_ENCUESTA" />
           <FunctionImportMapping FunctionImportName="SP_FIND_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_FIND_ENCUESTA">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result">
+              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_FIND_ENCUESTA_Result3">
                 <ScalarProperty Name="enc_id" ColumnName="enc_id" />
                 <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
                 <ScalarProperty Name="loc_id" ColumnName="loc_id" />
@@ -1788,10 +2677,222 @@
                 <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
                 <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
                 <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="enc_estadoembarazo" ColumnName="enc_estadoembarazo" />
+                <ScalarProperty Name="enc_etnia" ColumnName="enc_etnia" />
+                <ScalarProperty Name="enc_condiciondiscapacidad" ColumnName="enc_condiciondiscapacidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_hipertension" ColumnName="enc_presentaenfermedad_hipertension" />
+                <ScalarProperty Name="enc_presentaenfermedad_diabetesmellitus" ColumnName="enc_presentaenfermedad_diabetesmellitus" />
+                <ScalarProperty Name="enc_presentaenfermedad_obesidad" ColumnName="enc_presentaenfermedad_obesidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_epoc" ColumnName="enc_presentaenfermedad_epoc" />
+                <ScalarProperty Name="enc_presentaenfermedad_asma" ColumnName="enc_presentaenfermedad_asma" />
+                <ScalarProperty Name="enc_presentaenfermedad_otro" ColumnName="enc_presentaenfermedad_otro" />
+                <ScalarProperty Name="enc_presentaenfermedad_otrocuales" ColumnName="enc_presentaenfermedad_otrocuales" />
+                <ScalarProperty Name="enc_hapresentadosintomas_diarrea" ColumnName="enc_hapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_hapresentadosintomas_perdidaolfato" ColumnName="enc_hapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_contactopersonascuantas" ColumnName="enc_contactopersonascuantas" />
+                <ScalarProperty Name="enc_dispuestoaislamiento" ColumnName="enc_dispuestoaislamiento" />
+                <ScalarProperty Name="enc_vacunadocovid" ColumnName="enc_vacunadocovid" />
+                <ScalarProperty Name="enc_accedetomamuestra" ColumnName="enc_accedetomamuestra" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fiebre" ColumnName="enc_convivepresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_tos" ColumnName="enc_convivepresentadosintomas_tos" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorgarganta" ColumnName="enc_convivepresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fatigadebilidad" ColumnName="enc_convivepresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ahogofaltaaire" ColumnName="enc_convivepresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ninguno" ColumnName="enc_convivepresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_diarrea" ColumnName="enc_convivehapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_perdidaolfato" ColumnName="enc_convivehapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_presentaenfermedad_ninguno" ColumnName="enc_presentaenfermedad_ninguno" />
+                <ScalarProperty Name="enc_compartehabitacion" ColumnName="enc_compartehabitacion" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorestomago" ColumnName="enc_hapresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorestomago" ColumnName="enc_convivepresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_frecuenciadesplazamiento" ColumnName="enc_frecuenciadesplazamiento" />
+                <ScalarProperty Name="enc_esquemavacunacioncompleto" ColumnName="enc_esquemavacunacioncompleto" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_ANULAR_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_ANULAR_ENCUESTA" />
+          <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_Result2">
+                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+                <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+                <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+                <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+                <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+                <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+                <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+                <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+                <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+                <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
+                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+                <ScalarProperty Name="enc_estadoembarazo" ColumnName="enc_estadoembarazo" />
+                <ScalarProperty Name="enc_etnia" ColumnName="enc_etnia" />
+                <ScalarProperty Name="enc_condiciondiscapacidad" ColumnName="enc_condiciondiscapacidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_hipertension" ColumnName="enc_presentaenfermedad_hipertension" />
+                <ScalarProperty Name="enc_presentaenfermedad_diabetesmellitus" ColumnName="enc_presentaenfermedad_diabetesmellitus" />
+                <ScalarProperty Name="enc_presentaenfermedad_obesidad" ColumnName="enc_presentaenfermedad_obesidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_epoc" ColumnName="enc_presentaenfermedad_epoc" />
+                <ScalarProperty Name="enc_presentaenfermedad_asma" ColumnName="enc_presentaenfermedad_asma" />
+                <ScalarProperty Name="enc_presentaenfermedad_otro" ColumnName="enc_presentaenfermedad_otro" />
+                <ScalarProperty Name="enc_presentaenfermedad_otrocuales" ColumnName="enc_presentaenfermedad_otrocuales" />
+                <ScalarProperty Name="enc_hapresentadosintomas_diarrea" ColumnName="enc_hapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_hapresentadosintomas_perdidaolfato" ColumnName="enc_hapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_contactopersonascuantas" ColumnName="enc_contactopersonascuantas" />
+                <ScalarProperty Name="enc_dispuestoaislamiento" ColumnName="enc_dispuestoaislamiento" />
+                <ScalarProperty Name="enc_vacunadocovid" ColumnName="enc_vacunadocovid" />
+                <ScalarProperty Name="enc_accedetomamuestra" ColumnName="enc_accedetomamuestra" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fiebre" ColumnName="enc_convivepresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_tos" ColumnName="enc_convivepresentadosintomas_tos" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorgarganta" ColumnName="enc_convivepresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fatigadebilidad" ColumnName="enc_convivepresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ahogofaltaaire" ColumnName="enc_convivepresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ninguno" ColumnName="enc_convivepresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_diarrea" ColumnName="enc_convivehapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_perdidaolfato" ColumnName="enc_convivehapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_presentaenfermedad_ninguno" ColumnName="enc_presentaenfermedad_ninguno" />
+                <ScalarProperty Name="enc_compartehabitacion" ColumnName="enc_compartehabitacion" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorestomago" ColumnName="enc_hapresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorestomago" ColumnName="enc_convivepresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_frecuenciadesplazamiento" ColumnName="enc_frecuenciadesplazamiento" />
+                <ScalarProperty Name="enc_esquemavacunacioncompleto" ColumnName="enc_esquemavacunacioncompleto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LIST_ENCUESTAS_SUBRED" FunctionName="EncuestaConglomeradosModel.Store.SP_LIST_ENCUESTAS_SUBRED">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EncuestaConglomeradosModel.SP_LIST_ENCUESTAS_SUBRED_Result2">
+                <ScalarProperty Name="enc_id" ColumnName="enc_id" />
+                <ScalarProperty Name="enc_fecha" ColumnName="enc_fecha" />
+                <ScalarProperty Name="loc_nombre" ColumnName="loc_nombre" />
+                <ScalarProperty Name="upz_nombre" ColumnName="upz_nombre" />
+                <ScalarProperty Name="bar_nombre" ColumnName="bar_nombre" />
+                <ScalarProperty Name="cua_nombre" ColumnName="cua_nombre" />
+                <ScalarProperty Name="enc_muestreadopor" ColumnName="enc_muestreadopor" />
+                <ScalarProperty Name="cpm_nombre" ColumnName="cpm_nombre" />
+                <ScalarProperty Name="enc_nombreencuestado" ColumnName="enc_nombreencuestado" />
+                <ScalarProperty Name="tpd_nombre" ColumnName="tpd_nombre" />
+                <ScalarProperty Name="enc_numerodocumento" ColumnName="enc_numerodocumento" />
+                <ScalarProperty Name="enc_edad" ColumnName="enc_edad" />
+                <ScalarProperty Name="enc_genero" ColumnName="enc_genero" />
+                <ScalarProperty Name="enc_dirresidencia" ColumnName="enc_dirresidencia" />
+                <ScalarProperty Name="enc_numcelular" ColumnName="enc_numcelular" />
+                <ScalarProperty Name="enc_aseguramiento" ColumnName="enc_aseguramiento" />
+                <ScalarProperty Name="enc_nombreEAPB" ColumnName="enc_nombreEAPB" />
+                <ScalarProperty Name="enc_ocupacion" ColumnName="enc_ocupacion" />
+                <ScalarProperty Name="enc_cuantaspersonashabitan" ColumnName="enc_cuantaspersonashabitan" />
+                <ScalarProperty Name="enc_cuantaspersonasmayores60" ColumnName="enc_cuantaspersonasmayores60" />
+                <ScalarProperty Name="enc_cuantascondicionescronicas" ColumnName="enc_cuantascondicionescronicas" />
+                <ScalarProperty Name="enc_cuantashabitacionescuentaresidencia" ColumnName="enc_cuantashabitacionescuentaresidencia" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fiebre" ColumnName="enc_hapresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_hapresentadosintomas_tos" ColumnName="enc_hapresentadosintomas_tos" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorgarganta" ColumnName="enc_hapresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_hapresentadosintomas_fatigadebilidad" ColumnName="enc_hapresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ahogofaltaaire" ColumnName="enc_hapresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_hapresentadosintomas_ninguno" ColumnName="enc_hapresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_comoconsideracumplimientocuarentena" ColumnName="enc_comoconsideracumplimientocuarentena" />
+                <ScalarProperty Name="enc_contactopersonas24horas" ColumnName="enc_contactopersonas24horas" />
+                <ScalarProperty Name="enc_dondedesplazoustedomiembrofamilia" ColumnName="enc_dondedesplazoustedomiembrofamilia" />
+                <ScalarProperty Name="enc_motivosalirdecasa_noaplica" ColumnName="enc_motivosalirdecasa_noaplica" />
+                <ScalarProperty Name="enc_motivosalirdecasa_atrabajar" ColumnName="enc_motivosalirdecasa_atrabajar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_compraralimento" ColumnName="enc_motivosalirdecasa_compraralimento" />
+                <ScalarProperty Name="enc_motivosalirdecasa_ahacerdeporte" ColumnName="enc_motivosalirdecasa_ahacerdeporte" />
+                <ScalarProperty Name="enc_motivosalirdecasa_acitamedica" ColumnName="enc_motivosalirdecasa_acitamedica" />
+                <ScalarProperty Name="enc_motivosalirdecasa_sacarmascota" ColumnName="enc_motivosalirdecasa_sacarmascota" />
+                <ScalarProperty Name="enc_motivosalirdecasa_diligenciabancaria" ColumnName="enc_motivosalirdecasa_diligenciabancaria" />
+                <ScalarProperty Name="enc_motivosalirdecasa_socializar" ColumnName="enc_motivosalirdecasa_socializar" />
+                <ScalarProperty Name="enc_motivosalirdecasa_otro" ColumnName="enc_motivosalirdecasa_otro" />
+                <ScalarProperty Name="enc_otromotivosalirdecasa" ColumnName="enc_otromotivosalirdecasa" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_noaplica" ColumnName="enc_mediostransporteutilizo_noaplica" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_transmilenio" ColumnName="enc_mediostransporteutilizo_transmilenio" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_sitp" ColumnName="enc_mediostransporteutilizo_sitp" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_moto" ColumnName="enc_mediostransporteutilizo_moto" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_bicicleta" ColumnName="enc_mediostransporteutilizo_bicicleta" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_taxi" ColumnName="enc_mediostransporteutilizo_taxi" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_carro" ColumnName="enc_mediostransporteutilizo_carro" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_apie" ColumnName="enc_mediostransporteutilizo_apie" />
+                <ScalarProperty Name="enc_mediostransporteutilizo_otro" ColumnName="enc_mediostransporteutilizo_otro" />
+                <ScalarProperty Name="sub_nombre" ColumnName="sub_nombre" />
+                <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+                <ScalarProperty Name="enc_datetimecreated" ColumnName="enc_datetimecreated" />
+                <ScalarProperty Name="usu_nombre_modificacion" ColumnName="usu_nombre_modificacion" />
+                <ScalarProperty Name="enc_datetimeupdated" ColumnName="enc_datetimeupdated" />
+                <ScalarProperty Name="enc_estadoembarazo" ColumnName="enc_estadoembarazo" />
+                <ScalarProperty Name="enc_etnia" ColumnName="enc_etnia" />
+                <ScalarProperty Name="enc_condiciondiscapacidad" ColumnName="enc_condiciondiscapacidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_hipertension" ColumnName="enc_presentaenfermedad_hipertension" />
+                <ScalarProperty Name="enc_presentaenfermedad_diabetesmellitus" ColumnName="enc_presentaenfermedad_diabetesmellitus" />
+                <ScalarProperty Name="enc_presentaenfermedad_obesidad" ColumnName="enc_presentaenfermedad_obesidad" />
+                <ScalarProperty Name="enc_presentaenfermedad_epoc" ColumnName="enc_presentaenfermedad_epoc" />
+                <ScalarProperty Name="enc_presentaenfermedad_asma" ColumnName="enc_presentaenfermedad_asma" />
+                <ScalarProperty Name="enc_presentaenfermedad_otro" ColumnName="enc_presentaenfermedad_otro" />
+                <ScalarProperty Name="enc_presentaenfermedad_otrocuales" ColumnName="enc_presentaenfermedad_otrocuales" />
+                <ScalarProperty Name="enc_hapresentadosintomas_diarrea" ColumnName="enc_hapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_hapresentadosintomas_perdidaolfato" ColumnName="enc_hapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_contactopersonascuantas" ColumnName="enc_contactopersonascuantas" />
+                <ScalarProperty Name="enc_dispuestoaislamiento" ColumnName="enc_dispuestoaislamiento" />
+                <ScalarProperty Name="enc_vacunadocovid" ColumnName="enc_vacunadocovid" />
+                <ScalarProperty Name="enc_accedetomamuestra" ColumnName="enc_accedetomamuestra" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fiebre" ColumnName="enc_convivepresentadosintomas_fiebre" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_tos" ColumnName="enc_convivepresentadosintomas_tos" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorgarganta" ColumnName="enc_convivepresentadosintomas_dolorgarganta" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_fatigadebilidad" ColumnName="enc_convivepresentadosintomas_fatigadebilidad" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ahogofaltaaire" ColumnName="enc_convivepresentadosintomas_ahogofaltaaire" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_ninguno" ColumnName="enc_convivepresentadosintomas_ninguno" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_diarrea" ColumnName="enc_convivehapresentadosintomas_diarrea" />
+                <ScalarProperty Name="enc_convivehapresentadosintomas_perdidaolfato" ColumnName="enc_convivehapresentadosintomas_perdidaolfato" />
+                <ScalarProperty Name="enc_presentaenfermedad_ninguno" ColumnName="enc_presentaenfermedad_ninguno" />
+                <ScalarProperty Name="enc_compartehabitacion" ColumnName="enc_compartehabitacion" />
+                <ScalarProperty Name="enc_hapresentadosintomas_dolorestomago" ColumnName="enc_hapresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_convivepresentadosintomas_dolorestomago" ColumnName="enc_convivepresentadosintomas_dolorestomago" />
+                <ScalarProperty Name="enc_frecuenciadesplazamiento" ColumnName="enc_frecuenciadesplazamiento" />
+                <ScalarProperty Name="enc_esquemavacunacioncompleto" ColumnName="enc_esquemavacunacioncompleto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_UPD_ENCUESTA" FunctionName="EncuestaConglomeradosModel.Store.SP_UPD_ENCUESTA" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

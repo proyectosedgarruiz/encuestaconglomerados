@@ -11,7 +11,7 @@ namespace WSEncuestaConglomerado.Models.EDMX
 {
     using System;
     
-    public partial class SP_FIND_ENCUESTA_Result
+    public partial class SP_FIND_ENCUESTA_Result1
     {
         public long enc_id { get; set; }
         public System.DateTime enc_fecha { get; set; }

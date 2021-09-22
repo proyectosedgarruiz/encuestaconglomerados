@@ -11,7 +11,7 @@ namespace WSEncuestaConglomerado.Models.EDMX
 {
     using System;
     
-    public partial class SP_FIND_ENCUESTA_Result
+    public partial class SP_FIND_ENCUESTA_Result2
     {
         public long enc_id { get; set; }
         public System.DateTime enc_fecha { get; set; }
@@ -73,6 +73,7 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public Nullable<bool> enc_presentaenfermedad_epoc { get; set; }
         public Nullable<bool> enc_presentaenfermedad_asma { get; set; }
         public Nullable<bool> enc_presentaenfermedad_otro { get; set; }
+        public string enc_presentaenfermedad_otrocuales { get; set; }
         public Nullable<bool> enc_hapresentadosintomas_diarrea { get; set; }
         public Nullable<bool> enc_hapresentadosintomas_perdidaolfato { get; set; }
         public string enc_contactopersonascuantas { get; set; }

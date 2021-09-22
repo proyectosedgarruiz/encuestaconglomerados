@@ -11,18 +11,18 @@ namespace WSEncuestaConglomerado.Models.EDMX
 {
     using System;
     
-    public partial class SP_FIND_ENCUESTA_Result
+    public partial class SP_LIST_ENCUESTAS_Result1
     {
         public long enc_id { get; set; }
-        public System.DateTime enc_fecha { get; set; }
-        public int loc_id { get; set; }
-        public int upz_id { get; set; }
-        public int bar_id { get; set; }
-        public int cua_id { get; set; }
+        public string enc_fecha { get; set; }
+        public string loc_nombre { get; set; }
+        public string upz_nombre { get; set; }
+        public string bar_nombre { get; set; }
+        public string cua_nombre { get; set; }
         public string enc_muestreadopor { get; set; }
-        public Nullable<int> cpm_id { get; set; }
+        public string cpm_nombre { get; set; }
         public string enc_nombreencuestado { get; set; }
-        public int tpd_id { get; set; }
+        public string tpd_nombre { get; set; }
         public string enc_numerodocumento { get; set; }
         public int enc_edad { get; set; }
         public string enc_genero { get; set; }
@@ -63,7 +63,11 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public Nullable<bool> enc_mediostransporteutilizo_carro { get; set; }
         public Nullable<bool> enc_mediostransporteutilizo_apie { get; set; }
         public Nullable<bool> enc_mediostransporteutilizo_otro { get; set; }
-        public Nullable<int> sub_id { get; set; }
+        public string sub_nombre { get; set; }
+        public string usu_nombre { get; set; }
+        public System.DateTime enc_datetimecreated { get; set; }
+        public string usu_nombre_modificacion { get; set; }
+        public Nullable<System.DateTime> enc_datetimeupdated { get; set; }
         public string enc_estadoembarazo { get; set; }
         public string enc_etnia { get; set; }
         public string enc_condiciondiscapacidad { get; set; }
@@ -73,6 +77,7 @@ namespace WSEncuestaConglomerado.Models.EDMX
         public Nullable<bool> enc_presentaenfermedad_epoc { get; set; }
         public Nullable<bool> enc_presentaenfermedad_asma { get; set; }
         public Nullable<bool> enc_presentaenfermedad_otro { get; set; }
+        public string enc_presentaenfermedad_otrocuales { get; set; }
         public Nullable<bool> enc_hapresentadosintomas_diarrea { get; set; }
         public Nullable<bool> enc_hapresentadosintomas_perdidaolfato { get; set; }
         public string enc_contactopersonascuantas { get; set; }

@@ -162,12 +162,41 @@
       </div>
 
 
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="etnia">*11. Etnia : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Indígena" name="etnia"
+              [(ngModel)]="encuesta.enc_etnia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Indígena
+            <input type="radio" value="Afrodescendiente" name="etnia"
+              [(ngModel)]="encuesta.enc_etnia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Afrodescendiente
+            <input type="radio" value="Gitano" name="etnia"
+              [(ngModel)]="encuesta.enc_etnia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Gitano
+              <input type="radio" value="Otro" name="etnia"
+              [(ngModel)]="encuesta.enc_etnia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otro
+              <input type="radio" value="Ninguno" name="etnia"
+              [(ngModel)]="encuesta.enc_etnia"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
+      
+          </div>
+        </div>
+      </div>
 
 
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="aseguramiento">*11. Aseguramiento : </label>
+            <label class="labeld" for="aseguramiento">*12. Aseguramiento : </label>
           </div>
         </div>
       </div>
@@ -189,13 +218,122 @@
       </div>
 
 
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="embarazo">*13. ¿Se encuentra en estado de embarazo? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Si" name="embarazo"
+              [(ngModel)]="encuesta.enc_estadoembarazo"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Si
+            <input type="radio" value="No" name="embarazo"
+              [(ngModel)]="encuesta.enc_estadoembarazo"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No
+            <input type="radio" value="No Sabe" name="embarazo"
+              [(ngModel)]="encuesta.enc_estadoembarazo"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No Sabe
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="discapacidad">*14. ¿Se encuentra en condición de discapacidad? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Si" name="discapacidad"
+              [(ngModel)]="encuesta.enc_condiciondiscapacidad"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Si
+            <input type="radio" value="No" name="discapacidad"
+              [(ngModel)]="encuesta.enc_condiciondiscapacidad"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No
+           
+          </div>
+        </div>
+      </div>
+
+
+
+      
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="enfermedades">*15. ¿Usted presenta alguna de las siguientes enfermedades? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <div class="divTableRow">
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_hipertension"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_hipertension"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Hipertensión Arterial
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_diabetesmellitus"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_diabetesmellitus"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Diabetes Mellitus tipo I o II
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_obesidad"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_obesidad"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Obesidad
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_epoc"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_epoc"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> EPOC
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_asma"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_asma"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Asma
+              </div>
+              <div class="divTableCell">
+                
+                  <input type="checkbox" value="1" name="enc_presentaenfermedad_otro"
+                    [(ngModel)]="encuesta.enc_presentaenfermedad_otro"
+                    style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otras
+                  <input *ngIf="otrasenfermedadeseleccionado" required type="text" [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="encuesta.enc_presentaenfermead_otrocuales" class="form-control" id="enc_presentaenfermead_otrocuales"
+                    placeholder="Indique Otras Enfermedades">
+               
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_presentaenfermedad_ninguno"
+                  [(ngModel)]="encuesta.enc_presentaenfermedad_ninguno"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="ocupacion">*12. Ocupación ( a qué se dedica o qué tipo de trabajo realiza)
+            <label class="labeld" for="ocupacion">*16. Ocupación ( a qué se dedica o qué tipo de trabajo realiza)
               :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_ocupacion"
               class="form-control" id="enc_ocupacion" placeholder="Ingrese la ocupación" (keypress)="soloLetras($event)">
@@ -208,7 +346,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonashabitan">*13. ¿Cuántas personas habitan en su residencia?
+            <label class="labeld" for="cuantaspersonashabitan">*17. ¿Cuántas personas habitan en su residencia?
               :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantaspersonashabitan" class="form-control" id="enc_cuantaspersonashabitan"
@@ -221,7 +359,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonasmayores60">*14. ¿Cuántas son mayores de 60 años? :</label>
+            <label class="labeld" for="cuantaspersonasmayores60">*18. ¿Cuántas son mayores de 60 años? :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantaspersonasmayores60" class="form-control" id="enc_cuantaspersonasmayores60"
               placeholder="" maxlength="2" mask="99" (keypress)="soloNumeros($event)">
@@ -229,7 +367,7 @@
         </div>
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonascronicas">*15. ¿Cuántas con condiciones crónicas? :</label>
+            <label class="labeld" for="cuantaspersonascronicas">*19. ¿Cuántas con condiciones crónicas? :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantascondicionescronicas" class="form-control"
               id="enc_cuantascondicionescronicas" placeholder="" maxlength="2" mask="99"
@@ -243,7 +381,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantashabitacionesresidencia">*16. ¿Con cuántas habitaciones cuenta la
+            <label class="labeld" for="cuantashabitacionesresidencia">*20. ¿Con cuántas habitaciones cuenta la
               residencia?:</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantashabitacionescuentaresidencia" class="form-control"
@@ -254,13 +392,33 @@
       </div>
 
 
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="compartehabitacion">*21. ¿Comparte su habitación con otra (s) personas (s)? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Si" name="enc_compartehabitacion"
+              [(ngModel)]="encuesta.enc_compartehabitacion"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Si
+            <input type="radio" value="No" name="enc_compartehabitacion"
+              [(ngModel)]="encuesta.enc_compartehabitacion"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No
+           
+          </div>
+        </div>
+      </div>
+
+
 
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="hapresentadosintomas">*17. ¿Usted o alguien de las personas que viven con usted
-              ha presentado uno
-              varios de los siguientes síntomas o molestias? : </label>
+            <label class="labeld" for="hapresentadosintomas">*22. ¿Usted ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
           </div>
         </div>
       </div>
@@ -307,6 +465,28 @@
               </div>
               <div class="divTableCell">
 
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_diarrea"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_diarrea"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Diarrea
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_dolorestomago"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_dolorestomago"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Dolor de Estómago
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_hapresentadosintomas_perdidaolfato"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_hapresentadosintomas_perdidaolfato"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Pérdida de Olfato
+              </div>
+
+              <div class="divTableCell">
+
                 <input type="checkbox" value="1" name="enc_hapresentadosintomas_ninguno"
                   [(ngModel)]="encuesta.enc_hapresentadosintomas_ninguno" (change)="deshabilitarsintomas()"
                   style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
@@ -317,12 +497,93 @@
       </div>
 
 
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="convivepresentadosintomas">*23. ¿Alguna de las personas con las que convive ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <div class="divTableRow">
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_fiebre"
+                  (change)="deshabilitarnoaplicasintomas()" [(ngModel)]="encuesta.enc_convivepresentadosintomas_fiebre"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Fiebre
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_tos"
+                  (change)="deshabilitarnoaplicasintomas()" [(ngModel)]="encuesta.enc_convivepresentadosintomas_tos"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Tos
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_dolorgarganta"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_dolorgarganta"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Dolor de
+                garganta
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_fatigadebilidad"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_fatigadebilidad"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Fatiga o
+                debilidad
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_ahogofaltaaire"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_ahogofaltaaire"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ahogo o
+                falta
+                de aire
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_diarrea"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_diarrea"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Diarrea
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_dolorestomago"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_dolorestomago"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Dolor de Estómago
+              </div>
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_perdidaolfato"
+                  (change)="deshabilitarnoaplicasintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_perdidaolfato"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Pérdida de Olfato
+              </div>
+
+              <div class="divTableCell">
+
+                <input type="checkbox" value="1" name="enc_convivepresentadosintomas_ninguno"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_ninguno" (change)="deshabilitarsintomas()"
+                  style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="comoconsideracumplimientocuarentena">*18. ¿Cómo considera o evalúa el
-              cumplimiento o acatamiento del confinamiento o la cuarentena en el barrio donde usted vive? : </label>
+            <label class="labeld" for="comoconsideracumplimientocuarentena">*24. ¿Cómo considera o evalúa el
+              cumplimiento de las medidas de protección actualmente en el barrio donde usted vive? : </label>
           </div>
         </div>
       </div>
@@ -356,21 +617,60 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="contactopersonas24horas">*19. En las últimas 24 horas, ¿Ha estado en contacto con
-              otras personas
-              <u>fuera de su casa</u>? (<u>dentro de una distancia menor de 2 metros y más de 15 minutos</u>) : </label>
+            <label class="labeld" for="contactopersonas24horas">*25. En los últimos 5 días, ¿Ha estado en contacto durante más de 15 minutos 
+              sin elementos de protección personal con una persona o varias personas positivas o sospechosas de COVID-19? : </label>
           </div>
         </div>
       </div>
       <div class="form-row">
         <div class="col">
           <div class="form-group">
+          <label>
             <input type="radio" value="SI" name="contactopersonas24horas"
               [(ngModel)]="encuesta.enc_contactopersonas24horas"
               style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> SI
-            <input type="radio" value="NO" name="contactopersonas24horas"
+            </label>
+            <label>
+              <input type="radio" value="NO" name="contactopersonas24horas"
               [(ngModel)]="encuesta.enc_contactopersonas24horas"
               style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> NO
+            </label>
+            <label>
+              <input *ngIf="encuesta.enc_contactopersonas24horas=='SI'" required type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="encuesta.enc_contactopersonascuantas" class="form-control" id="enc_contactopersonascuantas"
+              placeholder="Cuantas Personas" maxlength="2" mask="99" (keypress)="soloNumeros($event)">
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="frecuenciadesplazamiento">*26. ¿Con qué frecuencia se desplaza a otras localidades de la ciudad? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Nunca" name="enc_frecuenciadesplazamiento"
+              [(ngModel)]="encuesta.enc_frecuenciadesplazamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Nunca
+            <input type="radio" value="Casi Nunca" name="enc_frecuenciadesplazamiento"
+              [(ngModel)]="encuesta.enc_frecuenciadesplazamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Casi Nunca
+            <input type="radio" value="Frecuentemente"
+              name="enc_frecuenciadesplazamiento" [(ngModel)]="encuesta.enc_frecuenciadesplazamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Frecuentemente
+            <input type="radio" value="Casi Siempre" name="enc_frecuenciadesplazamiento"
+              [(ngModel)]="encuesta.enc_frecuenciadesplazamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Casi Siempre
+              <input type="radio" value="Siempre" name="enc_frecuenciadesplazamiento"
+              [(ngModel)]="encuesta.enc_frecuenciadesplazamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Siempre
 
           </div>
         </div>
@@ -378,12 +678,10 @@
 
 
 
-
-
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="dondedesplazoustedomiembrofamilia">*20. ¿Hasta dónde se desplazó usted o el
+            <label class="labeld" for="dondedesplazoustedomiembrofamilia">*27. ¿Hasta dónde se desplazó usted o el
               miembro de su familia
               que salió fuera de la vivienda? : </label>
           </div>
@@ -416,7 +714,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="motivosalirdecasa">*21. ¿Por qué motivo o razón salió o salieron a la calle? :
+            <label class="labeld" for="motivosalirdecasa">*28. ¿Por qué motivo o razón salió o salieron a la calle? :
             </label>
           </div>
         </div>
@@ -485,7 +783,7 @@
                 style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otro motivo
             </label>
             <label>
-              <input *ngIf="otromotivoseleccionado" required type="text" [ngModelOptions]="{standalone: true}"
+              <input *ngIf="encuesta.enc_motivosalirdecasa_otro == '1'" required type="text" [ngModelOptions]="{standalone: true}"
                 [(ngModel)]="encuesta.enc_otromotivosalirdecasa" class="form-control" id="enc_otromotivosalirdecasa"
                 placeholder="Indique Otro Motivo">
             </label>
@@ -497,7 +795,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="mediostransporteutilizo">*22. ¿Qué medios de transporte utilizó? : </label>
+            <label class="labeld" for="mediostransporteutilizo">*29. ¿Qué medios de transporte utilizó? : </label>
           </div>
         </div>
       </div>
@@ -541,7 +839,69 @@
         </div>
       </div>
 
+   
 
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="contactopersonas24horas">*30. ¿Usted está dispuesto a cumplir con el aislamiento indicado por el personal de salud para evitar que más personas se contagien ? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="Dispuesto" name="enc_dispuestoaislamiento"
+              [(ngModel)]="encuesta.enc_dispuestoaislamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Dispuesto
+            <input type="radio" value="No Dispuesto" name="enc_dispuestoaislamiento"
+              [(ngModel)]="encuesta.enc_dispuestoaislamiento"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> No Dispuesto
+            
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="vacunado">*31. ¿Usted se encuentra actualmente vacunado para el virus COVID-19 ? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="SI" name="enc_vacunadocovid"
+              [(ngModel)]="encuesta.enc_vacunadocovid"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> SI
+            <input type="radio" value="NO" name="enc_vacunadocovid"
+              [(ngModel)]="encuesta.enc_vacunadocovid"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> NO
+             </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="labeld" for="esquemavacunacion">*32. ¿Tiene el esquema de vacunación completo ? : </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <input type="radio" value="SI" name="enc_esquemavacunacioncompleto"
+              [(ngModel)]="encuesta.enc_esquemavacunacioncompleto"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> SI
+            <input type="radio" value="NO" name="enc_esquemavacunacioncompleto"
+              [(ngModel)]="encuesta.enc_esquemavacunacioncompleto"
+              style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> NO
+             </div>
+        </div>
+      </div>
 
 
       <div class="contenedorsecundario">
@@ -559,7 +919,7 @@
             <div class="form-group">
               <label for="subred">Subred :</label>
               <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.sub_id"
-                id="sub_id" >
+                id="sub_id" readonly="readonly">
                 <option *ngFor="let fila of selectSubRedes" value="{{fila.sub_id}}">{{fila.sub_nombre}}
                 </option>
               </select>
@@ -571,6 +931,43 @@
 
       </div>
       <br>
+      <div class="contenedorsecundarioleyenda">
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label class="labeld" for="notaimportante"><b> Querido Registrador, recuerde realizar acciones IEC en :</b></label>
+            </div>
+          </div>
+        </div>
+       
+        <div class="form-row">
+
+          <div class="col">
+            <div class="form-group">
+              <label for="subred">1. Mitos en torno a la vacunación: Aún vacunado puede contagiarse de COVID-19 y contagiar a su familia,
+                amigos y demás contactos.
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="subred">2. Medidas de bioseguridad y autocuidado que deben mantener: EPP, lavado de manos, el aislamiento como
+                medida fundamental que evita la propagación del virus, etc.
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="subred">3. Si presenta síntomas y estuvo en contacto con una persona sospechosa o positiva para COVID-19, debe aislarse
+                e informar a sus contactos.
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="subred">4. Mecanismo de consulta de resultado de la muestra en la página web de la SDS.</label>
+            </div>
+
+          </div>
+
+      
+        </div>
+
+      </div>
       <br>
 
       <div class="divTableRow">
@@ -640,6 +1037,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="d('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-danger" (click)="saveForm(); d('Ok click'); ">Aceptar</button>
+    <button id="saveenc" type="button" class="btn btn-danger" (click)="saveForm(); d('Ok click'); ">Aceptar</button>
   </div>
 </ng-template>

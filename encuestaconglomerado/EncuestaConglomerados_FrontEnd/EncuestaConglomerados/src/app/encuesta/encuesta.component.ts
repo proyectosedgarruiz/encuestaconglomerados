@@ -30,6 +30,7 @@ export class EncuestaComponent implements OnInit {
   seleccionadoUPZ: boolean;
   formSaved: boolean;
   otromotivoseleccionado: boolean = false;
+  otrasenfermedadeseleccionado: boolean = false;
 
   error: any;
   ValorServicio: any;
@@ -54,7 +55,7 @@ export class EncuestaComponent implements OnInit {
   VisualizarBotonGuardar: boolean = true;
   VisualizarBotonActualizar: boolean = false;
 
-  SolicitudGrabacion : boolean = false;
+  SolicitudGrabacion: boolean = false;
 
 
   constructor(private encuestaservice: EncuestaService) { }
@@ -71,26 +72,21 @@ export class EncuestaComponent implements OnInit {
         this.VisualizarBotonGuardar = false;
         this.VisualizarBotonActualizar = true;
         this.GetInformacionEncuesta(this.edicion.enc_id);
-
       }
-
     }
     else {
 
       this.GetListaLocalidades(null);
       this.GetListaCriterioPriorizacionMuestra(null);
       this.GetListaTipoDocumentos(null);
-     
-      if(this.publicas.sub_id != 0 && this.publicas.sub_id != null){
+
+      if (this.publicas.sub_id != 0 && this.publicas.sub_id != null) {
         this.GetListaSubRedes(this.publicas.sub_id);
       }
-      else
-      {
+      else {
         this.GetListaSubRedes(null);
       }
     }
-
-
   }
 
 
@@ -100,7 +96,7 @@ export class EncuestaComponent implements OnInit {
 
   async GetInformacionEncuesta(enc_id: number) {
     try {
-   
+
       if (!this.ValorServicio) {
         this.ValorServicio = await this.GetInformacionEncuestaResult(enc_id);
 
@@ -112,8 +108,6 @@ export class EncuestaComponent implements OnInit {
         this.GetListaTipoDocumentos(this.ValorServicio.tpd_id);
         this.GetListaSubRedes(this.ValorServicio.sub_id);
 
-
-
         this.InhabilitadoUPZ = false;
         this.GetListaUPZs(this.encuesta.loc_id, this.ValorServicio.upz_id);
 
@@ -124,7 +118,6 @@ export class EncuestaComponent implements OnInit {
         this.GetListaCuadrantes(this.encuesta.loc_id, this.encuesta.upz_id, this.encuesta.cua_id);
 
       }
-
 
     }
     catch (error) {
@@ -194,8 +187,8 @@ export class EncuestaComponent implements OnInit {
 
       if (upz_id != 0 && upz_id != null)
         this.encuesta.upz_id = upz_id;
-        else if (upz_id ==0)
-        this.encuesta.upz_id =0;
+      else if (upz_id == 0)
+        this.encuesta.upz_id = 0;
       else
         this.encuesta.upz_id = -1;
 
@@ -341,6 +334,12 @@ export class EncuestaComponent implements OnInit {
       else
         this.encuesta.sub_id = 0;
 
+
+      const selectsub_id = document.getElementById('sub_id') as HTMLSelectElement;
+      if (selectsub_id != undefined) {
+        selectsub_id.disabled = true;
+      }
+
     }
     catch (error) {
       console.error('[error en GetListaSubRedes] : ' + error);
@@ -369,7 +368,24 @@ export class EncuestaComponent implements OnInit {
     this.encuesta.enc_hapresentadosintomas_dolorgarganta = false;
     this.encuesta.enc_hapresentadosintomas_fatigadebilidad = false;
     this.encuesta.enc_hapresentadosintomas_ahogofaltaaire = false;
+    this.encuesta.enc_hapresentadosintomas_diarrea = false;
+    this.encuesta.enc_hapresentadosintomas_perdidaolfato = false;
   }
+
+  deshabilitarnoaplicasintomasconvive() {
+    this.encuesta.enc_convivepresentadosintomas_ninguno = false;
+  }
+
+  deshabilitarsintomasconvive() {
+    this.encuesta.enc_convivepresentadosintomas_fiebre = false;
+    this.encuesta.enc_convivepresentadosintomas_tos = false;
+    this.encuesta.enc_convivepresentadosintomas_dolorgarganta = false;
+    this.encuesta.enc_convivepresentadosintomas_fatigadebilidad = false;
+    this.encuesta.enc_convivepresentadosintomas_ahogofaltaaire = false;
+    this.encuesta.enc_convivehapresentadosintomas_diarrea = false;
+    this.encuesta.enc_convivehapresentadosintomas_perdidaolfato = false;
+  }
+
 
   deshabilitarmotivosalirdecasanoaplica() {
     this.encuesta.enc_motivosalirdecasa_noaplica = false;
@@ -505,8 +521,22 @@ export class EncuestaComponent implements OnInit {
       this.encuesta.enc_hapresentadosintomas_dolorgarganta === false &&
       this.encuesta.enc_hapresentadosintomas_fatigadebilidad === false &&
       this.encuesta.enc_hapresentadosintomas_ahogofaltaaire === false &&
+      this.encuesta.enc_hapresentadosintomas_diarrea === false &&
+      this.encuesta.enc_hapresentadosintomas_perdidaolfato === false &&
       this.encuesta.enc_hapresentadosintomas_ninguno === false) {
       this.errorText = 'Por favor seleccione mínimo una opción en la casilla ha presentado sintomas';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_convivepresentadosintomas_fiebre === false &&
+      this.encuesta.enc_convivepresentadosintomas_tos === false &&
+      this.encuesta.enc_convivepresentadosintomas_dolorgarganta === false &&
+      this.encuesta.enc_convivepresentadosintomas_fatigadebilidad === false &&
+      this.encuesta.enc_convivepresentadosintomas_ahogofaltaaire === false &&
+      this.encuesta.enc_convivehapresentadosintomas_diarrea === false &&
+      this.encuesta.enc_convivehapresentadosintomas_perdidaolfato === false &&
+      this.encuesta.enc_convivepresentadosintomas_ninguno === false) {
+      this.errorText = 'Por favor seleccione mínimo una opción en la casilla persona con la que convive ha presentado sintomas';
       this.ShowAlertsValidations();
       return false;
     }
@@ -561,11 +591,18 @@ export class EncuestaComponent implements OnInit {
   }
 
 
-  saveForm() {
+  async saveForm() {
     this.encuesta.usu_id = this.publicas.usu_id;
     if (this.validateForm()) {
+
+
+      const btnsave = document.getElementById('saveenc') as HTMLButtonElement;
+      if (btnsave != undefined) {
+        btnsave.disabled = true;
+      }
+
       //Se ingresan los datos del formulario y se envian al Web Service
-      this.encuestaservice.addEncuesta(this.encuesta).subscribe(result => {
+      await this.encuestaservice.addEncuesta(this.encuesta).subscribe(result => {
         if (result.OperacionExitosa == true) {
           this.SolicitudGrabacion = true;
           this.formSaved = true;
@@ -574,6 +611,7 @@ export class EncuestaComponent implements OnInit {
           this.errorText = 'Error en en el registro de la encuesta';
           this.ShowAlertsValidations();
           console.log(result.Mensaje);
+          this.SolicitudGrabacion = true;
         }
       },
         error => {
@@ -588,13 +626,14 @@ export class EncuestaComponent implements OnInit {
   }
 
 
-  ActualizarEncuesta() {
+
+  async ActualizarEncuesta() {
     this.encuesta.usu_id = this.publicas.usu_id;
     this.encuesta.enc_fecha = new Date(this.FechaEdicion);
     if (this.validateForm()) {
       //Se ingresan los datos del formulario y se envian al Web Service
 
-      this.encuestaservice.updEncuesta(this.encuesta).subscribe(result => {
+      await this.encuestaservice.updEncuesta(this.encuesta).subscribe(result => {
         if (result.OperacionExitosa == true) {
           //Debe informar al componente padre que ya guardo y cerrar la ventana
           this.finalizoedicion.emit(true);
@@ -629,15 +668,14 @@ export class EncuestaComponent implements OnInit {
   }
 
   confirmar() {
-    
-    if(this.SolicitudGrabacion === false)
-    {
-    var r = confirm("¿Confirma que la información registrada es correcta ?");
-    if (r == true) {
-      
-      this.saveForm();
+
+    if (this.SolicitudGrabacion === false) {
+      var r = confirm("¿Confirma que la información registrada es correcta ?");
+      if (r == true) {
+
+        this.saveForm();
+      }
     }
-  }
   }
 
 
@@ -762,7 +800,37 @@ export class EncuestaComponent implements OnInit {
       enc_mediostransporteutilizo_apie: false,
       enc_mediostransporteutilizo_otro: false,
       sub_id: 0,
-      usu_id: 0
+      usu_id: 0,
+      enc_estadoembarazo: '',
+      enc_etnia: '',
+      enc_condiciondiscapacidad: '',
+      enc_presentaenfermedad_hipertension: false,
+      enc_presentaenfermedad_diabetesmellitus: false,
+      enc_presentaenfermedad_obesidad: false,
+      enc_presentaenfermedad_epoc: false,
+      enc_presentaenfermedad_asma: false,
+      enc_presentaenfermedad_otro: false,
+      enc_presentaenfermead_otrocuales: '',
+      enc_hapresentadosintomas_diarrea: false,
+      enc_hapresentadosintomas_perdidaolfato: false,
+      enc_contactopersonascuantas: '',
+      enc_dispuestoaislamiento: '',
+      enc_vacunadocovid: '',
+      enc_accedetomamuestra: '',
+      enc_convivepresentadosintomas_fiebre: false,
+      enc_convivepresentadosintomas_tos: false,
+      enc_convivepresentadosintomas_dolorgarganta: false,
+      enc_convivepresentadosintomas_fatigadebilidad: false,
+      enc_convivepresentadosintomas_ahogofaltaaire: false,
+      enc_convivepresentadosintomas_ninguno: false,
+      enc_convivehapresentadosintomas_diarrea: false,
+      enc_convivehapresentadosintomas_perdidaolfato: false,
+      enc_presentaenfermedad_ninguno: false,
+      enc_compartehabitacion: '',
+      enc_hapresentadosintomas_dolorestomago: false,
+      enc_convivepresentadosintomas_dolorestomago: false,
+      enc_frecuenciadesplazamiento: '',
+      enc_esquemavacunacioncompleto: ''
 
     };
   }

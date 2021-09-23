@@ -116,7 +116,7 @@
 
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="criteriopriormuestreo">*7. Criterio de Priorización para muestreo :</label>
+            <label class="labeld" for="criteriopriormuestreo">*6. Criterio de Priorización para muestreo :</label>
             <select required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.cpm_id"
               id="cpm_id" >
               <option *ngFor="let fila of selectCriterioPriorizacionMuestra" value="{{fila.cpm_id}}">{{fila.cpm_nombre}}
@@ -131,7 +131,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="nombreencuestado">*8. Nombre del encuestado :</label>
+            <label class="labeld" for="nombreencuestado">*7. Nombre del encuestado :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_nombreencuestado" class="form-control" id="enc_nombreencuestado"
               placeholder="Ingrese el nombre del encuestado">
@@ -142,7 +142,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="tipodocumento">*9. Tipo de Documento :</label>
+            <label class="labeld" for="tipodocumento">*8. Tipo de Documento :</label>
             <select #TipoDocumento required class="form-control" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.tpd_id" id="tipodocumento">
               <option *ngFor="let fila of selectTipoDocumento" value="{{fila.tpd_id}}">{{fila.tpd_nombre}}
@@ -155,7 +155,7 @@
 
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="numerodocumento">*10. Número de Documento :</label>
+            <label class="labeld" for="numerodocumento">*9. Número de Documento :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_numerodocumento"
               class="form-control" id="enc_numerodocumento" placeholder="Ingrese el número de documento">
           </div>
@@ -166,7 +166,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="etnia">*11. Etnia : </label>
+            <label class="labeld" for="etnia">*10. Etnia : </label>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="aseguramiento">*12. Aseguramiento : </label>
+            <label class="labeld" for="aseguramiento">*11. Aseguramiento : </label>
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="embarazo">*13. ¿Se encuentra en estado de embarazo? : </label>
+            <label class="labeld" for="embarazo">*12. ¿Se encuentra en estado de embarazo? : </label>
           </div>
         </div>
       </div>
@@ -246,7 +246,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="discapacidad">*14. ¿Se encuentra en condición de discapacidad? : </label>
+            <label class="labeld" for="discapacidad">*13. ¿Se encuentra en condición de discapacidad? : </label>
           </div>
         </div>
       </div>
@@ -270,7 +270,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="enfermedades">*15. ¿Usted presenta alguna de las siguientes enfermedades? : </label>
+            <label class="labeld" for="enfermedades">*14. ¿Usted presenta alguna de las siguientes enfermedades? : </label>
           </div>
         </div>
       </div>
@@ -334,7 +334,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="ocupacion">*16. Ocupación ( a qué se dedica o qué tipo de trabajo realiza)
+            <label class="labeld" for="ocupacion">*15. Ocupación ( a qué se dedica o qué tipo de trabajo realiza)
               :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="encuesta.enc_ocupacion"
               class="form-control" id="enc_ocupacion" placeholder="Ingrese la ocupación" (keypress)="soloLetras($event)">
@@ -347,7 +347,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonashabitan">*17. ¿Cuántas personas habitan en su residencia?
+            <label class="labeld" for="cuantaspersonashabitan">*16. ¿Cuántas personas habitan en su residencia?
               :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantaspersonashabitan" class="form-control" id="enc_cuantaspersonashabitan"
@@ -360,7 +360,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonasmayores60">*18. ¿Cuántas son mayores de 60 años? :</label>
+            <label class="labeld" for="cuantaspersonasmayores60">*17. ¿Cuántas son mayores de 60 años? :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantaspersonasmayores60" class="form-control" id="enc_cuantaspersonasmayores60"
               placeholder="" maxlength="2" mask="99" (keypress)="soloNumeros($event)">
@@ -368,7 +368,7 @@
         </div>
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantaspersonascronicas">*19. ¿Cuántas con condiciones crónicas? :</label>
+            <label class="labeld" for="cuantaspersonascronicas">*18. ¿Cuántas con condiciones crónicas? :</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantascondicionescronicas" class="form-control"
               id="enc_cuantascondicionescronicas" placeholder="" maxlength="2" mask="99"
@@ -382,7 +382,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="cuantashabitacionesresidencia">*20. ¿Con cuántas habitaciones cuenta la
+            <label class="labeld" for="cuantashabitacionesresidencia">*19. ¿Con cuántas habitaciones cuenta la
               residencia?:</label>
             <input required type="text" [ngModelOptions]="{standalone: true}"
               [(ngModel)]="encuesta.enc_cuantashabitacionescuentaresidencia" class="form-control"
@@ -396,7 +396,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="compartehabitacion">*21. ¿Comparte su habitación con otra (s) personas (s)? : </label>
+            <label class="labeld" for="compartehabitacion">*20. ¿Comparte su habitación con otra (s) personas (s)? : </label>
           </div>
         </div>
       </div>
@@ -419,7 +419,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="hapresentadosintomas">*22. ¿Usted ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
+            <label class="labeld" for="hapresentadosintomas">*21. ¿Usted ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
           </div>
         </div>
       </div>
@@ -501,7 +501,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="convivepresentadosintomas">*23. ¿Alguna de las personas con las que convive ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
+            <label class="labeld" for="convivepresentadosintomas">*22. ¿Alguna de las personas con las que convive ha presentado uno o varios de los siguientes síntomas o molestias? : </label>
           </div>
         </div>
       </div>
@@ -583,7 +583,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="comoconsideracumplimientocuarentena">*24. ¿Cómo considera o evalúa el
+            <label class="labeld" for="comoconsideracumplimientocuarentena">*23. ¿Cómo considera o evalúa el
               cumplimiento de las medidas de protección actualmente en el barrio donde usted vive? : </label>
           </div>
         </div>
@@ -618,7 +618,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="contactopersonas24horas">*25. En los últimos 5 días, ¿Ha estado en contacto durante más de 15 minutos 
+            <label class="labeld" for="contactopersonas24horas">*24. En los últimos 5 días, ¿Ha estado en contacto durante más de 15 minutos 
               sin elementos de protección personal con una persona o varias personas positivas o sospechosas de COVID-19? : </label>
           </div>
         </div>
@@ -650,7 +650,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="frecuenciadesplazamiento">*26. ¿Con qué frecuencia se desplaza a otras localidades de la ciudad? : </label>
+            <label class="labeld" for="frecuenciadesplazamiento">*25. ¿Con qué frecuencia se desplaza a otras localidades de la ciudad? : </label>
           </div>
         </div>
       </div>
@@ -682,7 +682,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="dondedesplazoustedomiembrofamilia">*27. ¿Hasta dónde se desplazó usted o el
+            <label class="labeld" for="dondedesplazoustedomiembrofamilia">*26. ¿Hasta dónde se desplazó usted o el
               miembro de su familia
               que salió fuera de la vivienda? : </label>
           </div>
@@ -715,7 +715,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="motivosalirdecasa">*28. ¿Por qué motivo o razón salió o salieron a la calle? :
+            <label class="labeld" for="motivosalirdecasa">*27. ¿Por qué motivo o razón salió o salieron a la calle? :
             </label>
           </div>
         </div>
@@ -796,7 +796,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="mediostransporteutilizo">*29. ¿Qué medios de transporte utilizó? : </label>
+            <label class="labeld" for="mediostransporteutilizo">*28. ¿Qué medios de transporte utilizó? : </label>
           </div>
         </div>
       </div>
@@ -845,7 +845,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="contactopersonas24horas">*30. ¿Usted está dispuesto a cumplir con el aislamiento indicado por el personal de salud para evitar que más personas se contagien ? : </label>
+            <label class="labeld" for="contactopersonas24horas">*29. ¿Usted está dispuesto a cumplir con el aislamiento indicado por el personal de salud para evitar que más personas se contagien ? : </label>
           </div>
         </div>
       </div>
@@ -867,7 +867,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="vacunado">*31. ¿Usted se encuentra actualmente vacunado para el virus COVID-19 ? : </label>
+            <label class="labeld" for="vacunado">*30. ¿Usted se encuentra actualmente vacunado para el virus COVID-19 ? : </label>
           </div>
         </div>
       </div>
@@ -887,7 +887,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="esquemavacunacion">*32. ¿Tiene el esquema de vacunación completo ? : </label>
+            <label class="labeld" for="esquemavacunacion">*31. ¿Tiene el esquema de vacunación completo ? : </label>
           </div>
         </div>
       </div>
@@ -908,7 +908,7 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label class="labeld" for="enc_accedetomamuestra">*33. ¿El usuario accede a la toma de la muestra para identificación de COVID-19 ? : </label>
+            <label class="labeld" for="enc_accedetomamuestra">*32. ¿El usuario accede a la toma de la muestra para identificación de COVID-19 ? : </label>
           </div>
         </div>
       </div>

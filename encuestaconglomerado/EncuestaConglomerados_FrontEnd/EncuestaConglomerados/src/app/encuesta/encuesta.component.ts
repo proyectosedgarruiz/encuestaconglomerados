@@ -461,11 +461,11 @@ export class EncuestaComponent implements OnInit {
       this.ShowAlertsValidations();
       return false;
     }
-    else if (this.encuesta.enc_muestreadopor === '' || this.encuesta.enc_muestreadopor === undefined) {
+ /*   else if (this.encuesta.enc_muestreadopor === '' || this.encuesta.enc_muestreadopor === undefined) {
       this.errorText = 'Por favor seleccione una opción en la casilla muestrado por';
       this.ShowAlertsValidations();
       return false;
-    }
+    }*/
     else if (this.encuesta.cpm_id === 0 || this.encuesta.cpm_id === undefined) {
       this.errorText = 'Por favor seleccione el criterio de priorización para muestra';
       this.ShowAlertsValidations();

@@ -17,7 +17,6 @@ namespace WSEncuestaConglomerado.Services
 
         public EncuestaRespuesta addEncuesta(EncuestaRespuesta encuesta)
         {
-
             EncuestaRespuesta respuesta = new EncuestaRespuesta();
             try
             {
@@ -49,11 +48,9 @@ namespace WSEncuestaConglomerado.Services
                     encuesta.enc_hapresentadosintomas_fatigadebilidad,
                     encuesta.enc_hapresentadosintomas_ahogofaltaaire,
                     encuesta.enc_hapresentadosintomas_ninguno,
-
                     encuesta.enc_comoconsideracumplimientocuarentena,
                     encuesta.enc_contactopersonas24horas,
                     encuesta.enc_dondedesplazoustedomiembrofamilia,
-
                     encuesta.enc_motivosalirdecasa_noaplica,
                     encuesta.enc_motivosalirdecasa_atrabajar,
                     encuesta.enc_motivosalirdecasa_compraralimento,
@@ -63,9 +60,7 @@ namespace WSEncuestaConglomerado.Services
                     encuesta.enc_motivosalirdecasa_diligenciabancaria,
                     encuesta.enc_motivosalirdecasa_socializar,
                     encuesta.enc_motivosalirdecasa_otro,
-
                     encuesta.enc_otromotivosalirdecasa,
-
                     encuesta.enc_mediostransporteutilizo_noaplica,
                     encuesta.enc_mediostransporteutilizo_transmilenio,
                     encuesta.enc_mediostransporteutilizo_sitp,
@@ -78,38 +73,35 @@ namespace WSEncuestaConglomerado.Services
                     encuesta.sub_id,
                     encuesta.usu_id,
                     encuesta.enc_estadoembarazo,
-encuesta.enc_etnia,
-encuesta.enc_condiciondiscapacidad,
-encuesta.enc_presentaenfermedad_hipertension,
-encuesta.enc_presentaenfermedad_diabetesmellitus,
-encuesta.enc_presentaenfermedad_obesidad,
-encuesta.enc_presentaenfermedad_epoc,
-encuesta.enc_presentaenfermedad_asma,
-encuesta.enc_presentaenfermedad_otro,
-encuesta.enc_presentaenfermedad_otrocuales,
-
-encuesta.enc_hapresentadosintomas_diarrea,
-encuesta.enc_hapresentadosintomas_perdidaolfato,
-encuesta.enc_contactopersonascuantas,
-encuesta.enc_dispuestoaislamiento,
-encuesta.enc_vacunadocovid,
-encuesta.enc_accedetomamuestra,
-encuesta.enc_convivepresentadosintomas_fiebre,
-encuesta.enc_convivepresentadosintomas_tos,
-encuesta.enc_convivepresentadosintomas_dolorgarganta,
-encuesta.enc_convivepresentadosintomas_fatigadebilidad,
-encuesta.enc_convivepresentadosintomas_ahogofaltaaire,
-encuesta.enc_convivepresentadosintomas_ninguno,
-encuesta.enc_convivehapresentadosintomas_diarrea,
-encuesta.enc_convivehapresentadosintomas_perdidaolfato,
-encuesta.enc_presentaenfermedad_ninguno,
-encuesta.enc_compartehabitacion,
-encuesta.enc_hapresentadosintomas_dolorestomago,
-encuesta.enc_convivepresentadosintomas_dolorestomago,
-encuesta.enc_frecuenciadesplazamiento,
-encuesta.enc_esquemavacunacioncompleto
-
-                    );
+                    encuesta.enc_etnia,
+                    encuesta.enc_condiciondiscapacidad,
+                    encuesta.enc_presentaenfermedad_hipertension,
+                    encuesta.enc_presentaenfermedad_diabetesmellitus,
+                    encuesta.enc_presentaenfermedad_obesidad,
+                    encuesta.enc_presentaenfermedad_epoc,
+                    encuesta.enc_presentaenfermedad_asma,
+                    encuesta.enc_presentaenfermedad_otro,
+                    encuesta.enc_presentaenfermedad_otrocuales,
+                    encuesta.enc_hapresentadosintomas_diarrea,
+                    encuesta.enc_hapresentadosintomas_perdidaolfato,
+                    encuesta.enc_contactopersonascuantas,
+                    encuesta.enc_dispuestoaislamiento,
+                    encuesta.enc_vacunadocovid,
+                    encuesta.enc_accedetomamuestra,
+                    encuesta.enc_convivepresentadosintomas_fiebre,
+                    encuesta.enc_convivepresentadosintomas_tos,
+                    encuesta.enc_convivepresentadosintomas_dolorgarganta,
+                    encuesta.enc_convivepresentadosintomas_fatigadebilidad,
+                    encuesta.enc_convivepresentadosintomas_ahogofaltaaire,
+                    encuesta.enc_convivepresentadosintomas_ninguno,
+                    encuesta.enc_convivehapresentadosintomas_diarrea,
+                    encuesta.enc_convivehapresentadosintomas_perdidaolfato,
+                    encuesta.enc_presentaenfermedad_ninguno,
+                    encuesta.enc_compartehabitacion,
+                    encuesta.enc_hapresentadosintomas_dolorestomago,
+                    encuesta.enc_convivepresentadosintomas_dolorestomago,
+                    encuesta.enc_frecuenciadesplazamiento,
+                    encuesta.enc_esquemavacunacioncompleto);
                 respuesta.OperacionExitosa = true;
 
             }
@@ -124,13 +116,11 @@ encuesta.enc_esquemavacunacioncompleto
 
         public EncuestaRespuesta anularEncuesta(EncuestaRespuesta encuesta)
         {
-
             EncuestaRespuesta respuesta = new EncuestaRespuesta();
             try
             {
                 var accion = db.SP_ANULAR_ENCUESTA(encuesta.enc_id);
                 respuesta.OperacionExitosa = true;
-
             }
             catch (Exception ex)
             {
@@ -140,16 +130,14 @@ encuesta.enc_esquemavacunacioncompleto
             return respuesta;
         }
 
-
         public EncuestaRespuesta updEncuesta(EncuestaRespuesta encuesta)
         {
-
             EncuestaRespuesta respuesta = new EncuestaRespuesta();
             try
             {
                 var accion = db.SP_UPD_ENCUESTA(
                     encuesta.enc_id,
-                    encuesta.enc_fecha,
+                   encuesta.enc_fecha,
                     encuesta.loc_id,
                     encuesta.upz_id,
                     encuesta.bar_id,
@@ -176,11 +164,9 @@ encuesta.enc_esquemavacunacioncompleto
                     encuesta.enc_hapresentadosintomas_fatigadebilidad,
                     encuesta.enc_hapresentadosintomas_ahogofaltaaire,
                     encuesta.enc_hapresentadosintomas_ninguno,
-
                     encuesta.enc_comoconsideracumplimientocuarentena,
                     encuesta.enc_contactopersonas24horas,
                     encuesta.enc_dondedesplazoustedomiembrofamilia,
-
                     encuesta.enc_motivosalirdecasa_noaplica,
                     encuesta.enc_motivosalirdecasa_atrabajar,
                     encuesta.enc_motivosalirdecasa_compraralimento,
@@ -190,9 +176,7 @@ encuesta.enc_esquemavacunacioncompleto
                     encuesta.enc_motivosalirdecasa_diligenciabancaria,
                     encuesta.enc_motivosalirdecasa_socializar,
                     encuesta.enc_motivosalirdecasa_otro,
-
                     encuesta.enc_otromotivosalirdecasa,
-
                     encuesta.enc_mediostransporteutilizo_noaplica,
                     encuesta.enc_mediostransporteutilizo_transmilenio,
                     encuesta.enc_mediostransporteutilizo_sitp,
@@ -204,7 +188,7 @@ encuesta.enc_esquemavacunacioncompleto
                     encuesta.enc_mediostransporteutilizo_otro,
                     encuesta.sub_id,
                     encuesta.usu_id,
-                    encuesta.enc_estadoembarazo,    
+                    encuesta.enc_estadoembarazo,
                     encuesta.enc_etnia,
                     encuesta.enc_condiciondiscapacidad,
                     encuesta.enc_presentaenfermedad_hipertension,
@@ -217,7 +201,7 @@ encuesta.enc_esquemavacunacioncompleto
                     encuesta.enc_hapresentadosintomas_diarrea,
                     encuesta.enc_hapresentadosintomas_perdidaolfato,
                     encuesta.enc_contactopersonascuantas,
-                    encuesta.enc_dispuestoaislamiento,  
+                    encuesta.enc_dispuestoaislamiento,
                     encuesta.enc_vacunadocovid,
                     encuesta.enc_accedetomamuestra,
                     encuesta.enc_convivepresentadosintomas_fiebre,
@@ -229,12 +213,11 @@ encuesta.enc_esquemavacunacioncompleto
                     encuesta.enc_convivehapresentadosintomas_diarrea,
                     encuesta.enc_convivehapresentadosintomas_perdidaolfato,
                     encuesta.enc_presentaenfermedad_ninguno,
-encuesta.enc_compartehabitacion,
-encuesta.enc_hapresentadosintomas_dolorestomago,
-encuesta.enc_convivepresentadosintomas_dolorestomago,
-encuesta.enc_frecuenciadesplazamiento,
-encuesta.enc_esquemavacunacioncompleto
-
+                    encuesta.enc_compartehabitacion,
+                    encuesta.enc_hapresentadosintomas_dolorestomago,
+                    encuesta.enc_convivepresentadosintomas_dolorestomago,
+                    encuesta.enc_frecuenciadesplazamiento,
+                    encuesta.enc_esquemavacunacioncompleto
                     );
                 respuesta.OperacionExitosa = true;
 
@@ -251,6 +234,7 @@ encuesta.enc_esquemavacunacioncompleto
         {
             EncuestaRespuesta respuesta = new EncuestaRespuesta();
             var info = db.SP_FIND_ENCUESTA(enc_id).FirstOrDefault();
+
             respuesta.enc_id = info.enc_id;
             respuesta.enc_fecha = info.enc_fecha;
             respuesta.loc_id = info.loc_id;
@@ -302,6 +286,37 @@ encuesta.enc_esquemavacunacioncompleto
             respuesta.enc_mediostransporteutilizo_apie = info.enc_mediostransporteutilizo_apie;
             respuesta.enc_mediostransporteutilizo_otro = info.enc_mediostransporteutilizo_otro;
             respuesta.sub_id = info.sub_id;
+            respuesta.enc_presentaenfermedad_ninguno = info.enc_presentaenfermedad_ninguno;
+            respuesta.enc_compartehabitacion = info.enc_compartehabitacion;
+            respuesta.enc_hapresentadosintomas_dolorestomago = info.enc_hapresentadosintomas_dolorestomago;
+            respuesta.enc_convivepresentadosintomas_dolorestomago = info.enc_convivepresentadosintomas_dolorestomago;
+            respuesta.enc_frecuenciadesplazamiento = info.enc_frecuenciadesplazamiento;
+            respuesta.enc_esquemavacunacioncompleto = info.enc_esquemavacunacioncompleto;
+
+            respuesta.enc_estadoembarazo = info.enc_estadoembarazo;
+            respuesta.enc_etnia = info.enc_etnia;
+            respuesta.enc_condiciondiscapacidad = info.enc_condiciondiscapacidad;
+            respuesta.enc_presentaenfermedad_hipertension = info.enc_presentaenfermedad_hipertension;
+            respuesta.enc_presentaenfermedad_diabetesmellitus = info.enc_presentaenfermedad_diabetesmellitus;
+            respuesta.enc_presentaenfermedad_obesidad = info.enc_presentaenfermedad_obesidad;
+            respuesta.enc_presentaenfermedad_epoc = info.enc_presentaenfermedad_epoc;
+            respuesta.enc_presentaenfermedad_asma = info.enc_presentaenfermedad_asma;
+            respuesta.enc_presentaenfermedad_otro = info.enc_presentaenfermedad_otro;
+            respuesta.enc_presentaenfermedad_otrocuales = info.enc_presentaenfermedad_otrocuales;
+            respuesta.enc_hapresentadosintomas_diarrea = info.enc_hapresentadosintomas_diarrea;
+            respuesta.enc_hapresentadosintomas_perdidaolfato = info.enc_hapresentadosintomas_perdidaolfato;
+            respuesta.enc_contactopersonascuantas = info.enc_contactopersonascuantas;
+            respuesta.enc_dispuestoaislamiento = info.enc_dispuestoaislamiento;
+            respuesta.enc_vacunadocovid = info.enc_vacunadocovid;
+            respuesta.enc_accedetomamuestra = info.enc_accedetomamuestra;
+            respuesta.enc_convivepresentadosintomas_fiebre = info.enc_convivepresentadosintomas_fiebre;
+            respuesta.enc_convivepresentadosintomas_tos = info.enc_convivepresentadosintomas_tos;
+            respuesta.enc_convivepresentadosintomas_dolorgarganta = info.enc_convivepresentadosintomas_dolorgarganta;
+            respuesta.enc_convivepresentadosintomas_fatigadebilidad = info.enc_convivepresentadosintomas_fatigadebilidad;
+            respuesta.enc_convivepresentadosintomas_ahogofaltaaire = info.enc_convivepresentadosintomas_ahogofaltaaire;
+            respuesta.enc_convivepresentadosintomas_ninguno = info.enc_convivepresentadosintomas_ninguno;
+            respuesta.enc_convivehapresentadosintomas_diarrea = info.enc_convivehapresentadosintomas_diarrea;
+            respuesta.enc_convivehapresentadosintomas_perdidaolfato = info.enc_convivehapresentadosintomas_perdidaolfato;
             respuesta.enc_presentaenfermedad_ninguno = info.enc_presentaenfermedad_ninguno;
             respuesta.enc_compartehabitacion = info.enc_compartehabitacion;
             respuesta.enc_hapresentadosintomas_dolorestomago = info.enc_hapresentadosintomas_dolorestomago;
@@ -403,11 +418,11 @@ encuesta.enc_esquemavacunacioncompleto
                                        enc_convivehapresentadosintomas_diarrea = l.enc_convivehapresentadosintomas_diarrea,
                                        enc_convivehapresentadosintomas_perdidaolfato = l.enc_convivehapresentadosintomas_perdidaolfato,
                                        enc_presentaenfermedad_ninguno = l.enc_presentaenfermedad_ninguno,
-enc_compartehabitacion = l.enc_compartehabitacion,
-enc_hapresentadosintomas_dolorestomago = l.enc_hapresentadosintomas_dolorestomago,
-enc_convivepresentadosintomas_dolorestomago = l.enc_convivepresentadosintomas_dolorestomago,
-enc_frecuenciadesplazamiento = l.enc_frecuenciadesplazamiento,
-enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
+                                       enc_compartehabitacion = l.enc_compartehabitacion,
+                                       enc_hapresentadosintomas_dolorestomago = l.enc_hapresentadosintomas_dolorestomago,
+                                       enc_convivepresentadosintomas_dolorestomago = l.enc_convivepresentadosintomas_dolorestomago,
+                                       enc_frecuenciadesplazamiento = l.enc_frecuenciadesplazamiento,
+                                       enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
 
                                    }
                                    ).ToList();
@@ -432,18 +447,15 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                                                  Texto_dyr = r.Texto_dyr,
 
                                              }
-                    ).ToList();
+                    ).FirstOrDefault();
 
 
-                    if (ListaporDocumento.Count > 0)
+                    if (ListaporDocumento != null)
                     {
                         //Se verifica si el item corresponde a Virus Respiratorios 237
 
-                        foreach (DatosRecepciondto i in ListaporDocumento)
-                        {
-
                             var ListaporId = (from r in db2.DatosRecepcion
-                                              where r.Ideyr_dyr == i.Ideyr_dyr && r.Idrvp_dyr == 191 && r.dato_dyr == "237" //VIRUS RESPIRATORIOS
+                                              where r.Ideyr_dyr == ListaporDocumento.Ideyr_dyr && r.Idrvp_dyr == 191 && r.dato_dyr == "237" //VIRUS RESPIRATORIOS
                                               orderby r.Fecha_dyr descending
                                               select new DatosRecepciondto
                                               {
@@ -451,7 +463,6 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                                                   Idrvp_dyr = r.Idrvp_dyr,
                                                   dato_dyr = r.dato_dyr,
                                                   Texto_dyr = r.Texto_dyr,
-
                                               }
                         ).FirstOrDefault();
 
@@ -460,18 +471,12 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                                 if (ListaporId.Ideyr_dyr != 0) //Tiene Datos asociados 
                                 {
                                     IdDatoReferenciado = ListaporId.Ideyr_dyr;
-                                    break;
                                 }
                             }
 
 
-
-
-                        }
-
                         if (IdDatoReferenciado != 0)
                         {
-
                             //Se consultan los datos faltantes de la encuesta y se hace su correspondiente reemplazamiento
                             var Edad = db2.DatosRecepcion.Where(p => p.Ideyr_dyr.Equals(IdDatoReferenciado) && p.Idrvp_dyr.Equals(155)).OrderByDescending(p => p.Fecha_dyr).FirstOrDefault();
                             var Anios = db2.DatosRecepcion.Where(p => p.Ideyr_dyr.Equals(IdDatoReferenciado) && p.Idrvp_dyr.Equals(329)).OrderByDescending(p => p.Fecha_dyr).FirstOrDefault();
@@ -485,39 +490,23 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                             item.enc_dirresidencia = Direccion.Texto_dyr;
                             item.enc_numcelular = Telefono.Texto_dyr;
                             item.enc_nombreEAPB = EAPB.Texto_dyr;
-
-
-
                         }
-
                     }
                     else
                     {
-
                         item.enc_edad = "No Reportado";
                         item.enc_genero = "No Reportado";
                         item.enc_dirresidencia = "No Reportado";
                         item.enc_numcelular = "No Reportado";
                         item.enc_nombreEAPB = "No Reportado";
-
-
-
                     }
-
                 }
-
-
             }
             else
             {
                 respuesta = null;
                 return respuesta;
-
             }
-
-
-
-
             respuesta = listapreliminar;
             return respuesta;
         }
@@ -621,6 +610,7 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                                    }
                                    ).ToList();
 
+
             if (listapreliminar.Count > 0)
             {
                 //Se consulta la información adicional desde Silaps
@@ -641,46 +631,38 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                                                  Texto_dyr = r.Texto_dyr,
 
                                              }
-                    ).ToList();
+                    ).FirstOrDefault();
 
 
-                    if (ListaporDocumento.Count > 0)
+                    if (ListaporDocumento != null)
                     {
                         //Se verifica si el item corresponde a Virus Respiratorios 237
 
-                        foreach (DatosRecepciondto i in ListaporDocumento)
+                        var ListaporId = (from r in db2.DatosRecepcion
+                                          where r.Ideyr_dyr == ListaporDocumento.Ideyr_dyr && r.Idrvp_dyr == 191 && r.dato_dyr == "237" //VIRUS RESPIRATORIOS
+                                          orderby r.Fecha_dyr descending
+                                          select new DatosRecepciondto
+                                          {
+                                              Ideyr_dyr = r.Ideyr_dyr,
+                                              Idrvp_dyr = r.Idrvp_dyr,
+                                              dato_dyr = r.dato_dyr,
+                                              Texto_dyr = r.Texto_dyr,
+
+                                          }
+                    ).FirstOrDefault();
+
+                        if (ListaporId != null)
                         {
-
-                            var ListaporId = (from r in db2.DatosRecepcion
-                                              where r.Ideyr_dyr == i.Ideyr_dyr && r.Idrvp_dyr == 191 && r.dato_dyr == "237" //VIRUS RESPIRATORIOS
-                                              orderby r.Fecha_dyr descending
-                                              select new DatosRecepciondto
-                                              {
-                                                  Ideyr_dyr = r.Ideyr_dyr,
-                                                  Idrvp_dyr = r.Idrvp_dyr,
-                                                  dato_dyr = r.dato_dyr,
-                                                  Texto_dyr = r.Texto_dyr,
-
-                                              }
-                        ).FirstOrDefault();
-
-                            if (ListaporId != null)
+                            if (ListaporId.Ideyr_dyr != 0) //Tiene Datos asociados 
                             {
-                                if (ListaporId.Ideyr_dyr != 0) //Tiene Datos asociados 
-                                {
-                                    IdDatoReferenciado = ListaporId.Ideyr_dyr;
-                                    break;
-                                }
+                                IdDatoReferenciado = ListaporId.Ideyr_dyr;
+
                             }
-
-
-
-
                         }
+
 
                         if (IdDatoReferenciado != 0)
                         {
-
                             //Se consultan los datos faltantes de la encuesta y se hace su correspondiente reemplazamiento
                             var Edad = db2.DatosRecepcion.Where(p => p.Ideyr_dyr.Equals(IdDatoReferenciado) && p.Idrvp_dyr.Equals(155)).OrderByDescending(p => p.Fecha_dyr).FirstOrDefault();
                             var Anios = db2.DatosRecepcion.Where(p => p.Ideyr_dyr.Equals(IdDatoReferenciado) && p.Idrvp_dyr.Equals(329)).OrderByDescending(p => p.Fecha_dyr).FirstOrDefault();
@@ -694,28 +676,17 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                             item.enc_dirresidencia = Direccion.Texto_dyr;
                             item.enc_numcelular = Telefono.Texto_dyr;
                             item.enc_nombreEAPB = EAPB.Texto_dyr;
-
-
-
                         }
-
                     }
                     else
                     {
-
                         item.enc_edad = "No Reportado";
                         item.enc_genero = "No Reportado";
                         item.enc_dirresidencia = "No Reportado";
                         item.enc_numcelular = "No Reportado";
                         item.enc_nombreEAPB = "No Reportado";
-
-
-
                     }
-
                 }
-
-
             }
             else
             {
@@ -723,9 +694,6 @@ enc_esquemavacunacioncompleto = l.enc_esquemavacunacioncompleto
                 return respuesta;
 
             }
-
-
-
 
             respuesta = listapreliminar;
             return respuesta;

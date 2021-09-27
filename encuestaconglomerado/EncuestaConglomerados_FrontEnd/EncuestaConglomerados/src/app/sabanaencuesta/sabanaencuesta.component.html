@@ -81,8 +81,24 @@
                 <dxi-column dataField="enc_genero" caption="Género"></dxi-column>
                 <dxi-column dataField="enc_dirresidencia" caption="Dirección Residencia"></dxi-column>
                 <dxi-column dataField="enc_numcelular" caption="Número Celular"></dxi-column>
+
+                <dxi-column dataField="enc_etnia" caption="Etnia"></dxi-column>
                 <dxi-column dataField="enc_aseguramiento" caption="Aseguramiento"></dxi-column>
                 <dxi-column dataField="enc_nombreEAPB" caption="Nombre EAPB"></dxi-column>
+                <dxi-column dataField="enc_estadoembarazo" caption="En estado de Embarazo"></dxi-column>
+                <dxi-column dataField="enc_condiciondiscapacidad" caption="En Condición de Discapacidad"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_hipertension" caption="Enfermedades - Hipertensión">
+                </dxi-column>
+
+                <dxi-column dataField="enc_presentaenfermedad_diabetesmellitus"
+                    caption="Enfermedades - Diabetes Mellitus"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_obesidad" caption="Enfermedades - Obesidad"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_epoc" caption="Enfermedades - EPOC"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_asma" caption="Enfermedades - Asma"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_otro" caption="Enfermedades - Otra"></dxi-column>
+                <dxi-column dataField="enc_presentaenfermead_otrocuales" caption="Enfermedades - Otra Cuales">
+                </dxi-column>
+                <dxi-column dataField="enc_presentaenfermedad_ninguno" caption="Enfermedades - Ninguno"></dxi-column>
                 <dxi-column dataField="enc_ocupacion" caption="Ocupación"></dxi-column>
                 <dxi-column dataField="enc_cuantaspersonashabitan" caption="Cuantas personas habitan"></dxi-column>
                 <dxi-column dataField="enc_cuantaspersonasmayores60" caption="Cuantas personas mayores de 60">
@@ -91,6 +107,8 @@
                 </dxi-column>
                 <dxi-column dataField="enc_cuantashabitacionescuentaresidencia"
                     caption="Cuantas habitaciones residencia"></dxi-column>
+                <dxi-column dataField="enc_compartehabitacion " caption="Comparte Habitación"> </dxi-column>
+
                 <dxi-column dataField="enc_hapresentadosintomas_fiebre" caption="Sintomas - Fiebre"></dxi-column>
                 <dxi-column dataField="enc_hapresentadosintomas_tos" caption="Síntomas - Tos"></dxi-column>
                 <dxi-column dataField="enc_hapresentadosintomas_dolorgarganta" caption="Síntomas - Dolor de Garganta">
@@ -99,11 +117,51 @@
                 </dxi-column>
                 <dxi-column dataField="enc_hapresentadosintomas_ahogofaltaaire" caption="Síntomas - Ahogo/Falta Aire">
                 </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_dolorestomago" caption="Síntomas - Dolor Estómago">
+                </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_diarrea" caption="Síntomas - Diarrea">
+                </dxi-column>
+                <dxi-column dataField="enc_hapresentadosintomas_perdidaolfato" caption="Síntomas - Perdida Olfato">
+                </dxi-column>
                 <dxi-column dataField="enc_hapresentadosintomas_ninguno" caption="Síntomas - Ninguno"></dxi-column>
+
+
+                <dxi-column dataField="enc_convivepresentadosintomas_fiebre" caption="Sintomas Persona Convive- Fiebre">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_tos" caption="Síntomas Persona Convive - Tos">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_dolorgarganta"
+                    caption="Síntomas Personas Convive - Dolor de Garganta">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_fatigadebilidad"
+                    caption="Síntomas Personas Convive - Fatiga/Debilidad">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_ahogofaltaaire"
+                    caption="Síntomas Personas Convive - Ahogo/Falta Aire">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_dolorestomago"
+                    caption="Síntomas Personas Convive - Dolor Estómago">
+                </dxi-column>
+                <dxi-column dataField="enc_convivehapresentadosintomas_diarrea"
+                    caption="Síntomas Personas Convive - Diarre">
+                </dxi-column>
+                <dxi-column dataField="enc_convivehapresentadosintomas_perdidaolfato "
+                    caption="Síntomas Personas Convive - Perdida Olfato">
+                </dxi-column>
+                <dxi-column dataField="enc_convivepresentadosintomas_ninguno" caption="Síntomas Persona Convive - Ninguno">
+                </dxi-column>
+
+
                 <dxi-column dataField="enc_comoconsideracumplimientocuarentena"
                     caption="Como considera cumplimiento cuarentena"></dxi-column>
-                <dxi-column dataField="enc_contactopersonas24horas" caption="Contacto personas 24 horas">
+                <dxi-column dataField="enc_contactopersonas24horas" caption="Contacto personas 5 días">
                 </dxi-column>
+                <dxi-column dataField="enc_contactopersonascuantas" caption="Cuantas Personas contacto">
+                </dxi-column>
+
+                <dxi-column dataField="enc_frecuenciadesplazamiento" caption="Frecuencia Desplaza otras Localidades">
+                </dxi-column>
+
                 <dxi-column dataField="enc_dondedesplazoustedomiembrofamilia" caption="Dónde desplazó ud o su familia">
                 </dxi-column>
                 <dxi-column dataField="enc_motivosalirdecasa_noaplica" caption="Motivo Salir de Casa - No Aplica">
@@ -143,12 +201,26 @@
                 </dxi-column>
                 <dxi-column dataField="enc_mediostransporteutilizo_otro" caption="Medio Transporte - Otro">
                 </dxi-column>
+
+                <dxi-column dataField="enc_dispuestoaislamiento" caption="Dispuesto Aislamiento">
+                </dxi-column>
+
+                <dxi-column dataField="enc_vacunadocovid" caption="Vacunado">
+                </dxi-column>
+
+                <dxi-column dataField="enc_esquemavacunacioncompleto" caption="Esquema Vacunación Completo">
+                </dxi-column>
+
+                <dxi-column dataField="enc_accedetomamuestra" caption="Accede toma de muestra">
+                </dxi-column>
+
                 <dxi-column dataField="sub_nombre" caption="SubRed"></dxi-column>
                 <dxi-column dataField="usu_nombre" caption="Usuario Registró"></dxi-column>
                 <dxi-column dataField="enc_datetimecreated" caption="Fecha y Hora de Registro"></dxi-column>
 
                 <dxi-column dataField="usu_nombre_modificacion" caption="Usuario Modificó"></dxi-column>
                 <dxi-column dataField="enc_datetimeupdated" caption="Fecha y Hora de Modificación"></dxi-column>
+
 
                 <dxo-export [enabled]="true" fileName="Sábana de Encuesta"></dxo-export>
                 <dxo-filter-row [visible]="true"></dxo-filter-row>
@@ -174,8 +246,8 @@
                         <dx-button id="button" class="rounded mx-auto" text="Editar" type="success"
                             (click)="EditarEncuesta(d.data.enc_id)"></dx-button>
 
-                            <dx-button id="button" class="rounded mx-auto" style="background-color: darkred;" text="Anular" type="success"
-                            (click)="confirmarAnular(d.data.enc_id)"></dx-button>
+                        <dx-button id="button" class="rounded mx-auto" style="background-color: darkred;" text="Anular"
+                            type="success" (click)="confirmarAnular(d.data.enc_id)"></dx-button>
 
                     </div>
                 </div>
@@ -183,7 +255,7 @@
             </dx-data-grid>
         </div>
 
-        
+
 
     </div>
 
@@ -193,14 +265,15 @@
                 <h3>Editar Encuesta</h3>
             </div>
         </div>
-     
+
         <div class="tarjeta">
-            <app-encuesta #encuesta [publicas]="publicas" [edicion]="edicion" (finalizoedicion)="finalizoedicion($event)">
+            <app-encuesta #encuesta [publicas]="publicas" [edicion]="edicion"
+                (finalizoedicion)="finalizoedicion($event)">
             </app-encuesta>
         </div>
     </div>
 
-    
+
 </div>
 
 <!-- Fin Body-->

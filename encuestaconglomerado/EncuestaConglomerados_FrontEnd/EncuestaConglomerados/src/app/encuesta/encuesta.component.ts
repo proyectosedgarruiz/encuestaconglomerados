@@ -521,6 +521,7 @@ export class EncuestaComponent implements OnInit {
       this.encuesta.enc_hapresentadosintomas_dolorgarganta === false &&
       this.encuesta.enc_hapresentadosintomas_fatigadebilidad === false &&
       this.encuesta.enc_hapresentadosintomas_ahogofaltaaire === false &&
+      this.encuesta.enc_hapresentadosintomas_dolorestomago === false &&
       this.encuesta.enc_hapresentadosintomas_diarrea === false &&
       this.encuesta.enc_hapresentadosintomas_perdidaolfato === false &&
       this.encuesta.enc_hapresentadosintomas_ninguno === false) {
@@ -533,6 +534,7 @@ export class EncuestaComponent implements OnInit {
       this.encuesta.enc_convivepresentadosintomas_dolorgarganta === false &&
       this.encuesta.enc_convivepresentadosintomas_fatigadebilidad === false &&
       this.encuesta.enc_convivepresentadosintomas_ahogofaltaaire === false &&
+      this.encuesta.enc_convivepresentadosintomas_dolorestomago === false &&
       this.encuesta.enc_convivehapresentadosintomas_diarrea === false &&
       this.encuesta.enc_convivehapresentadosintomas_perdidaolfato === false &&
       this.encuesta.enc_convivepresentadosintomas_ninguno === false) {

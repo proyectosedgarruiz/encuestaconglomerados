@@ -557,6 +557,47 @@ export class EncuestaComponent implements OnInit {
       this.ShowAlertsValidations();
       return false;
     }
+    else if (this.encuesta.enc_etnia === '' || this.encuesta.enc_etnia === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Etnia';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_estadoembarazo === '' || this.encuesta.enc_estadoembarazo === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Estado Embarazo';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_condiciondiscapacidad === '' || this.encuesta.enc_condiciondiscapacidad === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla En condición de Discapacidad';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_dispuestoaislamiento === '' || this.encuesta.enc_dispuestoaislamiento === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Dispuesto Aislamiento';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_vacunadocovid === '' || this.encuesta.enc_vacunadocovid === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Vacunado Covid-19';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_accedetomamuestra === '' || this.encuesta.enc_accedetomamuestra === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Accede Toma Muestra';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_compartehabitacion === '' || this.encuesta.enc_compartehabitacion === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Comparte Habitación';
+      this.ShowAlertsValidations();
+      return false;
+    }
+    else if (this.encuesta.enc_esquemavacunacioncompleto=== '' || this.encuesta.enc_esquemavacunacioncompleto === undefined) {
+      this.errorText = 'Por favor seleccione una opción en la casilla Esquema Vacunación Completo';
+      this.ShowAlertsValidations();
+      return false;
+    }
+
     else if (this.encuesta.enc_motivosalirdecasa_noaplica === false &&
       this.encuesta.enc_motivosalirdecasa_atrabajar === false &&
       this.encuesta.enc_motivosalirdecasa_compraralimento === false &&

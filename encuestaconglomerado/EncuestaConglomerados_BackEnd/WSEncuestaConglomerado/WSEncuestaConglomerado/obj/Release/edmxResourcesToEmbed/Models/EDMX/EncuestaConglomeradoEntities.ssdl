@@ -86,6 +86,36 @@
     <Property Name="enc_usu_modificacion" Type="int" />
     <Property Name="enc_datetimeupdated" Type="datetime" />
     <Property Name="enc_estado" Type="nvarchar" MaxLength="1" />
+    <Property Name="enc_etnia" Type="nvarchar(max)" />
+    <Property Name="enc_estadoembarazo" Type="nvarchar(max)" />
+    <Property Name="enc_condiciondiscapacidad" Type="nvarchar(max)" />
+    <Property Name="enc_presentaenfermedad_hipertension" Type="bit" />
+    <Property Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" />
+    <Property Name="enc_presentaenfermedad_obesidad" Type="bit" />
+    <Property Name="enc_presentaenfermedad_epoc" Type="bit" />
+    <Property Name="enc_presentaenfermedad_asma" Type="bit" />
+    <Property Name="enc_presentaenfermedad_otro" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_diarrea" Type="bit" />
+    <Property Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" />
+    <Property Name="enc_contactopersonascuantas" Type="nvarchar(max)" />
+    <Property Name="enc_dispuestoaislamiento" Type="nvarchar(max)" />
+    <Property Name="enc_vacunadocovid" Type="nvarchar(max)" />
+    <Property Name="enc_accedetomamuestra" Type="nvarchar(max)" />
+    <Property Name="enc_convivepresentadosintomas_fiebre" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_tos" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_ninguno" Type="bit" />
+    <Property Name="enc_convivehapresentadosintomas_diarrea" Type="bit" />
+    <Property Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" />
+    <Property Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" />
+    <Property Name="enc_presentaenfermedad_ninguno" Type="bit" />
+    <Property Name="enc_compartehabitacion" Type="nvarchar(max)" />
+    <Property Name="enc_hapresentadosintomas_dolorestomago" Type="bit" />
+    <Property Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" />
+    <Property Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" />
+    <Property Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Localidades">
     <Key>
@@ -290,6 +320,36 @@
     <Parameter Name="enc_mediostransporteutilizo_otro" Type="bit" Mode="In" />
     <Parameter Name="sub_id" Type="int" Mode="In" />
     <Parameter Name="usu_id" Type="int" Mode="In" />
+    <Parameter Name="enc_estadoembarazo" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_etnia" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_condiciondiscapacidad" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_hipertension" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_obesidad" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_epoc" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_asma" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_otro" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_diarrea" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+    <Parameter Name="enc_contactopersonascuantas" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_dispuestoaislamiento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_vacunadocovid" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_accedetomamuestra" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_fiebre" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_tos" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_ninguno" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivehapresentadosintomas_diarrea" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_ninguno" Type="bit" Mode="In" />
+    <Parameter Name="enc_compartehabitacion" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+    <Parameter Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="SP_ADD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="usu_nombre" Type="nvarchar" Mode="In" />
@@ -411,6 +471,36 @@
     <Parameter Name="enc_mediostransporteutilizo_otro" Type="bit" Mode="In" />
     <Parameter Name="sub_id" Type="int" Mode="In" />
     <Parameter Name="usu_id" Type="int" Mode="In" />
+    <Parameter Name="enc_estadoembarazo" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_etnia" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_condiciondiscapacidad" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_hipertension" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_diabetesmellitus" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_obesidad" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_epoc" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_asma" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_otro" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_otrocuales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_diarrea" Type="bit" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+    <Parameter Name="enc_contactopersonascuantas" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_dispuestoaislamiento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_vacunadocovid" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_accedetomamuestra" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_fiebre" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_tos" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_dolorgarganta" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_fatigadebilidad" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_ahogofaltaaire" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_ninguno" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivehapresentadosintomas_diarrea" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivehapresentadosintomas_perdidaolfato" Type="bit" Mode="In" />
+    <Parameter Name="enc_presentaenfermedad_ninguno" Type="bit" Mode="In" />
+    <Parameter Name="enc_compartehabitacion" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_hapresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+    <Parameter Name="enc_convivepresentadosintomas_dolorestomago" Type="bit" Mode="In" />
+    <Parameter Name="enc_frecuenciadesplazamiento" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="enc_esquemavacunacioncompleto" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="SP_UPD_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="usu_id" Type="int" Mode="In" />

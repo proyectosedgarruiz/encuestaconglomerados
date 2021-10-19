@@ -550,7 +550,7 @@
 
                 <input type="checkbox" value="1" name="enc_convivepresentadosintomas_diarrea"
                   (change)="deshabilitarnoaplicasintomas()"
-                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_diarrea"
+                  [(ngModel)]="encuesta.enc_convivehapresentadosintomas_diarrea"
                   style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Diarrea
               </div>
               <div class="divTableCell">
@@ -564,14 +564,14 @@
 
                 <input type="checkbox" value="1" name="enc_convivepresentadosintomas_perdidaolfato"
                   (change)="deshabilitarnoaplicasintomas()"
-                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_perdidaolfato"
+                  [(ngModel)]="encuesta.enc_convivehapresentadosintomas_perdidaolfato"
                   style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Pérdida de Olfato
               </div>
 
               <div class="divTableCell">
 
                 <input type="checkbox" value="1" name="enc_convivepresentadosintomas_ninguno"
-                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_ninguno" (change)="deshabilitarsintomas()"
+                  [(ngModel)]="encuesta.enc_convivepresentadosintomas_ninguno" (change)="deshabilitarsintomasconvive()"
                   style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Ninguno
               </div>
             </div>
@@ -784,7 +784,7 @@
                 style="background-color:white; color:black; font-weight: bold; width: 20px; height: 20px;"> Otro motivo
             </label>
             <label>
-              <input *ngIf="encuesta.enc_motivosalirdecasa_otro == '1'" required type="text" [ngModelOptions]="{standalone: true}"
+              <input *ngIf="encuesta.enc_motivosalirdecasa_otro == true" required type="text" [ngModelOptions]="{standalone: true}"
                 [(ngModel)]="encuesta.enc_otromotivosalirdecasa" class="form-control" id="enc_otromotivosalirdecasa"
                 placeholder="Indique Otro Motivo">
             </label>
